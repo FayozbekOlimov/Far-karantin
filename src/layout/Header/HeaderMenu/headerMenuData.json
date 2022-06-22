@@ -1,0 +1,320 @@
+[
+  {
+    "to": "/agency",
+    "menuName": "Agentlik",
+    "submenu": [
+      {
+        "to": "",
+        "text": "Agentlik haqida"
+      },
+      {
+        "to": "/leadership",
+        "text": "Rahbariyat"
+      },
+      {
+        "to": "/advisers",
+        "text": "Maslahatchilar"
+      },
+      {
+        "to": "/centeralApp",
+        "text": "Markaziy apparat"
+      },
+      {
+        "to": "/terrAdministrations",
+        "text": "Hududiy boshqarmalar"
+      },
+      {
+        "to": "/systemOrganizations",
+        "text": "Tizim tashkilotlari"
+      },
+      {
+        "to": "/contactAgency",
+        "text": "Agentlikka murojaat"
+      },
+      {
+        "to": "/vacancies",
+        "text": "Bo'sh ish o'rinlari"
+      },
+      {
+        "to": "/superior_organizations",
+        "text": "Yuqori turuvchi tashkilotlar"
+      },
+      {
+        "to": "/glossary_terms",
+        "text": "O'simliklar karantini sohasida qo'llaniladigan atamalar lug'ati"
+      },
+      {
+        "to": "/info_staff",
+        "text": "O'zbekiston Respublikasi O'simliklar karantini va himoyasi agentligi O`KChM xodimlari haqida ma`lumot"
+      },
+      {
+        "to": "/contact",
+        "text": "Bog'lanish"
+      },
+      {
+        "to": "/youth",
+        "text": "Yoshlarga oid yangiliklar"
+      },
+      {
+        "to": "/mobile_receptions",
+        "text": "Sayyor qabullar"
+      },
+      {
+        "to": "/open_data",
+        "text": "Ochiq ma'lumotlar"
+      },
+      {
+        "to": "/statistics_considered",
+        "text": "Ko‘rib chiqilgan murojaatlar bo‘yicha statistik ma’lumotlar"
+      },
+      {
+        "to": "/leading_specialist",
+        "text": "Ichki karantini bo'limi boshlig'i va bosh mutaxassislari (yetakchi mutaxassis) to'g'risida ma'lumot"
+      },
+      {
+        "to": "/spirituality_enlightenment",
+        "text": "Ma'naviyat va ma'rifat"
+      }
+    ]
+  },
+  {
+    "to": "/activity",
+    "menuName": "Faoliyat",
+    "submenu": [
+      {
+        "to": "",
+        "text": "'Elektron hukumat' tizimi"
+      },
+      {
+        "to": "/public_service_register",
+        "text": "Davlat xizmatlari reestri"
+      },
+      {
+        "to": "/international_relations",
+        "text": "Xalqaro aloqalar"
+      },
+      {
+        "to": "/government_programs",
+        "text": "Davlat dasturlari"
+      },
+      {
+        "to": "/plant_clinics",
+        "text": "O‘simliklar klinikalari"
+      },
+      {
+        "to": "/interagency_protocols",
+        "text": "Idoralararo bayonnomalar"
+      },
+      {
+        "to": "/anti_corruption",
+        "text": "Korrupsiyaga qarshi faoliyat"
+      }
+    ]
+  },
+  {
+    "to": "/information_services",
+    "menuName": "Axborot Xizmati",
+    "submenu": [
+      {
+        "to": "",
+        "text": "Agentlik yangiliklari"
+      },
+      {
+        "to": "/tenders",
+        "text": "Davlat xaridlari to'g'risida ma'lumot"
+      },
+      {
+        "to": "/congratulations",
+        "text": "Tabriklar, bayonotlar"
+      },
+      {
+        "to": "/videos",
+        "text": "Video"
+      },
+      {
+        "to": "/photo_gallery",
+        "text": "Fotogaleriya"
+      },
+      {
+        "to": "/infographics",
+        "text": "Infografika"
+      },
+      {
+        "to": "/bioprotection",
+        "text": "Biohimoya"
+      },
+      {
+        "to": "/media_about_us",
+        "text": "OAV biz haqimizda"
+      }
+    ]
+  },
+  {
+    "to": "/docs",
+    "menuName": "Hujjatlar",
+    "submenu": [
+      {
+        "to": "",
+        "text": "Qonunlar"
+      },
+      {
+        "to": "/resolutions",
+        "text": "O‘zbekiston Respublikasi Prezidenti qarorlari va farmonlari"
+      },
+      {
+        "to": "/government_decisions",
+        "text": "Hukumat qarorlari va farmoyishlari"
+      },
+      {
+        "to": "/international_agreements",
+        "text": "Xalqaro shartnomalar va ikki tomonlama bitimlar"
+      },
+      {
+        "to": "/normative_documents",
+        "text": "Adliya vazirligi tomonidan ro'yhatga olingan me'yoriy hujjatlar"
+      },
+      {
+        "to": "/draft_normative_documents",
+        "text": "Me'yoriy hujjatlar loyihalari"
+      },
+      {
+        "to": "/expired_normative_documents",
+        "text": "Kuchini yo'qotgan me'yoriy hujjatlar"
+      },
+      {
+        "to": "/fines_increased",
+        "text": "Jarimalar miqdori oshirildi"
+      },
+      {
+        "to": "/list_of_pests",
+        "text": "O'zbekiston Respublikasi uchun o'simliklar karantinida bo'lgan zararli organizmlar ro'yxati"
+      }
+    ]
+  },
+  {
+    "to": "/scientific_research",
+    "menuName": "Ilmiy-tadqidot-instituti",
+    "submenu": [
+      {
+        "to": "",
+        "text": "O'simliklar karantini va himoyasi agentligida karantin xizmatini tashkil qilishni takomillashtirish"
+      },
+      {
+        "to": "/cotton_bollworm",
+        "text": "Gʻoʻza kuyasi yoki gʻoʻzaning ofati toʻgʻrisida bilasizmi?"
+      },
+      {
+        "to": "/pest_control",
+        "text": "Zararkunandalarga qarshi kurashda feromon tutqichlardan foydalanishning ahamiyati"
+      },
+      {
+        "to": "/marble_shackle",
+        "text": "Marmar qandalasining zarari nimada?"
+      },
+      {
+        "to": "/cherry_flies",
+        "text": "O‘simliklar karantini va himoyasi ilmiy-tadqiqot instituti ogohlantiradi: gilos pashshasi – jiddiy zararkunanda"
+      }
+    ]
+  },
+  {
+    "to": "/laboratory",
+    "menuName": "Laboratoriya",
+    "submenu": [
+      {
+        "to": "",
+        "text": "Nizom"
+      },
+      {
+        "to": "/quarantine_organisms",
+        "text": "O'zbekiston Respublikasi hududlarida cheklangan ravishda tarqalgan zararli o'simliklar karantini organizmlari"
+      },
+      {
+        "to": "/cotton_bollworm_destroyed",
+        "text": "G‘o‘za kuyasi aniqlangan chigit yo‘q qilindi"
+      },
+      {
+        "to": "/pests_detected",
+        "text": "139 tonna kartoshkadan zararkunanda aniqlandi"
+      },
+      {
+        "to": "/california_shields",
+        "text": "Kaliforniya qalqondori aniqlangan mevalar yo‘q qilindi"
+      },
+      {
+        "to": "/citrus_honeysuckle",
+        "text": "Sitrus inli kuyasi - mevalar kushandasi"
+      },
+      {
+        "to": "/georgia_mandarins",
+        "text": "Gruziyadan keltirilgan mandarinda zararli organizmlar aniqlandi"
+      },
+      {
+        "to": "/imported_chine",
+        "text": "Xitoydan keltirilgan 3 million tut koʻchati yoqib yoʻq qilindi"
+      },
+      {
+        "to": "/vine_germany",
+        "text": "Germaniyadan keltirilgan tok ko‘chati yoqib yo‘q qilindi"
+      },
+      {
+        "to": "/imported_afghanistan",
+        "text": "Afg‘onistondan keltirilgan minglab tok, olxo‘ri va archa ko‘chatlari nima uchun yoqib yuborildi?"
+      }
+    ]
+  },
+  {
+    "to": "/export",
+    "menuName": "Export",
+    "submenu": [
+      {
+        "to": "/aboutAgency",
+        "text": "Maslahatchilar"
+      },
+      {
+        "to": "/",
+        "text": "Markaziy apparat"
+      }
+    ]
+  },
+  {
+    "to": "/import",
+    "menuName": "Import",
+    "submenu": [
+      {
+        "to": "",
+        "text": "O'simliklar karantini va himoyasi agentligi mutaxassislari tomonidan chet davlatlardan respublikamiz hududiga import qilinishi rejalashtirilgan ekish materiallarini fitosanitar holatini joyida o‘rganish maqsadida qilingan xizmat safarlari to‘g‘risidagi ma’lumot (2017-2020 yy.)"
+      },
+      {
+        "to": "/phytosanitary_requirements",
+        "text": "Fitosanitariya talablari"
+      },
+      {
+        "to": "/list_quarantine",
+        "text": "Karantin organizmlari ro'yxati"
+      },
+      {
+        "to": "/seeds_turkey",
+        "text": "Turkiya davlatidan pomidor va qalampir urug‘larini olib kelinishi ruxsat etilgan korxonalar ro‘yxati"
+      },
+      {
+        "to": "/according_pakistan",
+        "text": "Pokistondan O'zbekistonga kartoshka mahsulotini eksport qilish uchun ruxsat etilgan ko`chatxonalar (pitomniklar) ro`yxati (Pokistonning ma'lumotiga ko`ra)"
+      },
+      {
+        "to": "/products_import_export",
+        "text": "O‘zbekiston Respublikasiga olib kiriladigan va uning tashqarisiga olib chiqiladigan o‘simliklar karantini nazoratidagi mahsulotlar ro‘yxati"
+      }
+    ]
+  },
+  {
+    "to": "/phytosanitary",
+    "menuName": "Fitosanitar toza issiqxonlar",
+    "submenu": [
+      {
+        "to": "",
+        "text": "O'simliklar karantini va himoyasi agentligining Markaziy fitosanitariya laboratoriyasi tomonidan Qoraqalpog'iston Respublikasi, viloyatlar va Toshkent shahri hududlaridagi yetishtirilgan pomidor va qalampir maxsulotlarini PZR usuli orqali tekshirilgan fitosanitar toza issiqxonalar ro'yxati"
+      }
+    ]
+  }
+]

@@ -1,0 +1,193 @@
+// OPEN SANS SEMIBOLD 600 FONT
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+b,
+a {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #373634;
+
+  &:hover,
+  &:focus {
+    color: #119769;
+  }
+}
+
+p {
+  color: #373634;
+  margin-bottom: 10px;
+  line-height: 24px;
+}
+
+ul li,
+ol li {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  background-color: #e7ece6;
+  color: #777;
+  font-size: 14px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+
+.page_title {
+  font-size: 28px;
+  color: #119769;
+  font-weight: 600;
+  margin-bottom: 25px;
+  line-height: 28px;
+}
+
+.ant-dropdown-menu {
+  background-color: #119769;
+  padding: 6px 0 12px;
+  margin-top: -4px;
+}
+
+.ant-dropdown-menu-item {
+  color: #fff;
+  margin: -10px 0;
+
+  a {
+    padding: 8px;
+    display: block;
+    max-width: 420px;
+    font-size: 15px;
+  }
+
+  &:hover {
+    background-color: #119769;
+  }
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #fff;
+  font-size: 30px;
+}
+
+
+.container {
+  margin: 0 auto;
+  padding: 0 15px;
+  max-width: 1200px;
+}
+
+// global styles 
+
+.stuff_link {
+  color: #1d2127;
+  line-height: 24px;
+  display: block;
+  padding: 5px 0;
+
+  &:hover {
+    color: rgb(17, 131, 151);
+    text-decoration: underline;
+  }
+
+  i {
+    font-size: 25px;
+    margin-right: 20px;
+  }
+
+  // .fa-regular.fa-file-word {
+  //   // color: ;
+  // }
+
+  .fa-regular.fa-file-excel {
+    color: #0000FF;
+  }
+
+  .fa-regular.fa-file-pdf {
+    color: #ff0000;
+  }
+}
+
+.statistic_link {
+  margin-bottom: 10px;
+  display: block;
+}
+
+.main_page {
+  margin: 15px 0px 30px;
+  min-height: calc(100vh - 483px);
+}
+
+.page_card {
+  background-color: #fff;
+  padding: 30px 15px;
+  border-radius: 4px;
+}
+
+.pagination_area {
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.main_sidebar {
+  background-color: #fff;
+
+  ul {
+    li {
+      a {
+        padding: 10px 15px;
+        font-size: 16px;
+        line-height: 18px;
+        display: block;
+
+      }
+
+      a.active {
+        color: #fff;
+        background-color: rgb(24, 202, 141);
+      }
+    }
+  }
+}
+
+
+
+@media screen and (max-width:1200px) {
+  .container {
+    width: 100%;
+    padding: 0px 15px;
+    margin: 0;
+  }
+}
+
+@media screen and (max-width:1150px) {
+  .header .header_top .special_menu .special_menu_links .special_menu_link span {
+    display: none;
+  }
+}

@@ -1,0 +1,30 @@
+.plant_clinics {
+  .plant_clinics_body {
+
+    .plant_table_area {
+      border-collapse: collapse;
+      text-align     : center;
+
+      table {
+        width    : 100%;
+        font-size: 18px;
+        color    : #373634;
+
+        td,
+        th {
+          padding: 10px;
+        }
+
+        th,
+        td,
+        tr {
+          border         : 1px solid #000;
+          border-collapse: collapse;
+        }
+
+
+
+      }
+    }
+  }
+}

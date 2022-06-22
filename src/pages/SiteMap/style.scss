@@ -1,0 +1,21 @@
+.site_map {
+  margin-top: 15px;
+
+  .site_map_card {
+    .site_map_body {
+      .site_link {
+        display: block;
+        padding: 5px;
+      }
+
+      .subcategories {
+        margin-left: 40px;
+
+        .subcategory {
+          list-style: circle;
+
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+.main_news {
+  .banner_slider {
+
+    .slider_img_container {
+      width   : 100%;
+      overflow: hidden;
+
+      .main_news_img {
+        height: 500px;
+        width : 100%;
+      }
+    }
+
+    .swiper-pagination-bullet {
+      border          : 2px solid #fff;
+      width           : 14px;
+      height          : 14px;
+      background-color: transparent;
+      opacity         : 1;
+
+    }
+
+    .swiper-pagination-bullet-active {
+      background-color: #119769;
+      border-color    : #119769;
+    }
+  }
+}

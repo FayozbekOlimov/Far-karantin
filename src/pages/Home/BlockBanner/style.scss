@@ -1,0 +1,200 @@
+.block_banner {
+  margin: 10px 0px;
+
+  .silder_card {
+    height: 380px;
+  }
+
+  .slider_img_container {
+    padding-bottom  : 60px;
+    background-color: #fff;
+    border-radius   : 6px;
+
+    .main_news_img {
+      border-top-left-radius : 6px;
+      border-top-right-radius: 6px;
+    }
+  }
+
+  .swiper-button-next {
+    font-size: 20px;
+    right    : 70px;
+    bottom   : 10px;
+    top      : auto;
+    color    : #a7a7a7;
+
+    &:after {
+      font-size: 20px;
+    }
+  }
+
+  .swiper-button-prev {
+    font-size: 20px;
+    color    : #a7a7a7;
+    bottom   : 10px;
+    top      : auto;
+    left     : 70px;
+
+    &:after {
+      font-size: 20px;
+    }
+  }
+
+  .swiper-pagination {
+    bottom : 20px;
+    z-index: 9;
+
+    .swiper-pagination-bullet {
+      border: 1px solid #a7a7a7;
+
+      background-color: transparent;
+      opacity         : 1;
+
+    }
+
+    .swiper-pagination-bullet-active {
+      background-color: #a7a7a7;
+    }
+  }
+
+  // weather
+
+  .weather_card {
+    background-color: #fff;
+    height          : 380px;
+    text-align      : center;
+
+    .weather_body {
+      padding: 0 15px;
+
+      .title {
+        h2 {
+          font-size: 24px;
+        }
+      }
+
+      figure {
+        img {
+          width: 100px;
+
+        }
+      }
+
+      .temperature {
+        font-size: 24px;
+      }
+    }
+  }
+
+  // usefull link card
+
+  .useful_link_card {
+    background-color: #fff;
+    border-radius   : 6px;
+    height          : 380px;
+
+    .useful_link_body {
+      max-height: 290px;
+      overflow-y: auto;
+      padding   : 0 12px;
+
+      .useful_link {
+        display    : flex;
+        align-items: center;
+
+        &:hover .link_text {
+          color: #137461;
+        }
+
+        img {
+          border-radius: 50%;
+          border       : 1px solid #999;
+        }
+
+        .link_text {
+          margin-left: 10px;
+          color      : #000;
+        }
+      }
+    }
+
+    // scroll styles
+    .useful_link_body::-webkit-scrollbar {
+      width           : 3px;
+      display         : none;
+      background-color: #F5F5F5;
+    }
+
+
+    .useful_link_body::-webkit-scrollbar-thumb {
+      background-color: #a7a7a7;
+      height          : 5px;
+      border-radius   : 5px;
+    }
+
+    .useful_link_body:hover::-webkit-scrollbar {
+      display: block;
+    }
+  }
+
+  // so'rovnoma
+
+  .survey_card {
+    background-color: #fff;
+    height          : 380px;
+
+    .survey {
+      padding: 0 15px;
+
+      .survey_title {
+        font-size : 16px;
+        color     : #333333;
+        text-align: center;
+      }
+
+      .survey_radios {
+        margin-top: 15px;
+
+        .ant-radio {
+          font-size: 16px;
+          color    : #333;
+        }
+      }
+
+      .button_area {
+        display        : flex;
+        justify-content: space-between;
+        margin-top     : 20px;
+
+        .ant-btn-primary {
+          background   : linear-gradient(to bottom, rgb(17, 151, 105) 0%, rgb(19, 116, 97) 100%);
+          border       : none;
+          border-radius: 6px;
+          font-size    : 15px;
+          transition   : all .3s;
+          padding-left : 25px;
+          padding-right: 25px;
+
+          &:hover {
+            background: linear-gradient(to bottom, rgb(19, 116, 97) 0%, rgb(17, 151, 105) 100%);
+          }
+        }
+      }
+
+      .alert_area {
+        margin-top: 20px;
+      }
+    }
+  }
+
+}
+
+// So'rovnoma modal styles 
+
+.ant-modal-title {
+  font-size: 20px;
+}
+
+.ant-progress-line {
+  margin-bottom: 10px;
+}

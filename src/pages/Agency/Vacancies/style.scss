@@ -1,0 +1,92 @@
+.vacancies {
+  .vacancies_body {
+    .top_text {
+
+      .vacancy_argos {
+        background-color: #ccffff;
+      }
+
+    }
+
+    .vacancies_link {
+      text-decoration: underline;
+      font-weight    : bold;
+      line-height    : 28px;
+    }
+
+    .vacancy_img_link {
+      margin-top: 10px;
+      display   : inline-block;
+
+      img {
+        min-width : 100%;
+        object-fit: cover;
+      }
+    }
+
+    // from styles
+
+    .autobioraphy_form {
+      .form_title {
+        line-height: 28px;
+        font-size  : 20px;
+        margin     : 10px 0;
+        color      : #1d2127;
+      }
+
+      .form_area {
+        margin-top: 20px;
+
+        .upload_file_btn {
+          position     : relative;
+          background   : linear-gradient(to bottom, #eeeeee 0%, #eeeeee 100%);
+          padding-left : 30px;
+          padding-right: 30px;
+          border-color : #ccc;
+
+          &:hover {
+            border-color: #ccc;
+            color       : inherit;
+          }
+
+          input::-webkit-file-upload-button {
+            visibility: hidden;
+          }
+
+          input.ant-input {
+            color           : transparent;
+            border          : none;
+            padding         : 0;
+            margin          : 0;
+            background-color: transparent;
+            position        : absolute;
+            top             : 0;
+            right           : 0;
+            font-size       : 20px;
+            width           : 100%;
+            height          : 100%;
+
+            &:focus {
+              box-shadow: none;
+              outline   : none;
+            }
+
+          }
+
+          i {
+            margin-right: 10px;
+          }
+        }
+
+        .send_btn {
+          background: linear-gradient(to bottom, rgb(17, 151, 105) 0%, rgb(19, 116, 97) 100%);
+          color     : #fff;
+
+          i {
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+  }
+}

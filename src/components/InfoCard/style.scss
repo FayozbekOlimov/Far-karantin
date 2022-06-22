@@ -1,0 +1,37 @@
+.info_card {
+  .card_link {
+    .ant-card {
+      border-radius: 6px;
+
+      &:hover .ant-card-body .card_title {
+        color: #119769;
+      }
+
+      .ant-card-body {
+        padding: 5px 15px 30px;
+
+        .card_date {
+          color    : #119769;
+          font-size: 14px;
+
+          i {
+            margin-right: 5px;
+          }
+        }
+
+        .card_title {
+          font-size  : 16px;
+          line-height: 18px;
+          font-weight: bold;
+          margin-top : 5px;
+        }
+
+        .card_content {
+          font-size  : 16px;
+          line-height: 22px;
+          color      : #333;
+        }
+      }
+    }
+  }
+}

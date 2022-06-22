@@ -1,0 +1,27 @@
+.content_news_tab {
+  margin: 20px 0 10px;
+
+  .ant-tabs {
+    .ant-tabs-ink-bar {
+      background-color: #119769;
+    }
+
+    .ant-tabs-tab {
+      &:hover {
+        color: #119769;
+      }
+    }
+
+    .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+      color: #119769;
+
+    }
+
+    .news_link {
+      color       : #137461;
+      font-size   : 24px;
+      font-weight : 600;
+      margin-right: 15px;
+    }
+  }
+}

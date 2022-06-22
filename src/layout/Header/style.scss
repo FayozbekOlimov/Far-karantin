@@ -1,0 +1,267 @@
+.header {
+
+  // headerTop
+  &_top {
+    padding: 6px 0;
+
+    .social_medias {
+      display: flex;
+      gap: 15px;
+      // margin-right: 15px;
+
+      a {
+        color: #373634;
+
+        &:focus,
+        &:hover {
+          color: #119769;
+        }
+      }
+    }
+
+    .left {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+
+      .special_menu {
+        height: 100%;
+
+        .special_menu_links {
+          display: flex;
+          flex-wrap: wrap;
+          color: #000;
+          font-size: 13px;
+          height: 100%;
+          align-items: center;
+          gap: 15px;
+
+          .special_menu_link {
+            a {
+              color: #000;
+            }
+
+            i {
+              margin-right: 8px;
+              font-size: 15px;
+              background-color: #efefef;
+              color: #000;
+            }
+
+            &:last-child {
+              margin-right: 0;
+            }
+          }
+        }
+      }
+
+      .social_medias {
+        display: none;
+      }
+    }
+
+    .right {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 15px;
+
+      .social_medias {
+        display: flex;
+      }
+
+      .search_area {
+        position: relative;
+
+        input {
+          border: 1px solid #9a9a9a;
+          background-color: transparent;
+          border-radius: 15px;
+          padding: 1px 15px;
+          transition: all .7s ease;
+          padding-right: 40px;
+
+          &:focus {
+            outline: none;
+          }
+        }
+
+        i {
+          position: absolute;
+          top: 6px;
+          right: 15px;
+          cursor: pointer;
+        }
+      }
+
+      .language_area {
+        display: flex;
+
+        .languages {
+          display: flex;
+          gap: 15px;
+
+          li {
+            &:not(:last-child) {
+              border-right: 1px solid #dedede;
+              padding-right: 5px;
+            }
+
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+
+  // headerBody
+  &_body {
+    background-color: #119769;
+    padding: 20px 0;
+
+    .left {
+      display: flex;
+
+      a {
+        display: flex;
+        height: 100%;
+        color: #fff;
+
+        .site_logo_img {
+          width: 80px;
+        }
+
+        .site_title {
+          font-size: 20px;
+          margin: 10px 0 0px 10px;
+          line-height: 28px;
+          font-family: 'OpenSansSemiBold', sans-serif;
+          color: #fff;
+        }
+      }
+    }
+
+    .right {
+      .fax {
+        display: flex;
+        justify-content: flex-end;
+
+        a {
+          color: #fff;
+          display: flex;
+
+          i {
+            color: #fff;
+          }
+
+          .fax_text {
+            font-size: 13px;
+            margin-left: 10px;
+            font-weight: 600;
+            color: #fff;
+          }
+        }
+      }
+
+      .phone {
+        color: #fff;
+
+        .phone_top {
+          display: flex;
+
+          i {
+            border: 1px solid #fff;
+            border-radius: 50%;
+            display: block;
+            padding: 5px;
+          }
+
+          .phone_body {
+            margin-left: 15px;
+            flex: 1;
+
+            .tel_text {
+              font-size: 13px;
+              color: #fff;
+            }
+
+            .tel_number {
+              font-size: 20px;
+              font-weight: 600;
+              color: #fff;
+            }
+
+            .phone_url {
+              font-size: 13px;
+              font-weight: 600;
+              color: #fff;
+
+              .tel_number {
+                font-size: 20px;
+                margin-left: 5px;
+              }
+            }
+          }
+
+        }
+
+        .phone_top.bottom {
+          .phone_body {
+            .phone_url {
+              margin-left: 12px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .header_body {
+    .left {
+      justify-content: center;
+    }
+  }
+}
+
+@media (max-width: 575px) {
+  .header_top {
+    .left {
+      justify-content: space-between;
+
+      .social_medias {
+        display: flex;
+      }
+    }
+
+    .right {
+      justify-content: space-between;
+
+      .social_medias {
+        display: none;
+      }
+    }
+  }
+
+  .header_body {
+    .left {
+      a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+    }
+
+    .right {
+      .fax {
+        display: none;
+      }
+
+      display: flex;
+      justify-content: center;
+    }
+  }
+}

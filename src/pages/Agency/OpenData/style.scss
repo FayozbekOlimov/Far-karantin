@@ -1,0 +1,33 @@
+.open_data {
+  border-radius: none;
+
+  .open_data_body {
+    .open_data_table {
+      border         : 1px solid #000;
+      border-collapse: collapse;
+
+      tr {
+        border-collapse: collapse;
+        border         : 1px solid #000;
+
+        td {
+          border         : 1px solid #000;
+          border-collapse: collapse;
+          font-size      : 18px;
+          color          : #373634;
+          text-align     : center;
+        }
+
+        .title {
+          width  : 60%;
+          padding: 10px;
+        }
+
+        .link {
+          width  : 39%;
+          padding: 10px;
+        }
+      }
+    }
+  }
+}

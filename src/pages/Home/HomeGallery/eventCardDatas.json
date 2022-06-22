@@ -1,0 +1,22 @@
+[
+  {
+    "id": "1",
+    "title": "Rasmlar",
+    "linkTitle": "Barcha rasmlar",
+    "link": "#",
+    "contentTitle": "Alisher Navoiy milliy faxrimiz va iftixorimiz",
+    "imgCount": "10",
+    "img": "/assets/img/galery_img.jpg",
+    "date": "08.02.2022"
+  },
+  {
+    "id": "1",
+    "title": "Rasmlar",
+    "linkTitle": "Barcha rasmlar",
+    "link": "#",
+    "contentTitle": "Alisher Navoiy milliy faxrimiz va iftixorimiz",
+    "imgCount": "",
+    "img": "/assets/img/galery_img.jpg",
+    "date": "08.02.2022"
+  }
+]

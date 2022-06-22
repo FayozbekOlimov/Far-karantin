@@ -1,0 +1,31 @@
+.ant-dropdown-menu-title-content>a {
+  &:hover {
+    background-color: #137461;
+
+  }
+}
+
+.header_menu {
+  background-color: #137461;
+  padding         : 5px 0;
+
+  .nav_link_btn.ant-btn.ant-btn-background-ghost {
+    border: none;
+    height: 40px;
+
+    &:hover {
+      color           : #fff;
+      background-color: #119769;
+    }
+
+    &:focus {
+      color: #fff;
+    }
+  }
+
+  .nav_link_btn.ant-dropdown-open {
+    color           : #fff;
+    background-color: #119769;
+
+  }
+}

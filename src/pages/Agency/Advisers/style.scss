@@ -1,0 +1,82 @@
+.leadership_card {
+  .leadership_body {
+    .leader_card {
+
+      // background-color: #fff;
+      .card_tab {
+        .ant-tabs {
+          background-color: #fff;
+
+          .ant-tabs-nav .ant-tabs-nav-wrap {
+            background-color: #e7ece6;
+          }
+
+          .ant-tabs-tab-btn {
+            color: #119769;
+            ;
+          }
+
+          .info_body {
+            padding      : 0px 15px 15px;
+            display      : flex;
+            border-radius: 0 0 4px 4px;
+            box-shadow   : 0 1px 5px 0 rgba(0, 0, 0, 0 / 4%);
+
+
+            .right {
+              margin-left: 23px;
+
+              .rank {
+                font-size  : 21px;
+                text-indent: 5px;
+              }
+
+              .fio {
+                color      : #137461;
+                margin     : 10px 0;
+                font-weight: 600;
+              }
+
+              .information {
+                margin-bottom: 5px;
+
+                b {
+                  font-weight: 600;
+                }
+              }
+            }
+          }
+
+          .autobigraphy_body {
+            padding         : 8px 23px 23px;
+            background-color: #fff;
+            border-radius   : 0 0 4px 4px;
+            box-shadow      : 0 1px 5px 0 rgba(0, 0, 0, 0 / 4%);
+
+
+            .autobigraphy_text {
+              p {
+                margin-bottom: 18px;
+                text-align   : justify;
+                font-size    : 14pt;
+              }
+            }
+
+          }
+
+          .obligations_body {
+            padding      : 0px 15px 15px;
+            border-radius: 0 0 4px 4px;
+            box-shadow   : 0 1px 5px 0 rgba(0, 0, 0, 0 / 4%);
+
+            .obligations_text {
+              text-align: justify;
+              font-size : 14pt;
+            }
+          }
+
+        }
+      }
+    }
+  }
+}

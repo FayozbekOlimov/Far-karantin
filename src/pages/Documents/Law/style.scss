@@ -1,0 +1,17 @@
+.law {
+  .law_body {
+    .law_body_title {
+      text-align : center;
+      font-weight: bold;
+    }
+
+    .law_link {
+      margin : 20px 0;
+      display: inline-block;
+
+      span {
+        background-color: #99ccff;
+      }
+    }
+  }
+}
