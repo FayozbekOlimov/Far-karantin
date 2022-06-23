@@ -8,8 +8,8 @@ function HomeGallery() {
       <div className="container">
         <Row gutter={[16, 16]}>
           {
-            eventCardDatas.map(eventCardData => (
-              <Col lg={12}>
+            eventCardDatas.map((eventCardData, ind) => (
+              <Col lg={12} key={ind}>
                 <PhotoGalleryCard {...eventCardData} />
               </Col>
             ))

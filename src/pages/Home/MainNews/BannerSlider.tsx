@@ -24,8 +24,8 @@ function BannerSlider() {
 
       >
         {
-          Array.of(1, 2, 3).map(arg => (
-            <SwiperSlide>
+          Array.of(1, 2, 3).map((arg, ind) => (
+            <SwiperSlide key={ind}>
               <div className="slider_img_container">
                 <img className="main_news_img" src={`/assets/img/slide${arg}.jpg`} alt={`slide${arg}`} />
               </div>

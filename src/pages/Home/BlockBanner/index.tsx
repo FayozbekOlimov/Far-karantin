@@ -153,7 +153,7 @@ function BlockBanner() {
               >
                 {
                   blockBannerImages.map(blockBannerImage => (
-                    <SwiperSlide>
+                    <SwiperSlide key={blockBannerImage.id}>
                       <div
                         className="slider_img_container"
                         key={blockBannerImage.id}>

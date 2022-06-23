@@ -9,6 +9,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import "swiper/css/effect-fade";
 import "./static/styles/style.scss";
+import "./static/styles/responsive.scss";
 
 
 render(

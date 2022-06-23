@@ -94,7 +94,6 @@ body {
   font-size: 30px;
 }
 
-
 .container {
   margin: 0 auto;
   padding: 0 15px;
@@ -173,21 +172,5 @@ body {
         background-color: rgb(24, 202, 141);
       }
     }
-  }
-}
-
-
-
-@media screen and (max-width:1200px) {
-  .container {
-    width: 100%;
-    padding: 0px 15px;
-    margin: 0;
-  }
-}
-
-@media screen and (max-width:1150px) {
-  .header .header_top .special_menu .special_menu_links .special_menu_link span {
-    display: none;
   }
 }

@@ -26,8 +26,8 @@ function MainNewsRight() {
   return (
     <div className="main_news_right">
       {
-        virtualAdmissionData.map((virtualAdmission, idx) => (
-          <VirtualAdmission {...virtualAdmission} />
+        virtualAdmissionData.map((virtualAdmission, ind) => (
+          <VirtualAdmission {...virtualAdmission} key={ind} />
         ))
       }
 
