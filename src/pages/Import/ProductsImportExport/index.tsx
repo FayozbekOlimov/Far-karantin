@@ -10,14 +10,16 @@ function ProductsImportExport() {
       <div className="product_import_export_body">
         {
           Object.entries(statisticsConsideredData).map(([id, { title, link }]) => (
-            <a
-              className='statistic_link'
-              href={link}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {title}
-            </a>
+            <React.Fragment key={id}>
+              <a
+                className='statistic_link'
+                href={link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {title}
+              </a>
+            </React.Fragment>
           )
           )
         }

@@ -4,7 +4,6 @@ import LeaderCard from "./LeaderCard";
 import leadershipData from "./leadershipData.json";
 import { Divider } from 'antd';
 
-
 function Leadership() {
   return (
     <div className="leadership_card">
@@ -12,15 +11,12 @@ function Leadership() {
         Rahbariyat
       </h4>
       <div className="leadership_body">
-        {
-          Object.entries(leadershipData).map(([id, leadership]) => (
-            <>
-              <LeaderCard id={id} {...leadership} />
-              <Divider />
-            </>
-          )
-          )
-        }
+        {Object.entries(leadershipData).map(([id, leadership]) => (
+          <React.Fragment key={id}>
+            <LeaderCard id={id} {...leadership} />
+            <Divider />
+          </React.Fragment>
+        ))}
       </div>
     </div>
   )

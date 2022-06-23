@@ -52,7 +52,6 @@ function Leadership(props: ILeadership) {
                 <p className="information">
                   <b>Qabul kunlari :</b> {info.receptionDays}
                 </p>
-
               </div>
             </div>
           </TabPane>
@@ -63,7 +62,6 @@ function Leadership(props: ILeadership) {
                   <p>
                     {text}
                   </p>
-
                 ))}
               </p>
             </div>

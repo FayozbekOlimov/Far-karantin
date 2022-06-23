@@ -6,11 +6,21 @@
     .about_agency_body {
       .agency_text {
         text-align: justify;
-        font-size : 14pt;
+        font-size: 14px;
       }
     }
   }
 
-  // .leadership_card {}
+  // .leadership_body {
+  .ant-divider.ant-divider-horizontal {
+    margin: 16px 0;
+
+    &:last-child {
+      display: none;
+      // margin-bottom: 0;
+    }
+  }
+
+  // }
 
 }

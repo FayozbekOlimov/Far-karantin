@@ -6,19 +6,17 @@ import { Divider } from 'antd';
 
 function TerritorialAdministrations() {
   return (
-    <div className="administraions page_card">
+    <div className="administrations page_card">
       <h4 className="page_title">
         Hududiy boshqarmalar
       </h4>
       <div className="administrations_body">
-        {
-          Object.entries(administrationsData).map(([id, administration]) => (
-            <>
-              <AdministrationCard id={id} {...administration} />
-              <Divider />
-            </>
-          ))
-        }
+        {Object.entries(administrationsData).map(([id, administration]) => (
+          <React.Fragment key={id}>
+            <AdministrationCard id={id} {...administration} />
+            <Divider />
+          </React.Fragment>
+        ))}
       </div>
     </div>
   )

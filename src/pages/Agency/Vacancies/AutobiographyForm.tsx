@@ -32,9 +32,8 @@ function AutobiographyForm() {
           layout='vertical'
         >
           <Row gutter={[16, 16]}>
-            <Col md={8} sm={24}>
+            <Col md={8} xs={24}>
               <Form.Item
-
                 label="Ism"
                 name="name"
                 rules={[{ required: true, message: 'Please input your name!' }]}
@@ -42,7 +41,7 @@ function AutobiographyForm() {
                 <Input />
               </Form.Item>
             </Col>
-            <Col md={8} sm={24}>
+            <Col md={8} xs={24}>
 
               <Form.Item
                 label="Elektron manzil"
@@ -52,7 +51,7 @@ function AutobiographyForm() {
                 <Input />
               </Form.Item>
             </Col>
-            <Col md={8} sm={24}>
+            <Col md={8} xs={24}>
               <Form.Item
                 label="Telefon"
                 name="phone"
@@ -63,7 +62,7 @@ function AutobiographyForm() {
             </Col>
           </Row>
           <Row gutter={[16, 16]}>
-            <Col lg={24}>
+            <Col xs={24}>
               <Form.Item
                 name="message"
                 label="Xabar"
@@ -74,11 +73,11 @@ function AutobiographyForm() {
             </Col>
           </Row>
           <Row gutter={[16, 16]}>
-            <Col lg={16}>
+            <Col xs={12}>
               <Form.Item
                 name="file"
-
                 rules={[{ required: true, message: 'Please choose File!' }]}
+              style={{marginBottom: '0'}}
               >
                 <Button className='upload_file_btn'>
                   <Input type="file" />
@@ -87,7 +86,7 @@ function AutobiographyForm() {
                 </Button>
               </Form.Item>
             </Col>
-            <Col lg={8} >
+            <Col xs={12}>
               <Button className="send_btn" htmlType="submit">
                 <i className="fa-solid fa-paper-plane"></i>
                 Jo'natish

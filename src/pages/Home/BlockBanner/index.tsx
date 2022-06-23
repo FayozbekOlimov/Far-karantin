@@ -115,9 +115,6 @@ function BlockBanner() {
     }, 3000)
   }
 
-
-
-
   const showModal = () => {
     setIsModalVisible(true);
   };
@@ -135,7 +132,7 @@ function BlockBanner() {
       <div className="container">
         <Row gutter={[16, 16]}>
           {/* block slider */}
-          <Col lg={6} md={12}>
+          <Col lg={6} sm={12} xs={24}>
             <div className="slider_card">
               <Swiper
                 // install Swiper modules
@@ -169,8 +166,7 @@ function BlockBanner() {
               </Swiper>
             </div>
           </Col>
-
-          <Col lg={6} md={12}>
+          <Col lg={6} sm={12} xs={24}>
             <div className="weather_card">
               <TitleBlock text="Toshkentda ob-havo" />
               <div className="weather_body">
@@ -189,8 +185,7 @@ function BlockBanner() {
               </div>
             </div>
           </Col>
-
-          <Col lg={6} md={12}>
+          <Col lg={6} sm={12} xs={24}>
             <div className="useful_link_card">
               <TitleBlock text="Foydali havolalar" />
               <div className="useful_link_body">
@@ -217,7 +212,7 @@ function BlockBanner() {
               </div>
             </div>
           </Col>
-          <Col lg={6} md={12}>
+          <Col lg={6} sm={12} xs={24}>
             <div className="survey_card">
               <TitleBlock text="So'rovnoma" />
               <div className="survey">

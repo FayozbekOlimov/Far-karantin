@@ -1,6 +1,5 @@
 import "./style.scss";
 
-
 function MyGovBanner() {
   return (
     <div className="mygov_banner">

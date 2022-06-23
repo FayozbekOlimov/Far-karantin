@@ -32,10 +32,9 @@ const tabLinkDatas = [
 ]
 
 function ContentNewsTab() {
-
-  function callback(key: string) {
-    console.log(key);
-  }
+  // function callback(key: string) {
+  //   console.log(key);
+  // }
 
 
   return (
@@ -44,7 +43,7 @@ function ContentNewsTab() {
         <Tabs
           tabBarExtraContent={{ left: operations }}
           defaultActiveKey="1"
-          onChange={callback}
+          // onChange={callback}
           animated={{ tabPane: true }}
         >
           {

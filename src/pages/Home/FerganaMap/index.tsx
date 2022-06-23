@@ -14,7 +14,6 @@ function FerganaMap() {
             loading="lazy"
             style={{ borderRadius: "10px" }}
             frameBorder="0"></iframe>
-
         </div>
       </div>
     </div>

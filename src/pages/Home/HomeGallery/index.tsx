@@ -9,7 +9,7 @@ function HomeGallery() {
         <Row gutter={[16, 16]}>
           {
             eventCardDatas.map((eventCardData, ind) => (
-              <Col lg={12} key={ind}>
+              <Col xs={24} lg={12} key={ind}>
                 <PhotoGalleryCard {...eventCardData} />
               </Col>
             ))

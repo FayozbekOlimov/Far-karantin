@@ -259,7 +259,7 @@ function AboutAgency() {
         Agentlik haqida
       </h4>
       <div className="about_agency_body">
-
+        {aboutAgencyContent}
       </div>
     </div>
   )

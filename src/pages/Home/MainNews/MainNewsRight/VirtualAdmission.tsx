@@ -12,7 +12,6 @@ function VirtualAdmission(props: IVirtualAdmission) {
       <a href={link} target="_blank" rel="noopener noreferrer">
         {text}
       </a>
-
     </div>
   )
 }

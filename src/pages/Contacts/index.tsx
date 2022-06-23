@@ -66,7 +66,6 @@ function Contacts() {
               </div>
             </Col>
             <Col lg={12}>
-
               <div className="contact_form_card">
                 <h3 className="form_title">
                   Qayta bog'lanish
@@ -81,9 +80,9 @@ function Contacts() {
                     layout='vertical'
                   >
                     <Row gutter={[16, 16]}>
-                      <Col md={12}>
+                      <Col xs={12}>
                         <Form.Item
-
+                          style={{marginBottom: '0'}}
                           label="Ism"
                           name="name"
                           rules={[{ required: true, message: 'Please input your name!' }]}
@@ -91,9 +90,9 @@ function Contacts() {
                           <Input />
                         </Form.Item>
                       </Col>
-                      <Col md={12} >
-
+                      <Col xs={12} >
                         <Form.Item
+                          style={{marginBottom: '0'}}
                           label="Elektron manzil"
                           name="email"
                           rules={[{ required: true, message: "Please input your E-mail!" }, { message: "The input is not valid E-mail!", type: "email" }]}
@@ -102,8 +101,9 @@ function Contacts() {
                         </Form.Item>
                       </Col>
 
-                      <Col md={24}>
+                      <Col xs={24}>
                         <Form.Item
+                          style={{marginBottom: '0'}}
                           label="Telefon"
                           name="phone"
                           rules={[{ required: true, message: 'Please input your telefon!' }]}
@@ -111,7 +111,7 @@ function Contacts() {
                           <Input />
                         </Form.Item>
                       </Col>
-                      <Col md={24}>
+                      <Col xs={24}>
                         <Form.Item
                           name="message"
                           label="Xabar"

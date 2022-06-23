@@ -1,11 +1,12 @@
 .mygov_banner {
   text-align: center;
-  margin    : 10px 0px;
+  margin: 10px 0px;
 
   a {
     display: block;
-    padding: 0 50px;
 
-    .mygoy_banner_img {}
+    .mygoy_banner_img {
+      width: 100%;
+    }
   }
 }

@@ -8,10 +8,10 @@ function MainNews() {
     <div className='main_news'>
       <div className="container">
         <Row gutter={[16, 16]}>
-          <Col lg={18}>
+          <Col xs={24} lg={18}>
             <BannerSlider />
           </Col>
-          <Col lg={6}>
+          <Col xs={24} lg={6}>
             <MainNewsRight />
           </Col>
         </Row>

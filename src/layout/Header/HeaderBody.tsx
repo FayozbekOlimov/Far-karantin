@@ -1,4 +1,3 @@
-import React from 'react'
 import { Col, Row } from 'antd'
 import { Link } from 'react-router-dom'
 import { Fade } from "react-awesome-reveal";
@@ -13,7 +12,7 @@ function HeaderBody() {
               <Fade>
                 <Link to="/">
                   <figure>
-                    <img className="site_logo_img" src="https://karantin.uz/assets/public/images/logo.svg" alt="karantin agentligi" />
+                    <img className="site_logo_img" src="/assets/img/logo.svg" alt="karantin agentligi" />
                   </figure>
                   <h2 className="site_title">
                     O'ZBEKISTON RESPUBLIKASI <br /> O'SIMLIKLAR KARANTINI VA HIMOYASI <br /> AGENTLIGI
