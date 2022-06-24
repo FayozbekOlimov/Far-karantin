@@ -1017,7 +1017,7 @@ const routes = [
     element: <Agency />,
     children: [
       {
-        path: "",
+        path: "about-agency",
         index: true,
         element: <AboutAgency />
       },
@@ -1030,19 +1030,19 @@ const routes = [
         element: <Advisers />
       },
       {
-        path: "centeralApp",
+        path: "centeral-app",
         element: <CenteralApp />
       },
       {
-        path: "terrAdministrations",
+        path: "terr-administrations",
         element: <TerritorialAdministrations />
       },
       {
-        path: "systemOrganizations",
+        path: "system-organizations",
         element: <SystemOrganizations {...textComponentsProps.systemOrganizations} />
       },
       {
-        path: "contactAgency",
+        path: "contact-agency",
         element: <SystemOrganizations {...textComponentsProps.contactAgency} />
       },
       {
@@ -1050,15 +1050,15 @@ const routes = [
         element: <Vacancies />
       },
       {
-        path: "superior_organizations",
+        path: "superior-organizations",
         element: <SystemOrganizations {...textComponentsProps.superior_organizations} />
       },
       {
-        path: "glossary_terms",
+        path: "glossary-terms",
         element: <SystemOrganizations {...textComponentsProps.glossary_terms} />
       },
       {
-        path: "info_staff",
+        path: "info-staff",
         element: <InformationOfStaff {...filesComponentProps.info_staff} />
       },
       {
@@ -1066,23 +1066,23 @@ const routes = [
         element: <Youth />
       },
       {
-        path: "mobile_receptions",
+        path: "mobile-receptions",
         element: <MobileReceptions />
       },
       {
-        path: "open_data",
+        path: "open-data",
         element: <OpenData />
       },
       {
-        path: "statistics_considered",
+        path: "statistics-considered",
         element: <StatisticsConsidered {...linkComponentProps.statistics_considered} />
       },
       {
-        path: "leading_specialist",
+        path: "leading-specialist",
         element: <StatisticsConsidered {...linkComponentProps.leading_specialist} />
       },
       {
-        path: "spirituality_enlightenment",
+        path: "spirituality-enlightenment",
         element: <SpiritualityEnlightenment />
       }
     ]
@@ -1092,42 +1092,42 @@ const routes = [
     element: <Activity />,
     children: [
       {
-        path: "",
+        path: "e-government",
         index: true,
         element: <InformationOfStaff {...filesComponentProps.activity} />
       },
       {
-        path: "public_service_register",
+        path: "public-service-register",
         element: <InformationOfStaff {...filesComponentProps.public_service_register} />
       },
       {
-        path: "international_relations",
+        path: "international-relations",
         element: <InternationalRelations />
       },
       {
-        path: "government_programs",
+        path: "government-programs",
         element: <StatisticsConsidered {...linkComponentProps.government_programs} />
       },
       {
-        path: "plant_clinics",
+        path: "plant-clinics",
         element: <PlantClinics />
       },
       {
-        path: "interagency_protocols",
+        path: "interagency-protocols",
         element: <InformationOfStaff {...filesComponentProps.interagency_protocols} />
       },
       {
-        path: "anti_corruption",
+        path: "anti-corruption",
         element: <AntiCorruption />
       }
     ]
   },
   {
-    path: "information_services",
+    path: "information-services",
     element: <InformationServices />,
     children: [
       {
-        path: "",
+        path: "news",
         index: true,
         element: <News />
       },
@@ -1144,7 +1144,7 @@ const routes = [
         element: <Videos />
       },
       {
-        path: "photo_gallery",
+        path: "photo-gallery",
         element: <FotoGallery />
       },
       {
@@ -1156,7 +1156,7 @@ const routes = [
         element: <Bioprotection />
       },
       {
-        path: "media_about_us",
+        path: "media-about-us",
         element: <MediaAboutUs />
       }
     ]
@@ -1166,7 +1166,7 @@ const routes = [
     element: <Documents />,
     children: [
       {
-        path: "",
+        path: "laws",
         index: true,
         element: <Law />
       },
@@ -1175,58 +1175,58 @@ const routes = [
         element: <StatisticsConsidered {...linkComponentProps.resolutions} />
       },
       {
-        path: "government_decisions",
+        path: "government-decisions",
         element: <InformationOfStaff {...filesComponentProps.government_decisions} />
       },
       {
-        path: "international_agreements",
+        path: "international-agreements",
         element: <InternationalAgreements />
       },
       {
-        path: "normative_documents",
+        path: "normative-documents",
         element: <InformationOfStaff {...filesComponentProps.normative_documents} />
       },
       {
-        path: "draft_normative_documents",
+        path: "draft-normative-documents",
         element: <SystemOrganizations {...textComponentsProps.draft_normative_documents} />
       },
       {
-        path: "expired_normative_documents",
+        path: "expired-normative-documents",
         element: <StatisticsConsidered {...linkComponentProps.expired_normative_documents} />
       },
       {
-        path: "fines_increased",
+        path: "fines-increased",
         element: <FinesIncreased />
       },
       {
-        path: "list_of_posts",
+        path: "list-of-posts",
         element: <StatisticsConsidered {...linkComponentProps.list_of_pests} />
       }
     ]
   },
   {
-    path: "scientific_research",
+    path: "scientific-research",
     element: <ScientificResearch />,
     children: [
       {
-        path: "",
+        path: "plant-quarantine",
         index: true,
         element: <SystemOrganizations {...textComponentsProps.scientific_research} />
       },
       {
-        path: "cotton_bollworm",
+        path: "cotton-bollworm",
         element: <CottonBollworm />
       },
       {
-        path: "pest_control",
+        path: "pest-control",
         element: <SystemOrganizations {...textComponentsProps.pest_control} />
       },
       {
-        path: "marble_shackle",
+        path: "marble-shackle",
         element: <SystemOrganizations {...textComponentsProps.marble_shackle} />
       },
       {
-        path: "cherry_flies",
+        path: "cherry-flies",
         element: <SystemOrganizations {...textComponentsProps.cherry_flies} />
       }
     ]
@@ -1236,44 +1236,44 @@ const routes = [
     element: <Laboratory />,
     children: [
       {
-        path: "",
+        path: "charter",
         index: true,
         element: <SystemOrganizations {...textComponentsProps.laboratory} />
       },
       {
-        path: "quarantine_organisms",
+        path: "quarantine-organisms",
         element: <QuarantineOrganisms />
       },
       {
-        path: "cotton_bollworm_destroyed",
+        path: "cotton-bollworm-destroyed",
         element: <SystemOrganizations {...textComponentsProps.cotton_bollworm_destroyed} />
       },
       {
-        path: "pests_detected",
+        path: "pests-detected",
         element: <SystemOrganizations {...textComponentsProps.pests_detected} />
       },
       {
-        path: "california_shields",
+        path: "california-shields",
         element: <SystemOrganizations {...textComponentsProps.california_shields} />
       },
       {
-        path: "citrus_honeysuckle",
+        path: "citrus-honeysuckle",
         element: <SystemOrganizations {...textComponentsProps.citrus_honeysuckle} />
       },
       {
-        path: "georgia_mandarins",
+        path: "georgia-mandarins",
         element: <SystemOrganizations {...textComponentsProps.georgia_mandarins} />
       },
       {
-        path: "imported_chine",
+        path: "imported-chine",
         element: <SystemOrganizations {...textComponentsProps.imported_chine} />
       },
       {
-        path: "vine_germany",
+        path: "vine-germany",
         element: <SystemOrganizations {...textComponentsProps.vine_germany} />
       },
       {
-        path: "imported_afghanistan",
+        path: "imported-afghanistan",
         element: <SystemOrganizations {...textComponentsProps.imported_afghanistan} />
       },
 
@@ -1284,28 +1284,28 @@ const routes = [
     element: <Import />,
     children: [
       {
-        path: "",
+        path: "plants-import-export",
         index: true,
         element: <InformationOfStaff {...filesComponentProps.import} />
       },
       {
-        path: "phytosanitary_requirements",
+        path: "phytosanitary-requirements",
         element: <InformationOfStaff {...filesComponentProps.phytosanitary_requirements} />
       },
       {
-        path: "list_quarantine",
+        path: "list-quarantine",
         element: <InformationOfStaff {...filesComponentProps.list_quarantine} />
       },
       {
-        path: "seeds_turkey",
+        path: "seeds-turkey",
         element: <InformationOfStaff {...filesComponentProps.seeds_turkey} />
       },
       {
-        path: "according_pakistan",
+        path: "according-pakistan",
         element: <StatisticsConsidered {...linkComponentProps.according_pakistan} />
       },
       {
-        path: "products_import_export",
+        path: "products-import-export",
         element: <StatisticsConsidered {...linkComponentProps.products_import_export} />
       },
 
@@ -1316,7 +1316,7 @@ const routes = [
     element: <Phytosanitary />,
     children: [
       {
-        path: "",
+        path: "greenhouses",
         index: true,
         element: <InformationOfStaff {...filesComponentProps.phytosanitary} />
       }

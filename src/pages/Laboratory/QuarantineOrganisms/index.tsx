@@ -209,7 +209,6 @@ const contextText: any = {
 }
 
 function QuarantineOrganisms() {
-
   return (
     <div className="quarantine-organisms page_card">
       <h4 className="page_title">
@@ -218,7 +217,7 @@ function QuarantineOrganisms() {
       <div className="quarantine_body">
         {
           sliderLinks?.map(slider => (
-            <QuarantineSlider {...slider} />
+            <QuarantineSlider key={slider.id} {...slider} />
           ))
         }
       </div>

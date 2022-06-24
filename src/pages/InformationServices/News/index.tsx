@@ -35,7 +35,6 @@ function News() {
               showSizeChanger={false}
             />
           </div>
-
         </Row>
       </div>
     </div>

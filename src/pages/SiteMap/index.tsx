@@ -66,9 +66,6 @@ const categoriesDatas = [
 ]
 
 function SiteMap() {
-
-
-
   return (
     <section className="site_map main_page">
       <div className="container">
@@ -104,13 +101,10 @@ function SiteMap() {
                             </li>
                           ))
                         }
-
                       </ul>
-
                     </React.Fragment>
                   ))
                 }
-
               </div>
             </div>
           </Col>

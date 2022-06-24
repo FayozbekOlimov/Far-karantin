@@ -16,7 +16,6 @@ function PlantClinics() {
         </p>
         <div className="plant_table_area">
           <table>
-
             <tr>
               <th rowSpan={2}>
                 Т/р

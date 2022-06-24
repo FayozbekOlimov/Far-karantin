@@ -15,6 +15,7 @@ function InternationalAgreements() {
         {
           Object.entries(statisticsConsideredData).map(([id, { title, link }]) => (
             <a
+              key={id}
               className='statistic_link'
               href={link}
               target="_blank"

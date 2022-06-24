@@ -8,10 +8,10 @@ function ScientificResearch() {
     <section className="scientific_research main_page">
       <div className="container">
         <Row gutter={[16, 16]}>
-          <Col md={18}>
+          <Col xs={24} lg={18}>
             <Outlet />
           </Col>
-          <Col md={6}>
+          <Col xs={0} lg={6}>
             <MainSidebar id={4} />
           </Col>
         </Row>

@@ -9,16 +9,16 @@ function HeaderBody() {
         <Row gutter={[16, 16]} justify='center'>
           <Col xs={24} lg={12}>
             <div className="left">
-              <Fade>
-                <Link to="/">
-                  <figure>
-                    <img className="site_logo_img" src="/assets/img/logo.svg" alt="karantin agentligi" />
-                  </figure>
-                  <h2 className="site_title">
-                    O'ZBEKISTON RESPUBLIKASI <br /> O'SIMLIKLAR KARANTINI VA HIMOYASI <br /> AGENTLIGI
-                  </h2>
-                </Link>
-              </Fade>
+              {/* <Fade direction='down' delay={100}> */}
+              <Link to="/">
+                <figure>
+                  <img className="site_logo_img" src="/assets/img/logo.svg" alt="karantin agentligi" />
+                </figure>
+                <h2 className="site_title">
+                  O'ZBEKISTON RESPUBLIKASI <br /> O'SIMLIKLAR KARANTINI VA HIMOYASI <br /> AGENTLIGI
+                </h2>
+              </Link>
+              {/* </Fade> */}
             </div>
           </Col>
           <Col xs={24} lg={12}>

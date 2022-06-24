@@ -12,7 +12,12 @@ function MainSidebar(props: { id: number }) {
       <ul>
         {headerMenuData[props.id].submenu.map(menu => (
           <li key={menu.to}>
-            <NavLink className={({ isActive }) => isActive ? activeClassName : undefined} to={`${headerMenuData[props.id].to}${menu.to}`}>{menu.text}</NavLink>
+            <NavLink
+              className={
+                ({ isActive }) => isActive ? activeClassName : undefined
+              }
+              to={`${headerMenuData[props.id].to}${menu.to}`}
+            >{menu.text}</NavLink>
           </li>
         ))}
       </ul>

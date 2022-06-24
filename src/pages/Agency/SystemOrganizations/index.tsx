@@ -1,6 +1,3 @@
-
-
-
 function SystemArganizations(props: { title: string, content: string }) {
   return (
     <div className="system_organizations page_card">
@@ -8,7 +5,6 @@ function SystemArganizations(props: { title: string, content: string }) {
         {props.title}
       </h4>
       <div className="system_organizations_body" dangerouslySetInnerHTML={{ __html: props.content }}>
-
       </div>
     </div>
   )

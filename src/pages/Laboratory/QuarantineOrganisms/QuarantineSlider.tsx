@@ -1,5 +1,4 @@
-import React from 'react'
-
+import './style.scss';
 interface IQuarantineSlider {
   sliderLink: string,
   id: string
@@ -8,7 +7,6 @@ interface IQuarantineSlider {
 function QuarantineSlider(props: IQuarantineSlider) {
   return (
     <div
-      style={{ margin: "40px 0px" }}
       className='slider_card'
       key={props.id}
     >
