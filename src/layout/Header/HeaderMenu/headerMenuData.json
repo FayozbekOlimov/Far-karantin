@@ -264,6 +264,52 @@
     ]
   },
   {
+    "to": "/for-entrepreneurs",
+    "menuName": "Tadbirkorlar uchun",
+    "submenu": [
+      {
+        "to": "/",
+        "text": "TIFTH kodlar"
+      },
+      {
+        "to": "/",
+        "text": "Qishloq xo'jaligi mahsulotlarini ekologik toza feromon tutqichlar orqali himoyalash uchun"
+      },
+      {
+        "to": "/",
+        "text": "O'zbekiston Respublikasidan Koreya davlatiga gilos eksportining talablari"
+      },
+      {
+        "to": "/",
+        "text": "Rossiya Federatsiyasi hududidagi yashil yo'laklar ro'yxati"
+      },
+      {
+        "to": "/",
+        "text": "Oʼzbekiston Respublikasi qishloq xoʼjaligida oʼsimlik zararkunandalari, kasalliklariga va begona oʼtlarga qarshi foydalanish uchun ruxsat etilgan kimyoviy va biologik himoya vositalari, defoliantlar hamda oʼsimliklarning oʼsishini boshqaruvchi vositalar ROʼYXАTI"
+      },
+      {
+        "to": "/",
+        "text": "Fitosanitar toza issiqxonalar"
+      },
+      {
+        "to": "/",
+        "text": "Meva va sabzavot yetishtiruvchi  tadbirkorlik subyektlari"
+      },
+      {
+        "to": "/",
+        "text": "Paxta g‘alla va moyli ekin yetishtiruvchi klaster va fermer dehqon"
+      },
+      {
+        "to": "/",
+        "text": "Biofabrika va biolaboratoriyalar"
+      },
+      {
+        "to": "/",
+        "text": "O'simliklar klinikasi"
+      }
+    ]
+  },
+  {
     "to": "/export",
     "menuName": "Export",
     "submenu": [
@@ -304,16 +350,6 @@
       {
         "to": "/products-import-export",
         "text": "O‘zbekiston Respublikasiga olib kiriladigan va uning tashqarisiga olib chiqiladigan o‘simliklar karantini nazoratidagi mahsulotlar ro‘yxati"
-      }
-    ]
-  },
-  {
-    "to": "/phytosanitary",
-    "menuName": "Fitosanitar toza issiqxonlar",
-    "submenu": [
-      {
-        "to": "/greenhouses",
-        "text": "O'simliklar karantini va himoyasi agentligining Markaziy fitosanitariya laboratoriyasi tomonidan Qoraqalpog'iston Respublikasi, viloyatlar va Toshkent shahri hududlaridagi yetishtirilgan pomidor va qalampir maxsulotlarini PZR usuli orqali tekshirilgan fitosanitar toza issiqxonalar ro'yxati"
       }
     ]
   }

@@ -1,10 +1,27 @@
 import { Col, Row, Input } from 'antd';
 import { Link } from 'react-router-dom';
+import { useT } from '../../custom-hooks/useT';
+import { changeLang, LangType, setLang } from '../../helpers';
 
 // const { Search } = Input;
 
 function HeaderTop() {
   const onSearch = (value: string) => console.log(value);
+  const { t, lang } = useT();
+
+  type Tlangs = [
+    { 1: string, 2: "uz" },
+    { 1: string, 2: "ru" },
+    { 1: string, 2: "en" }
+  ]
+
+  let langs: Tlangs = [{ 1: "O'z", 2: "uz" }, { 1: "Ru", 2: "ru" }, { 1: "En", 2: "en" }];
+
+  const handleSetLang = (language: LangType) => {
+    setLang(language);
+    changeLang(language);
+    window.location.reload();
+  }
 
   const SocialMedia = () => {
     return (
@@ -34,11 +51,11 @@ function HeaderTop() {
                   <li className="special_menu_link">
                     <Link to={"/siteMap"}>
                       <i className="fa fa-sitemap"></i>
-                      <span>Sayt xaritasi</span>
+                      <span>{t(`siteMap.${lang}`)}</span>
                     </Link>
                   </li>
                   <li className="special_menu_link">
-                    <i className="fa fa-mobile"></i>
+                    <i className="fa fa-mobile-screen"></i>
                     <span>Mobil taqvim</span>
                   </li>
                   <li className="special_menu_link">
@@ -62,15 +79,9 @@ function HeaderTop() {
               </div>
               <div className="language_area">
                 <ul className="languages">
-                  <li>
-                    O'z
-                  </li>
-                  <li>
-                    Ru
-                  </li>
-                  <li>
-                    En
-                  </li>
+                  {langs.map(lang => (
+                    <li key={lang[2]} onClick={() => handleSetLang(lang[2])}>{lang[1]}</li>
+                  ))}
                 </ul>
               </div>
             </div>
