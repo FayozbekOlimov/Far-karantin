@@ -90,8 +90,8 @@ function SiteMap() {
                       </Link>
                       <ul className="subcategories">
                         {
-                          categories.subcategories.map(subcategory => (
-                            <li className="subcategory">
+                          categories.subcategories.map((subcategory, ind) => (
+                            <li className="subcategory" key={ind}>
                               <Link
                                 to={subcategory.to}
                                 className={"site_link"}

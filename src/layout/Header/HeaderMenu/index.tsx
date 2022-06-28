@@ -45,10 +45,9 @@ function HeaderMenu() {
         if (res.data.status === 200) {
           setMenuUrls(res.data.data);
           setLoading(false);
-        } else {
-          console.log(res.data.message)
         }
       })
+      .catch((e) => console.log(e))
   }, []);
 
   useEffect(() => {

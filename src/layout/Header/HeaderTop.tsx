@@ -1,19 +1,14 @@
 import { Col, Row, Input } from 'antd';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useT } from '../../custom-hooks/useT';
 import { changeLang, LangType, setLang } from '../../helpers';
+import { Tlangs } from '../../types';
 
 // const { Search } = Input;
 
 function HeaderTop() {
   // const onSearch = (value: string) => console.log(value);
   const { t, lang } = useT();
-
-  type Tlangs = [
-    { 1: string, 2: "uz" },
-    { 1: string, 2: "ru" },
-    { 1: string, 2: "en" }
-  ]
 
   let langs: Tlangs = [{ 1: "O'z", 2: "uz" }, { 1: "Ru", 2: "ru" }, { 1: "En", 2: "en" }];
 
@@ -40,6 +35,15 @@ function HeaderTop() {
     )
   }
 
+  const location = useLocation();
+  const mobileVersion = () => {
+    window.open(location.pathname, "_blank", "width=375px,height=576px,left=300,top=100");
+  }
+
+  const verForVisImp = () => {
+    document.body.classList.toggle('white-black');
+  }
+
   return (
     <div className="header_top">
       <div className="container">
@@ -54,11 +58,11 @@ function HeaderTop() {
                       <span>{t(`siteMap.${lang}`)}</span>
                     </Link>
                   </li>
-                  <li className="special_menu_link">
+                  <li className="special_menu_link" onClick={mobileVersion}>
                     <i className="fa fa-mobile-screen"></i>
                     <span>{t(`mobileVersion.${lang}`)}</span>
                   </li>
-                  <li className="special_menu_link">
+                  <li className="special_menu_link" onClick={verForVisImp}>
                     <i className="fa fa-eye"></i>
                     <span>{t(`verForVisImp.${lang}`)}</span>
                   </li>

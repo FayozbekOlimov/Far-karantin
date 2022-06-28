@@ -3,41 +3,37 @@ import { Navigation, Pagination, EffectFade, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { bannerUrl } from '../../../api/apiUrls';
 import baseAPI from '../../../api/baseAPI';
+import { BASE_IMG_URL } from '../../../constants';
 
 function BannerSlider() {
   type BannerUrlResType = {
-    status: number,
+    status: string,
     message: string,
     data: BannerUrlInfoType
   }
   type BannerUrlInfoType = {
-    item: {
-      id: number,
-      image: string
-    }[]
-  }
+    id: number,
+    image: string
+  }[]
 
   const [loading, setLoading] = useState<boolean>(true);
-  const [bannerData, setBannerData] = useState<BannerUrlInfoType>({} as BannerUrlInfoType);
-  
+  const [bannerData, setBannerData] = useState<BannerUrlInfoType>([]);
+
   const getBannerData = useCallback(() => {
     setLoading(true);
     baseAPI.fetchAll<BannerUrlResType>(bannerUrl)
       .then((res) => {
-        if (res.data.status === 200) {
-          setBannerData(res.data.data);
+        if (res.data.status === "200") {
+          setBannerData(res.data?.data);
           setLoading(false);
-        } else {
-          console.log(res.data.message)
         }
       })
+      .catch((e) => console.log(e))
   }, []);
 
   useEffect(() => {
     getBannerData();
   }, [getBannerData])
-
-  console.log(bannerData)
 
   return (
     <div className='banner_slider'>
@@ -47,7 +43,7 @@ function BannerSlider() {
           delay: 3000,
           disableOnInteraction: false,
         }}
-        effect={"fade"}
+        effect={"slide"}
         loop={true}
         modules={[Autoplay, Navigation, Pagination, EffectFade]}
         spaceBetween={50}
@@ -56,10 +52,10 @@ function BannerSlider() {
         pagination={{ clickable: true }}
       >
         {
-          Array.of(1, 2, 3).map((arg, ind) => (
-            <SwiperSlide key={ind}>
+          bannerData?.map((item) => (
+            <SwiperSlide key={item.id}>
               <div className="slider_img_container">
-                <img className="main_news_img" src={`/assets/img/slide${arg}.jpg`} alt={`slide${arg}`} />
+                <img className="main_news_img" src={BASE_IMG_URL + item.image} alt={`slide${item.image}`} />
               </div>
             </SwiperSlide>
           ))
