@@ -2,11 +2,13 @@ import React from 'react'
 import statisticsConsideredData from "../../statisticsConsideredData.json";
 
 
-function StatisticsConsidered(props: { title: string }) {
+// function StatisticsConsidered(props: { title: string }) {
+function StatisticsConsidered() {
   return (
     <div className="statistics_considered page_card">
       <h4 className="page_title">
-        {props.title}
+        Title
+        {/* {props.title} */}
       </h4>
       <div className="statistics_body">
         {

@@ -26,17 +26,17 @@ function HeaderBody() {
               <Row gutter={[16, 16]} justify='center'>
                 <Col xs={0} sm={12}>
                   <div className="fax">
-                    <a href="#">
-                      <i className="fa-solid fa-map-location-dot"></i>
-                      <p className="fax_text">
-                        Bizning manzil: <br />
-                        100100, Toshkent sh., <br />
-                        "Bobur" 1-berk ko'chasi, 17-uy <br />
-                        <a href="mailto:info@karantin.uz">
-                          Elektron manzil: info@karantin.uz
-                        </a>
-                      </p>
-                    </a>
+                    {/* <a href="#"> */}
+                    <i className="fa-solid fa-map-location-dot"></i>
+                    <p className="fax_text">
+                      Bizning manzil: <br />
+                      100100, Toshkent sh., <br />
+                      "Bobur" 1-berk ko'chasi, 17-uy <br />
+                      <a href="mailto:info@karantin.uz">
+                        Elektron manzil: info@karantin.uz
+                      </a>
+                    </p>
+                    {/* </a> */}
                   </div>
                 </Col>
                 <Col xs={24} sm={12}>

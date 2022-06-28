@@ -3,5 +3,20 @@
         "uz": "Sayt xaritasi",
         "ru": "Карта сайта",
         "en": "Sitemap"
+    },
+    "mobileVersion": {
+        "uz": "Mobil taqvim",
+        "ru": "Мобильная версия",
+        "en": "Mobile version"
+    },
+    "verForVisImp": {
+        "uz": "Zaif ko'ruvchilar uchun",
+        "ru": "Версия для слабовидящих",
+        "en": "Version for visually impaired"
+    },
+    "soundAcc": {
+        "uz": "Ovozli o'qish",
+        "ru": "Читай вслух",
+        "en": "Read aloud"
     }
 }

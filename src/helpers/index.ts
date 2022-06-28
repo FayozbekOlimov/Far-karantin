@@ -19,3 +19,6 @@ export const changeLang = (lang: LangType) => {
 
 export const getItemFromLocalStorage = (item: string) => localStorage.getItem(item) || "";
 export const setItemToLocalStorage = (key: string, value: string) => localStorage.setItem(key, value);
+
+export const getAccessToken = (): string =>
+	getItemFromLocalStorage("access_token");

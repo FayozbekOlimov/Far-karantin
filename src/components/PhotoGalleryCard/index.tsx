@@ -9,12 +9,12 @@ interface IPhotoGalleryCard {
   link: string,
   contentTitle: string,
   imgCount?: string,
-  img: string,
+  image: string,
   date: string
 }
 
 function PhotoGalleryCard(props: IPhotoGalleryCard) {
-  const { title, linkTitle, link, contentTitle, imgCount, img, date } = props;
+  const { title, linkTitle, link, contentTitle, imgCount, image, date } = props;
 
   return (
     <div className="photo_gallery_card">
@@ -33,7 +33,7 @@ function PhotoGalleryCard(props: IPhotoGalleryCard) {
         <div className="photo_gallery_body">
           <img
             className='photo_gallery_img'
-            src={img}
+            src={image}
             alt=""
           />
           <div className={`content ${imgCount && "count"}`}>

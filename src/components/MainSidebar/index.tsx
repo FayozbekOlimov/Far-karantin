@@ -1,4 +1,3 @@
-import React from 'react'
 import { NavLink } from 'react-router-dom'
 import headerMenuData from "../../layout/Header/HeaderMenu/headerMenuData.json"
 import "./style.scss";
@@ -10,7 +9,7 @@ function MainSidebar(props: { id: number }) {
   return (
     <div className="main_sidebar">
       <ul>
-        {headerMenuData[props.id].submenu.map(menu => (
+        {headerMenuData[props.id].submenu?.map(menu => (
           <li key={menu.to}>
             <NavLink
               className={

@@ -3,14 +3,16 @@ import internationalProtocolData from "../../internationalProtocolData.json"
 import { Tooltip } from 'antd';
 
 
-function InformationOfStaff(props: { title: string }) {
+// function InformationOfStaff(props: { title: string }) {
+function InformationOfStaff() {
 
   const tooltipText = <span>Ko'chirib olish</span>
 
   return (
     <div className="information_staff page_card">
       <h4 className="page_title">
-        {props.title}
+        Title
+        {/* {props.title} */}
       </h4>
       <div className="staff_body">
         {

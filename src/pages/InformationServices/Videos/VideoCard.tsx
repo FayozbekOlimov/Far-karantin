@@ -28,11 +28,9 @@ function VideoCard(props: IVideoCard) {
     setVideoPlaying(false)
   };
 
-  useEffect(() => {
-
-    console.log("playing", videoPlaying)
-  }, [videoPlaying])
-
+  // useEffect(() => {
+  //   console.log("playing", videoPlaying)
+  // }, [videoPlaying])
 
   return (
     <>

@@ -268,60 +268,50 @@
     "menuName": "Tadbirkorlar uchun",
     "submenu": [
       {
-        "to": "/",
+        "to": "/tifth",
         "text": "TIFTH kodlar"
       },
       {
-        "to": "/",
+        "to": "/pheromone-handles",
         "text": "Qishloq xo'jaligi mahsulotlarini ekologik toza feromon tutqichlar orqali himoyalash uchun"
       },
       {
-        "to": "/",
+        "to": "/cherry-exports",
         "text": "O'zbekiston Respublikasidan Koreya davlatiga gilos eksportining talablari"
       },
       {
-        "to": "/",
+        "to": "/green-corridors",
         "text": "Rossiya Federatsiyasi hududidagi yashil yo'laklar ro'yxati"
       },
       {
-        "to": "/",
+        "to": "/protection-agents",
         "text": "Oʼzbekiston Respublikasi qishloq xoʼjaligida oʼsimlik zararkunandalari, kasalliklariga va begona oʼtlarga qarshi foydalanish uchun ruxsat etilgan kimyoviy va biologik himoya vositalari, defoliantlar hamda oʼsimliklarning oʼsishini boshqaruvchi vositalar ROʼYXАTI"
       },
       {
-        "to": "/",
+        "to": "/clean-greenhouses",
         "text": "Fitosanitar toza issiqxonalar"
       },
       {
-        "to": "/",
+        "to": "/business-entities",
         "text": "Meva va sabzavot yetishtiruvchi  tadbirkorlik subyektlari"
       },
       {
-        "to": "/",
+        "to": "/cluster",
         "text": "Paxta g‘alla va moyli ekin yetishtiruvchi klaster va fermer dehqon"
       },
       {
-        "to": "/",
+        "to": "/biofactory",
         "text": "Biofabrika va biolaboratoriyalar"
       },
       {
-        "to": "/",
+        "to": "/plant-clinic",
         "text": "O'simliklar klinikasi"
       }
     ]
   },
   {
     "to": "/export",
-    "menuName": "Export",
-    "submenu": [
-      {
-        "to": "/about-agency",
-        "text": "Maslahatchilar"
-      },
-      {
-        "to": "/",
-        "text": "Markaziy apparat"
-      }
-    ]
+    "menuName": "Export"
   },
   {
     "to": "/import",

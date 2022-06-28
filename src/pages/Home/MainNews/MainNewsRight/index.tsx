@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import "./style.scss";
 import VirtualAdmission from './VirtualAdmission';
 
@@ -31,9 +32,8 @@ function MainNewsRight() {
         ))
       }
 
-      <a
-        href="#"
-        target="_blank"
+      <Link
+        to={'/symbols'}
         rel="noopener noreferrer"
         className='symbol_box_link'
       >
@@ -42,7 +42,7 @@ function MainNewsRight() {
             Davlat <br />ramzlari
           </span>
         </div>
-      </a>
+      </Link>
 
       <div className="sidebar_block1">
         <a

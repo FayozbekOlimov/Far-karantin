@@ -35,17 +35,20 @@
           align-items: center;
           gap: 15px;
 
-          .special_menu_link {
-            a {
-              color: #000;
-            }
+        }
 
-            i {
-              margin-right: 8px;
-              font-size: 15px;
-              background-color: #efefef;
-              color: #000;
-            }
+        &_link {
+          cursor: pointer;
+
+          a {
+            color: #000;
+          }
+
+          i {
+            margin-right: 8px;
+            font-size: 15px;
+            background-color: #efefef;
+            color: #000;
           }
         }
       }
@@ -140,19 +143,19 @@
         display: flex;
         justify-content: flex-end;
 
+        i,
         a {
           color: #fff;
-          display: flex;
+        }
 
-          i {
-            color: #fff;
-          }
+        .fax_text {
+          font-size: 13px;
+          margin-left: 10px;
+          font-weight: 600;
+          color: #fff;
 
-          .fax_text {
-            font-size: 13px;
-            margin-left: 10px;
-            font-weight: 600;
-            color: #fff;
+          a:hover {
+            text-decoration: underline;
           }
         }
       }
@@ -174,21 +177,22 @@
             margin-left: 15px;
             flex: 1;
 
+            &>* {
+              color: #fff;
+            }
+
             .tel_text {
               font-size: 13px;
-              color: #fff;
             }
 
             .tel_number {
               font-size: 20px;
               font-weight: 600;
-              color: #fff;
             }
 
             .phone_url {
               font-size: 13px;
               font-weight: 600;
-              color: #fff;
 
               .tel_number {
                 font-size: 20px;

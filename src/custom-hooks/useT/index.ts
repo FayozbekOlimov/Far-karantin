@@ -1,8 +1,8 @@
 import { TFunction } from "i18next";
 import { useTranslation } from 'react-i18next';
-import { getLang } from "../../helpers";
+import { getLang, LangType } from "../../helpers";
 
-export const useT = (): { t: TFunction, lang: "uz" | "ru" | "en" } => {
+export const useT = (): { t: TFunction, lang: LangType } => {
   const { t } = useTranslation();
   return { t, lang: getLang() };
 }

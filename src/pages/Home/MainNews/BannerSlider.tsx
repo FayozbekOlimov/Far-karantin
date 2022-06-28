@@ -1,10 +1,44 @@
+import { useCallback, useEffect, useState } from 'react';
 import { Navigation, Pagination, EffectFade, Autoplay } from 'swiper';
-
-
 import { Swiper, SwiperSlide } from 'swiper/react';
-
+import { bannerUrl } from '../../../api/apiUrls';
+import baseAPI from '../../../api/baseAPI';
 
 function BannerSlider() {
+  type BannerUrlResType = {
+    status: number,
+    message: string,
+    data: BannerUrlInfoType
+  }
+  type BannerUrlInfoType = {
+    item: {
+      id: number,
+      image: string
+    }[]
+  }
+
+  const [loading, setLoading] = useState<boolean>(true);
+  const [bannerData, setBannerData] = useState<BannerUrlInfoType>({} as BannerUrlInfoType);
+  
+  const getBannerData = useCallback(() => {
+    setLoading(true);
+    baseAPI.fetchAll<BannerUrlResType>(bannerUrl)
+      .then((res) => {
+        if (res.data.status === 200) {
+          setBannerData(res.data.data);
+          setLoading(false);
+        } else {
+          console.log(res.data.message)
+        }
+      })
+  }, []);
+
+  useEffect(() => {
+    getBannerData();
+  }, [getBannerData])
+
+  console.log(bannerData)
+
   return (
     <div className='banner_slider'>
       <Swiper
@@ -20,8 +54,6 @@ function BannerSlider() {
         slidesPerView={1}
         navigation
         pagination={{ clickable: true }}
-
-
       >
         {
           Array.of(1, 2, 3).map((arg, ind) => (
@@ -32,9 +64,6 @@ function BannerSlider() {
             </SwiperSlide>
           ))
         }
-
-
-
       </Swiper>
     </div>
   )

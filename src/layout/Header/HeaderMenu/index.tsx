@@ -3,12 +3,14 @@ import "./style.scss";
 import headerMenu from "./headerMenuData.json"
 import { Link } from 'react-router-dom';
 import { AlignRightOutlined } from '@ant-design/icons';
+import { useCallback, useEffect, useState } from 'react';
+import baseAPI from '../../../api/baseAPI';
+import { menuUrl } from '../../../api/apiUrls';
 
-
-const createNavbar = (to: string, submenu: { to: string, text: string }[]) => (
+const createNavbar = (to: string, submenu?: { to: string, text: string }[]) => (
   <Menu>
     {
-      submenu.map((menu, ind) => (
+      submenu?.map((menu, ind) => (
         <Menu.Item key={"key" + ind}>
           <Link to={`${to}${menu.to}`}>
             {menu.text}
@@ -20,6 +22,39 @@ const createNavbar = (to: string, submenu: { to: string, text: string }[]) => (
 )
 
 function HeaderMenu() {
+  const [loading, setLoading] = useState<boolean>(true);
+  const [menuUrls, setMenuUrls] = useState<MenuItemInfoType>({} as MenuItemInfoType);
+
+  type MenuItemInfoType = {
+    id: number,
+    title: string,
+    url: string,
+    submenus: MenuItemInfoType[]
+  }[]
+
+  type MenuUrlResType = {
+    status: number,
+    message: string,
+    data: MenuItemInfoType
+  }
+
+  const getMenuUrls = useCallback(() => {
+    setLoading(true);
+    baseAPI.fetchAll<MenuUrlResType>(menuUrl)
+      .then((res) => {
+        if (res.data.status === 200) {
+          setMenuUrls(res.data.data);
+          setLoading(false);
+        } else {
+          console.log(res.data.message)
+        }
+      })
+  }, []);
+
+  useEffect(() => {
+    getMenuUrls();
+  }, [getMenuUrls])
+
   return (
     <div className="header_menu">
       <div className="container">
@@ -28,7 +63,7 @@ function HeaderMenu() {
             <Collapse accordion>
               {headerMenu.map((menu, ind) => (
                 <Collapse.Panel header={menu.menuName} key={"key" + ind}>
-                  {menu.submenu.map((sub, ind) => (
+                  {menu.submenu?.map((sub, ind) => (
                     <Link key={"submenu" + ind} className='header_menu_link' to={`${menu.to}${sub.to}`}>
                       {sub.text}
                     </Link>

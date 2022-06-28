@@ -67,10 +67,10 @@ const categoriesDatas = [
 
 function SiteMap() {
   return (
-    <section className="site_map main_page">
+    <section className="site_map">
       <div className="container">
         <Row gutter={[16, 16]} justify="center">
-          <Col md={18}>
+          <Col xs={24} md={18}>
             <div className="site_map_card page_card">
               <h4 className="page_title">
                 Sayt xaritasi
