@@ -18,5 +18,110 @@
         "uz": "Ovozli o'qish",
         "ru": "Читай вслух",
         "en": "Read aloud"
+    },
+    "search": {
+        "uz": "Sayt bo'ylab qidiruv",
+        "ru": "Поиск по сайту",
+        "en": "Site search"
+    },
+    "state": {
+        "uz": "O'ZBEKISTON RESPUBLIKASI <br /> O'SIMLIKLAR KARANTINI VA HIMOYASI <br /> AGENTLIGI",
+        "ru": "АГЕНТСТВО <br /> ПО КАРАНТИНУ И ЗАЩИТЕ РАСТЕНИЙ <br /> РЕСПУБЛИКИ УЗБЕКИСТАН",
+        "en": "AGENCY OF PLANT PROTECTION <br /> AND QUARANTINE OF THE REPUBLIC <br /> UZBEKISTAN"
+    },
+    "address": {
+        "uz": "Bizning manzil",
+        "ru": "Наш адресс",
+        "en": "Our address"
+    },
+    "email": {
+        "uz": "Elektron manzil",
+        "ru": "Эл. почта",
+        "en": "E-mail"
+    },
+    "hotline": {
+        "uz": "Ishonch telefoni",
+        "ru": "Телефон доверия",
+        "en": "Hotline"
+    },
+    "callCenter": {
+        "uz": "Call markaz",
+        "ru": "Call-центр",
+        "en": "Call center"
+    },
+    "symbols": {
+        "uz": "Davlat <br /> ramzlari",
+        "ru": "Государственные <br /> символы",
+        "en": "State <br /> symbols"
+    },
+    "nextTo": {
+        "uz": "Mo'ljal",
+        "ru": "Ориентир",
+        "en": "Next to"
+    },
+    "buses": {
+        "uz": "Avtobuslar",
+        "ru": "Автобусов",
+        "en": "Buses"
+    },
+    "schedule": {
+        "uz": "Ish kunlari",
+        "ru": "График работы",
+        "en": "Schedule"
+    },
+    "lunch": {
+        "uz": "Tushlik vaqti",
+        "ru": "Время обеда",
+        "en": "Lunch time"
+    },
+    "phoneNumbers": {
+        "uz": "Telefon nomerlari",
+        "ru": "Телефонные номера",
+        "en": "Phone numbers"
+    },
+    "stations": {
+        "uz": "Yaqin bekatlar",
+        "ru": "Ближайшие станции",
+        "en": "Nearby stations"
+    },
+    "rule": {
+        "uz": "O'zbekiston Respublikasi O'simliklar Karantini va Himoyasi Agentligi davlat xizmatlarini ko'rsatishda aloqa markazi (ishonch telefoni) faoliyatini tashkil etish tartibi to'g'risidagi nizom",
+        "ru": "Положение о порядке организации деятельности контакт-центра (горячей линии) при оказании государственных услуг Агентства по карантину и защите растений Республики Узбекистан",
+        "en": "Regulation on the procedure for organizing the activity of the contact center (hotline) in the provision of public services of the Plant Quarantine and Protection Agency of the Republic of Uzbekistan"
+    },
+    "see": {
+        "uz": "Ko'rish",
+        "ru": "Вид",
+        "en": "See"
+    },
+    "bankDetails": {
+        "uz": "Bank rekvizitlari",
+        "ru": "Банковские реквизиты",
+        "en": "Bank details"
+    },
+    "reconnect": {
+        "uz": "Qayta bog'lanish",
+        "ru": "Повторное подключение",
+        "en": "Reconnect"
+    },
+    "name": {
+        "uz": "Ism",
+        "ru": "Имя",
+        "en": "Name"
+    },
+    "phone": {
+        "uz": "Telefon",
+        "ru": "Телефон",
+        "en": "Phone"
+    },
+    "msg": {
+        "uz": "Xabar",
+        "ru": "Сообщение",
+        "en": "Message"
+    },
+    "send": {
+        "uz": "Jo'natish",
+        "ru": "Отправить",
+        "en": "Send"
     }
 }

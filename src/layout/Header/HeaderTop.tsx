@@ -1,4 +1,4 @@
-import { Col, Row, Input } from 'antd';
+import { Col, Row } from 'antd';
 import { useCallback, useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { socialNetworkUrl } from '../../api/apiUrls';
@@ -93,7 +93,7 @@ function HeaderTop() {
             <div className="right">
               <SocialMedia />
               <div className="search_area">
-                <input type="search" placeholder="Sayt bo'ylab qidiruv" /><i className="fa-solid fa-magnifying-glass"></i>
+                <input type="search" placeholder={t(`search.${lang}`)} /><i className="fa-solid fa-magnifying-glass"></i>
               </div>
               <div className="language_area">
                 <ul className="languages">

@@ -10,3 +10,7 @@ export const usefulLinkUrl = 'useful-link'; // c
 export const bannerImageUrl = 'banner-image'; // c
 export const symbolsUrl = 'symbols'; // inc
 export const menuUrl = 'menu';
+export const galleryUrl = 'gallery';
+export const galleryDetailUrl = 'gallery-detail';
+export const videoUrl = 'video';
+export const managementUrl = 'management';

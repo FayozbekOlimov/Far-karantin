@@ -5,8 +5,10 @@ import { useCallback, useEffect, useState } from 'react';
 import { usefulLinkUrl } from '../../../../api/apiUrls';
 import baseAPI from '../../../../api/baseAPI';
 import { UsefulLinkInfoType, UsefulLinkResType } from '../../../../types';
+import { useT } from '../../../../custom-hooks/useT';
 
 function MainNewsRight() {
+  const {t, lang} = useT();
   const [loading, setLoading] = useState<boolean>(true);
   const [usefulLink, setUsefulLink] = useState<UsefulLinkInfoType>([]);
 
@@ -38,9 +40,7 @@ function MainNewsRight() {
         className='symbol_box_link'
       >
         <div className="sidebar_sybols">
-          <span>
-            Davlat <br />ramzlari
-          </span>
+          <span dangerouslySetInnerHTML={{__html: t(`symbols.${lang}`)}} />
         </div>
       </Link>
 

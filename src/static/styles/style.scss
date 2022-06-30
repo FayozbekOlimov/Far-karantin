@@ -36,6 +36,10 @@ a {
   &:focus {
     color: #119769;
   }
+
+  &.email:hover {
+    text-decoration: underline;
+  }
 }
 
 p {

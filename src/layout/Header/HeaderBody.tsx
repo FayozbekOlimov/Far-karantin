@@ -1,8 +1,10 @@
 import { Col, Row } from 'antd'
 import { Link } from 'react-router-dom'
 import { Fade } from "react-awesome-reveal";
+import { useT } from '../../custom-hooks/useT';
 
 function HeaderBody() {
+  const { t, lang } = useT();
   return (
     <div className="header_body">
       <div className="container">
@@ -14,9 +16,7 @@ function HeaderBody() {
                 <figure>
                   <img className="site_logo_img" src="/assets/img/logo.svg" alt="karantin agentligi" />
                 </figure>
-                <h2 className="site_title">
-                  O'ZBEKISTON RESPUBLIKASI <br /> O'SIMLIKLAR KARANTINI VA HIMOYASI <br /> AGENTLIGI
-                </h2>
+                <h2 className="site_title" dangerouslySetInnerHTML={{__html: t(`state.${lang}`)}} />
               </Link>
               {/* </Fade> */}
             </div>
@@ -29,11 +29,11 @@ function HeaderBody() {
                     {/* <a href="#"> */}
                     <i className="fa-solid fa-map-location-dot"></i>
                     <p className="fax_text">
-                      Bizning manzil: <br />
+                      {t(`address.${lang}`)}: <br />
                       100100, Toshkent sh., <br />
                       "Bobur" 1-berk ko'chasi, 17-uy <br />
-                      <a href="mailto:info@karantin.uz">
-                        Elektron manzil: info@karantin.uz
+                      {t(`email.${lang}`)}: <a href="mailto:info@karantin.uz" className='email'>
+                        info@karantin.uz
                       </a>
                     </p>
                     {/* </a> */}
@@ -46,7 +46,7 @@ function HeaderBody() {
                         <i className="fa-solid fa-phone"></i>
                       </div>
                       <p className="phone_body">
-                        <span className="tel_text">Ishonch telefoni</span> <br />
+                        <span className="tel_text">{t(`hotline.${lang}`)}</span> <br />
                         <a className="phone_url" href="tel:+998712028484">
                           (+99871)
                           <span className="tel_number">
@@ -60,7 +60,7 @@ function HeaderBody() {
                         <i className="fa-solid fa-phone"></i>
                       </div>
                       <p className="phone_body">
-                        <span className="tel_text">Call markaz</span> <br />
+                        <span className="tel_text">{t(`callCenter.${lang}`)}</span> <br />
                         <a href="tel:1288" className="tel_number">
                           1288,
                         </a>
