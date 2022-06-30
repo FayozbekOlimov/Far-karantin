@@ -1,34 +1,24 @@
 import { useCallback, useEffect, useState } from 'react';
 import { Navigation, Pagination, EffectFade, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { bannerUrl } from '../../../api/apiUrls';
+import { bannerImageUrl } from '../../../api/apiUrls';
 import baseAPI from '../../../api/baseAPI';
-import { BASE_IMG_URL } from '../../../constants';
+import { BannerUrlInfoType, BannerUrlResType } from '../../../types';
 
 function BannerSlider() {
-  type BannerUrlResType = {
-    status: string,
-    message: string,
-    data: BannerUrlInfoType
-  }
-  type BannerUrlInfoType = {
-    id: number,
-    image: string
-  }[]
-
   const [loading, setLoading] = useState<boolean>(true);
   const [bannerData, setBannerData] = useState<BannerUrlInfoType>([]);
 
   const getBannerData = useCallback(() => {
     setLoading(true);
-    baseAPI.fetchAll<BannerUrlResType>(bannerUrl)
+    baseAPI.fetchAll<BannerUrlResType>(bannerImageUrl)
       .then((res) => {
         if (res.data.status === "200") {
           setBannerData(res.data?.data);
           setLoading(false);
         }
       })
-      .catch((e) => console.log(e))
+      .catch(e => console.log('Error:', e.message));
   }, []);
 
   useEffect(() => {
@@ -55,7 +45,7 @@ function BannerSlider() {
           bannerData?.map((item) => (
             <SwiperSlide key={item.id}>
               <div className="slider_img_container">
-                <img className="main_news_img" src={BASE_IMG_URL + item.image} alt={`slide${item.image}`} />
+                <img className="main_news_img" src={item.image} alt={`slide${item.image}`} />
               </div>
             </SwiperSlide>
           ))

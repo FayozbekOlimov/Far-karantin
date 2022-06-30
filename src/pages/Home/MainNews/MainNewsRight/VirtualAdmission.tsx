@@ -1,16 +1,12 @@
-import React from 'react'
+import { VirtualAdmissionProps } from "../../../../types";
 
-interface IVirtualAdmission {
-  link: string,
-  text: string
-}
+function VirtualAdmission(props: VirtualAdmissionProps) {
+  const { url_name, name } = props;
 
-function VirtualAdmission(props: IVirtualAdmission) {
-  const { link, text } = props;
   return (
     <div className="virtual_admission">
-      <a href={link} target="_blank" rel="noopener noreferrer">
-        {text}
+      <a href={url_name} target="_blank" rel="noopener noreferrer">
+        {name}
       </a>
     </div>
   )

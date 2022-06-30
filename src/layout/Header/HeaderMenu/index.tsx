@@ -47,7 +47,7 @@ function HeaderMenu() {
           setLoading(false);
         }
       })
-      .catch((e) => console.log(e))
+      .catch(e => console.log('Error:', e.message));
   }, []);
 
   useEffect(() => {

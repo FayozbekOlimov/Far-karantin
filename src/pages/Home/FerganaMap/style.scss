@@ -1,3 +1,35 @@
 .fergana_map {
   margin: 10px 0;
+
+  .container {
+    position: relative;
+  }
+
+  .contact-data {
+    padding: 20px;
+    background-color: rgba(250, 250, 251, 0.8);
+    border-radius: 10px;
+    max-width: 400px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 25px;
+
+    &__item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 10px;
+
+      i {
+        margin-top: 5px;
+        margin-right: 10px;
+        font-size: 16px;
+      }
+
+      p {
+        margin: 0;
+        flex: 1;
+      }
+    }
+  }
 }

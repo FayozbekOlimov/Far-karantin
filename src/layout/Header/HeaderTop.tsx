@@ -1,47 +1,61 @@
 import { Col, Row, Input } from 'antd';
+import { useCallback, useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { socialNetworkUrl } from '../../api/apiUrls';
+import baseAPI from '../../api/baseAPI';
 import { useT } from '../../custom-hooks/useT';
-import { changeLang, LangType, setLang } from '../../helpers';
-import { Tlangs } from '../../types';
-
+import { changeLang, getLang, setLang } from '../../helpers';
+import { LangType, SocialLinkInfoType, SocialLinkResType, Tlangs } from '../../types';
 // const { Search } = Input;
 
 function HeaderTop() {
   // const onSearch = (value: string) => console.log(value);
   const { t, lang } = useT();
-
   let langs: Tlangs = [{ 1: "O'z", 2: "uz" }, { 1: "Ru", 2: "ru" }, { 1: "En", 2: "en" }];
-
   const handleSetLang = (language: LangType) => {
-    changeLang(language);
-    setLang(language);
-    window.location.reload();
+    let currLang = getLang();
+
+    if (language !== currLang) {
+      changeLang(language);
+      setLang(language);
+      window.location.reload();
+    }
   }
+
+  const location = useLocation();
+  const mobileVersion = () => { window.open(location.pathname, "_blank", "width=375px,height=576px,left=300,top=100"); }
+  const verForVisImp = () => { document.body.classList.toggle('white-black'); }
+
+  const [socialLinks, setSocialLinks] = useState<SocialLinkInfoType>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+  const getSocialLinks = useCallback(() => {
+    setLoading(true);
+    baseAPI.fetchAll<SocialLinkResType>(socialNetworkUrl)
+      .then(res => {
+        if (res.data.status === '200') {
+          setSocialLinks(res.data?.data);
+          setLoading(false);
+        }
+      })
+      .catch(e => console.log('Error:', e.message));
+  }, []);
+
+  useEffect(() => {
+    getSocialLinks();
+  }, [getSocialLinks])
 
   const SocialMedia = () => {
     return (
       <ul className="social_medias">
-        <li className="social_media">
-          <a href="#" target="_blank" rel="noopener noreferrer">
-            <i className="fa-brands fa-telegram"></i>
-          </a>
-        </li>
-        <li className="social_media">
-          <a href="#" target="_blank" rel="noopener noreferrer">
-            <i className="fa-brands fa-facebook-f"></i>
-          </a>
-        </li>
+        {socialLinks.map((link) => (
+          <li className="social_media" key={link.id}>
+            <a href={link.url_name} target="_blank" rel="noopener noreferrer">
+              <i className={`fab ${link.icon_code}`}></i>
+            </a>
+          </li>
+        ))}
       </ul>
     )
-  }
-
-  const location = useLocation();
-  const mobileVersion = () => {
-    window.open(location.pathname, "_blank", "width=375px,height=576px,left=300,top=100");
-  }
-
-  const verForVisImp = () => {
-    document.body.classList.toggle('white-black');
   }
 
   return (

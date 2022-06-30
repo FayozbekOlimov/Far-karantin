@@ -1,7 +1,4 @@
 import { Col, Row } from "antd";
-import { useCallback, useEffect, useState } from "react";
-import { bannerUrl } from "../../../api/apiUrls";
-import baseAPI from "../../../api/baseAPI";
 import PhotoGalleryCard from "../../../components/PhotoGalleryCard";
 import eventCardDatas from "./eventCardDatas.json";
 

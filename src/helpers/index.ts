@@ -1,7 +1,6 @@
 import i18next from 'i18next';
+import { LangType } from '../types';
 import { fallbackLang } from './../constants';
-
-export type LangType = "uz" | "ru" | "en";
 
 export const getLang = (): LangType => {
 	let lang = getItemFromLocalStorage("language");

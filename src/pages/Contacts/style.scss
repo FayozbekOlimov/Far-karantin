@@ -1,8 +1,8 @@
 .contact {
-  .contact_top {
+  &_top {
     .contact_form_card {
       .form_title {
-        color    : #1d2127;
+        color: #1d2127;
         font-size: 30px;
       }
 
@@ -11,7 +11,7 @@
 
         .send_btn {
           background: linear-gradient(to bottom, rgb(17, 151, 105) 0%, rgb(19, 116, 97) 100%);
-          color     : #fff;
+          color: #fff;
 
           i {
             margin-right: 10px;

@@ -2,7 +2,6 @@ import { Col, Row } from 'antd'
 import { useCallback, useEffect, useState } from 'react';
 import { symbolsUrl } from '../../api/apiUrls';
 import baseAPI from '../../api/baseAPI';
-import { BASE_IMG_URL } from '../../constants';
 import { SymbolUrlInfoType, SymbolUrlResType } from '../../types';
 import './style.scss'
 
@@ -18,7 +17,7 @@ function Symbols() {
 					setLoading(false);
 				}
 			})
-			.catch((e) => console.log(e));
+			.catch(e => console.log('Error:', e.message));
 	}, []);
 
 	useEffect(() => {
@@ -33,7 +32,7 @@ function Symbols() {
 						<div className="page_card">
 							<div dangerouslySetInnerHTML={{ __html: symbolData[0]?.content }}>
 							</div>
-							<audio controls src={BASE_IMG_URL + symbolData[0]?.music}></audio>
+							<audio className='symbols__audio' controls src={symbolData[0]?.music}></audio>
 						</div>
 					</Col>
 				</Row>
