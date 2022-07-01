@@ -1,30 +1,35 @@
-import { useEffect, useState } from 'react';
-import { useRoutes } from 'react-router-dom';
+import { useCallback, useEffect, useState } from 'react';
+import { Route, Routes, useRoutes } from 'react-router-dom';
+import { menuUrl } from './api/apiUrls';
+import baseAPI from './api/baseAPI';
 import Footer from './layout/Footer';
 import Header from './layout/Header';
+import AboutAgency from './pages/Agency/AboutAgency';
+import Leadership from './pages/Agency/Leadership';
+import Youth from './pages/Agency/Youth';
+import Contacts from './pages/Contacts';
+import Home from './pages/Home';
+import PageNotFound from './pages/PageNotFound';
+import SiteMap from './pages/SiteMap';
 import routes from "./Routes";
 
 function App() {
-  let element = useRoutes(routes);
-
-  // const [txt, setTxt] = useState<string>('')
-
-  // function getSelectionText() {
-  //   let text: any = "";
-  //   if (window.getSelection()) {
-  //     text = window?.getSelection()?.toString();
-  //   }
-  //   console.log(text)
-  // }
-
-  // useEffect(() => {
-  //   getSelectionText()
-  // }, [txt, setTxt])
+  // let element = useRoutes(routes);
 
   return (
     <div className="App">
       <Header />
-      {element}
+      <Routes>
+        <Route index element={<Home />} />
+        {/* <Route path='category'> */}
+        <Route path='page/:slug' element={<AboutAgency />} />
+        <Route path='leader/:slug' element={<Leadership />} />
+        <Route path="news/:slug" element={<Youth />} />
+        {/* </Route> */}
+        <Route path='contact' element={<Contacts />} />
+        <Route path='sitemap' element={<SiteMap />} />
+        <Route path='*' element={<PageNotFound />} />
+      </Routes>
       <Footer />
     </div >
   );

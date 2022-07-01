@@ -1,49 +1,50 @@
 import { Button, Collapse, Dropdown, Menu } from 'antd';
 import "./style.scss";
-import headerMenu from "./headerMenuData.json"
+// import headerMenu from "./headerMenuData.json"
 import { Link } from 'react-router-dom';
 import { AlignRightOutlined } from '@ant-design/icons';
 import { useCallback, useEffect, useState } from 'react';
 import baseAPI from '../../../api/baseAPI';
 import { menuUrl } from '../../../api/apiUrls';
 
-const createNavbar = (to: string, submenu?: { to: string, text: string }[]) => (
+type MenuItemInfoType = {
+  menuName: string,
+  to: string,
+  subMenus: {
+    subName: string,
+    type: string,
+    to: string
+  }[]
+}[]
+
+type MenuUrlResType = {
+  status: string,
+  message: string,
+  data: MenuItemInfoType
+}[]
+
+const createNavbar = (submenu: { subName: string, type: string, to: string }[]) => (
   <Menu>
-    {
-      submenu?.map((menu, ind) => (
-        <Menu.Item key={"key" + ind}>
-          <Link to={`${to}${menu.to}`}>
-            {menu.text}
-          </Link>
-        </Menu.Item>
-      ))
-    }
+    {submenu.map((menu, ind) => (
+      <Menu.Item key={"key" + ind}>
+        <Link to={`${submenu[ind].type}/${menu.to}`}>
+          {menu.subName}
+        </Link>
+      </Menu.Item>
+    ))}
   </Menu>
 )
 
 function HeaderMenu() {
   const [loading, setLoading] = useState<boolean>(true);
-  const [menuUrls, setMenuUrls] = useState<MenuItemInfoType>({} as MenuItemInfoType);
-
-  type MenuItemInfoType = {
-    id: number,
-    title: string,
-    url: string,
-    submenus: MenuItemInfoType[]
-  }[]
-
-  type MenuUrlResType = {
-    status: number,
-    message: string,
-    data: MenuItemInfoType
-  }
+  const [menuUrls, setMenuUrls] = useState<MenuItemInfoType>([]);
 
   const getMenuUrls = useCallback(() => {
     setLoading(true);
     baseAPI.fetchAll<MenuUrlResType>(menuUrl)
       .then((res) => {
-        if (res.data.status === 200) {
-          setMenuUrls(res.data.data);
+        if (res.data[0].status === "200") {
+          setMenuUrls(res.data[0].data);
           setLoading(false);
         }
       })
@@ -60,11 +61,11 @@ function HeaderMenu() {
         <Collapse className="header_menu__collapse" accordion expandIcon={(panelProps) => <AlignRightOutlined />}>
           <Collapse.Panel header="Menu" key="1">
             <Collapse accordion>
-              {headerMenu.map((menu, ind) => (
-                <Collapse.Panel header={menu.menuName} key={"key" + ind}>
-                  {menu.submenu?.map((sub, ind) => (
-                    <Link key={"submenu" + ind} className='header_menu_link' to={`${menu.to}${sub.to}`}>
-                      {sub.text}
+              {menuUrls.map((menu) => (
+                <Collapse.Panel header={menu.menuName} key={menu.menuName}>
+                  {menu.subMenus.map((subMenu) => (
+                    <Link key={subMenu.subName} className='header_menu_link' to={`${subMenu.type}/:${subMenu.to}`}>
+                      {subMenu.subName}
                     </Link>
                   ))}
                 </Collapse.Panel>
@@ -73,8 +74,8 @@ function HeaderMenu() {
           </Collapse.Panel>
         </Collapse>
         <div className='nav'>
-          {headerMenu.map((menu, ind) => (
-            <Dropdown key={"dropdown" + ind} overlay={createNavbar(menu.to, menu.submenu)} placement="bottomLeft">
+          {menuUrls.map((menu, ind) => (
+            <Dropdown key={"dropdown" + ind} overlay={createNavbar(menu.subMenus)} placement="bottomLeft">
               <Button className='nav_link_btn' ghost>{menu.menuName}</Button>
             </Dropdown>
           ))}

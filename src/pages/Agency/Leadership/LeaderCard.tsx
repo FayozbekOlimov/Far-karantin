@@ -58,8 +58,8 @@ function Leadership(props: ILeadership) {
           <TabPane tab={autobiography.title} key="2">
             <div className="autobigraphy_body">
               <p className="autobigraphy_text">
-                {autobiography.text.split("\n").map(text => (
-                  <p>
+                {autobiography.text.split("\n").map((text, ind) => (
+                  <p key={ind}>
                     {text}
                   </p>
                 ))}
