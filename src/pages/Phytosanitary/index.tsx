@@ -12,7 +12,7 @@ function Phytosanitary() {
             <Outlet />
           </Col>
           <Col md={6}>
-            <MainSidebar id={8} />
+            <MainSidebar id={'8'} />
           </Col>
         </Row>
       </div>

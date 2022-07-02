@@ -12,7 +12,7 @@ function ScientificResearch() {
             <Outlet />
           </Col>
           <Col xs={0} lg={6}>
-            <MainSidebar id={4} />
+            <MainSidebar id={'4'} />
           </Col>
         </Row>
       </div>

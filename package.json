@@ -21,6 +21,7 @@
     "react-awesome-reveal": "^3.8.1",
     "react-dom": "^18.0.0",
     "react-i18next": "^11.17.2",
+    "react-phone-input-2": "^2.15.1",
     "react-player": "^2.10.0",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.0",

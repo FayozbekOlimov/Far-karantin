@@ -6,28 +6,13 @@ import { AlignRightOutlined } from '@ant-design/icons';
 import { useCallback, useEffect, useState } from 'react';
 import baseAPI from '../../../api/baseAPI';
 import { menuUrl } from '../../../api/apiUrls';
+import { MenuItemInfoType, MenuUrlResType } from '../../../types';
 
-type MenuItemInfoType = {
-  menuName: string,
-  to: string,
-  subMenus: {
-    subName: string,
-    type: string,
-    to: string
-  }[]
-}[]
-
-type MenuUrlResType = {
-  status: string,
-  message: string,
-  data: MenuItemInfoType
-}[]
-
-const createNavbar = (submenu: { subName: string, type: string, to: string }[]) => (
+const createNavbar = (to : string, submenu: { subName: string, type: string, to: string }[]) => (
   <Menu>
     {submenu.map((menu, ind) => (
       <Menu.Item key={"key" + ind}>
-        <Link to={`${submenu[ind].type}/${menu.to}`}>
+        <Link to={`${to}/${submenu[ind].type}/${menu.to}`}>
           {menu.subName}
         </Link>
       </Menu.Item>
@@ -64,7 +49,7 @@ function HeaderMenu() {
               {menuUrls.map((menu) => (
                 <Collapse.Panel header={menu.menuName} key={menu.menuName}>
                   {menu.subMenus.map((subMenu) => (
-                    <Link key={subMenu.subName} className='header_menu_link' to={`${subMenu.type}/:${subMenu.to}`}>
+                    <Link key={subMenu.subName} className='header_menu_link' to={`${menu.to}/${subMenu.type}/${subMenu.to}`}>
                       {subMenu.subName}
                     </Link>
                   ))}
@@ -75,7 +60,7 @@ function HeaderMenu() {
         </Collapse>
         <div className='nav'>
           {menuUrls.map((menu, ind) => (
-            <Dropdown key={"dropdown" + ind} overlay={createNavbar(menu.subMenus)} placement="bottomLeft">
+            <Dropdown key={"dropdown" + ind} overlay={createNavbar(menu.to, menu.subMenus)} placement="bottomLeft">
               <Button className='nav_link_btn' ghost>{menu.menuName}</Button>
             </Dropdown>
           ))}
@@ -86,7 +71,3 @@ function HeaderMenu() {
 }
 
 export default HeaderMenu
-
-{/* <Dropdown overlay={createNavbar(menu.to, menu.submenu)} trigger={['click']} placement="bottomLeft">
-  <Button className='nav_link_btn' ghost>{menu.menuName}</Button>
-</Dropdown> */}

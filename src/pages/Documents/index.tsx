@@ -12,7 +12,7 @@ function Documents() {
             <Outlet />
           </Col>
           <Col xs={0} lg={6}>
-            <MainSidebar id={3} />
+            <MainSidebar id={'3'} />
           </Col>
         </Row>
       </div>

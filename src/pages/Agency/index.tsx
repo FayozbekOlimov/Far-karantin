@@ -4,8 +4,7 @@ import { Row, Col } from "antd";
 import "./style.scss";
 import MainSidebar from '../../components/MainSidebar';
 
-function Agency() {
-
+function Agency(props: { to: string }) {
   return (
     <section className="about_agency main_page">
       <div className="container">
@@ -14,7 +13,7 @@ function Agency() {
             <Outlet />
           </Col>
           <Col xs={0} lg={6}>
-            <MainSidebar id={0} />
+            <MainSidebar id={props.to} />
           </Col>
         </Row>
       </div>

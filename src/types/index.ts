@@ -74,8 +74,82 @@ export type UsefulLinkInfoType = {
     url_name: string
 }[]
 
-export type VirtualAdmissionProps = {
+export type VirtualAdmissionPropsType = {
     id: number,
     url_name: string,
     name: string
 }
+
+export type MenuItemInfoType = {
+    menuName: string,
+    to: string,
+    subMenus: {
+        subName: string,
+        type: string,
+        to: string
+    }[]
+}[]
+
+export type MenuUrlResType = {
+    status: string,
+    message: string,
+    data: MenuItemInfoType
+}[]
+
+export type PageUrlResType = {
+    status: string,
+    message: string,
+    data: PageUrlInfoType
+}
+
+export type PageUrlInfoType = {
+    slug: string,
+    title: string,
+    content: string
+}
+
+export type LeaderUrlResType = {
+    status: string,
+    message: string,
+    data: LeaderUrlInfoType
+}
+
+export type LeaderUrlInfoType = {
+    id: number,
+    image: string,
+    name: string,
+    phone: string,
+    position: string,
+    work_day: string,
+    biography: string
+}[]
+
+export type FileUrlResType = {
+    status: string,
+    message: string,
+    data: FileUrlInfoType
+}
+
+export type FileUrlInfoType = {
+    id: number,
+    file_icon: string,
+    file_download: string,
+    file_name: string,
+    subcategory_id: string,
+}[]
+
+export type NewsUrlResType = {
+    status: string,
+    message: string,
+    data: NewsUrlInfoType
+}
+
+export type NewsUrlInfoType = {
+    id: number,
+    title: string,
+    image: string,
+    slug: string,
+    created_at: string,
+    content: string,
+    post_category_id: string
+}[]

@@ -15,7 +15,7 @@ function News() {
       <h4 className="page_title">
         Agentlik yangiliklari
       </h4>
-      <div className="news_body">
+      {/* <div className="news_body">
         <Row gutter={[16, 16]}>
           {NewsData?.map(news => (
             <Col lg={8} md={12} key={news.id}>
@@ -36,7 +36,7 @@ function News() {
             />
           </div>
         </Row>
-      </div>
+      </div> */}
     </div>
   )
 }

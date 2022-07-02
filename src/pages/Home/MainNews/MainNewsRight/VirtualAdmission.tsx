@@ -1,6 +1,6 @@
-import { VirtualAdmissionProps } from "../../../../types";
+import { VirtualAdmissionPropsType } from "../../../../types";
 
-function VirtualAdmission(props: VirtualAdmissionProps) {
+function VirtualAdmission(props: VirtualAdmissionPropsType) {
   const { url_name, name } = props;
 
   return (

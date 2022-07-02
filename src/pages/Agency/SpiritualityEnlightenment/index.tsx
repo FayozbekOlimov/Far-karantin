@@ -18,7 +18,7 @@ function SpiritualityEnlightenment() {
       <h4 className="page_title">
         Ma'naviyat va ma'rifat
       </h4>
-      <div className="spirituality_enlightenment_body">
+      {/* <div className="spirituality_enlightenment_body">
         <Row gutter={[16, 16]}>
           {SpiritualityEnlightenmentData?.map(spirituality => (
             <Col lg={8} md={12} key={spirituality.id}>
@@ -40,7 +40,7 @@ function SpiritualityEnlightenment() {
           </div>
 
         </Row>
-      </div>
+      </div> */}
     </div>
   )
 }

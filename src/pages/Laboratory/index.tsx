@@ -12,7 +12,7 @@ function Laboratory() {
             <Outlet />
           </Col>
           <Col xs={0} lg={6}>
-            <MainSidebar id={5} />
+            <MainSidebar id={'5'} />
           </Col>
         </Row>
       </div>

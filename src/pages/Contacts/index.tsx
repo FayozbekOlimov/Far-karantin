@@ -1,6 +1,8 @@
-import { Row, Col, Form, Input, Button } from "antd";
+import { Row, Col, Form, Input, Button, message } from "antd";
+import { log } from "console";
 import { useCallback, useEffect, useState } from "react";
-import { contactDataUrl } from "../../api/apiUrls";
+import PhoneInput from "react-phone-input-2";
+import { contactDataUrl, contactForm } from "../../api/apiUrls";
 import baseAPI from "../../api/baseAPI";
 import { BASE_IMG_URL } from "../../constants";
 import { useT } from "../../custom-hooks/useT";
@@ -11,8 +13,31 @@ import './style.scss';
 function Contacts() {
   const { t, lang } = useT();
 
-  const onFinish = (values: any) => {
-    console.log('Success:', values);
+  // user data states
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [phoneNumber, setPhoneNumber] = useState('')
+  // const [message, setMessage] = useState('')
+
+  type ContactFormType = {
+    status: string,
+    message: string,
+    data: {
+      message: string
+    }
+  }
+
+  const onFinish = (values: FormData) => {
+    // console.log('Success:', values);
+    baseAPI.create<ContactFormType>(contactForm, values)
+      .then((res) => {
+        message.warning(res.data.message)
+      })
+      .catch(err => {
+        console.log(err);
+      })
+
+
   };
 
   const onFinishFailed = (errorInfo: any) => {
@@ -94,7 +119,7 @@ function Contacts() {
                         <Form.Item
                           style={{ marginBottom: '0' }}
                           label={t(`name.${lang}`)}
-                          name="name"
+                          name="username"
                           rules={[{ required: true, message: 'Please input your name!' }]}
                         >
                           <Input />
@@ -116,9 +141,16 @@ function Contacts() {
                           style={{ marginBottom: '0' }}
                           label={t(`phone.${lang}`)}
                           name="phone"
-                          rules={[{ required: true, message: 'Please input your telefon!' }]}
+                          rules={[{ required: true, message: 'Please input your phone number!' }]}
                         >
-                          <Input />
+                          {/* <Input type={'tel'} /> */}
+                          <PhoneInput
+                            country={'uz'}
+                            placeholder='+998 (__) ___-__-__'
+                            value={phoneNumber}
+                            onChange={phone => setPhoneNumber(phone)}
+                            masks={{ uz: '(..) ...-..-..' }}
+                          />
                         </Form.Item>
                       </Col>
                       <Col xs={24}>

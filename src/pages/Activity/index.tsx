@@ -12,7 +12,7 @@ function Activity() {
             <Outlet />
           </Col>
           <Col xs={0} lg={6}>
-            <MainSidebar id={1} />
+            <MainSidebar id={'1'} />
           </Col>
         </Row>
       </div>

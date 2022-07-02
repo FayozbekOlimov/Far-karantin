@@ -15,7 +15,7 @@ function Congratulations() {
       <h4 className="page_title">
         Tabriklar, bayonotlar
       </h4>
-      <div className="congratulations_body">
+      {/* <div className="congratulations_body">
         <Row gutter={[16, 16]}>
           {congratulationsData?.map(congratulation => (
             <Col lg={8} md={12} key={congratulation.id}>
@@ -37,7 +37,7 @@ function Congratulations() {
           </div>
 
         </Row>
-      </div>
+      </div> */}
     </div>
   )
 

@@ -11,7 +11,7 @@ function Entrepreneurs() {
 						<Outlet />
 					</Col>
 					<Col xs={0} lg={6}>
-						<MainSidebar id={6} />
+						<MainSidebar id={'6'} />
 					</Col>
 				</Row>
 			</div>

@@ -14,7 +14,7 @@ function InformationServices() {
             <Outlet />
           </Col>
           <Col xs={0} lg={6}>
-            <MainSidebar id={2} />
+            <MainSidebar id={'2'} />
           </Col>
         </Row>
       </div>

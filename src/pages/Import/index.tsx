@@ -12,7 +12,7 @@ function Import() {
             <Outlet />
           </Col>
           <Col xs={0} lg={6}>
-            <MainSidebar id={8} />
+            <MainSidebar id={'8'} />
           </Col>
         </Row>
       </div>

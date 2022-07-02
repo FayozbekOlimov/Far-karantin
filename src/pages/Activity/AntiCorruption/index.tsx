@@ -17,7 +17,7 @@ function AntiCorruption() {
       <h4 className="page_title">
         Korrupsiyaga qarshi faoliyat
       </h4>
-      <div className="youth_body">
+      {/* <div className="youth_body">
         <Row gutter={[16, 16]}>
           {antiCorruptionData?.map(antiCorruption => (
             <Col lg={8} md={12} key={antiCorruption.id}>
@@ -38,7 +38,7 @@ function AntiCorruption() {
             />
           </div>
         </Row>
-      </div>
+      </div> */}
     </div>
   )
 }

@@ -3,76 +3,61 @@ import { Tabs } from 'antd';
 
 const { TabPane } = Tabs;
 
-interface IAutobiography {
-  title: string,
-  text: string
+type LeaderUrlPropsType = {
+  id: number,
+  image: string,
+  name: string,
+  phone: string,
+  position: string,
+  work_day: string,
+  email?: string,
+  biography: string
 }
 
-interface IInfo {
-  title: string;
-  rank: string;
-  fio: string;
-  tel: string;
-  email: string;
-  receptionDays: string;
-  img: string
-}
-
-interface ILeadership {
-  id: string,
-  info: IInfo,
-  autobiography: IAutobiography,
-  obligations: IAutobiography
-}
-
-function Leadership(props: ILeadership) {
-  const { id, info, autobiography, obligations } = props;
+function Leadership(props: LeaderUrlPropsType) {
+  const { id, image, name, phone, position, email, work_day, biography } = props;
   return (
-    <div className="leader_card" key={id}>
+    <div className="leader_card">
       <div className="card_tab">
         <Tabs type="card">
-          <TabPane tab={info.title} key="1">
+          <TabPane tab="Ma'lumot" key="1">
             <div className="info_body">
               <div className="img_area">
-                <img src={info.img} alt={info.fio} />
+                <img src={image} alt={name} />
               </div>
               <div className="right">
                 <h2 className="rank">
-                  {info.rank}
+                  {position}
                 </h2>
                 <h2 className="fio">
-                  {info.fio}
+                  {name}
                 </h2>
                 <p className="information">
-                  <b>Telefon :</b> {info.tel}
+                  <b>Telefon :</b> {phone}
                 </p>
+                {
+                  email && <p className="information">
+                    <b>Elektron pochta :</b> {email}
+                  </p>
+                }
                 <p className="information">
-                  <b>Elektron pochta :</b> {info.email}
-                </p>
-                <p className="information">
-                  <b>Qabul kunlari :</b> {info.receptionDays}
+                  <b>Qabul kunlari :</b> {work_day}
                 </p>
               </div>
             </div>
           </TabPane>
-          <TabPane tab={autobiography.title} key="2">
+          <TabPane tab='Tarjimai hol' key="2">
             <div className="autobigraphy_body">
-              <p className="autobigraphy_text">
-                {autobiography.text.split("\n").map((text, ind) => (
-                  <p key={ind}>
-                    {text}
-                  </p>
-                ))}
-              </p>
+              <p className="autobigraphy_text" dangerouslySetInnerHTML={{ __html: biography }} />
             </div>
           </TabPane>
-          <TabPane tab={obligations.title} key="3">
+          {/* <TabPane tab={'Majburiyatlari'} key="3">
             <div className="obligations_body">
               <p className="obligations_text">
                 {obligations.text}
               </p>
             </div>
-          </TabPane>
+          </TabPane> */}
         </Tabs>
       </div>
     </div >

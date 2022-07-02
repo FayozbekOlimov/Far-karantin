@@ -98,7 +98,7 @@ function HeaderTop() {
               <div className="language_area">
                 <ul className="languages">
                   {langs.map(lang => (
-                    <li key={lang[2]} onClick={() => handleSetLang(lang[2])}>{lang[1]}</li>
+                    <li className={getLang() === lang[2] ? 'active' : undefined} key={lang[2]} onClick={() => handleSetLang(lang[2])}>{lang[1]}</li>
                   ))}
                 </ul>
               </div>

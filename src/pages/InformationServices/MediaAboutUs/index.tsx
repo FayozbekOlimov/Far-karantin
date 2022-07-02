@@ -16,7 +16,7 @@ function MediaAboutUs() {
         OAV biz haqimizda
       </h4>
       <div className="media_about_us_body">
-        <Row gutter={[16, 16]}>
+        {/* <Row gutter={[16, 16]}>
           {cardData?.map(data => (
             <Col lg={8} md={12} key={data.id}>
               <NewsCard {...data}
@@ -24,7 +24,7 @@ function MediaAboutUs() {
             </Col>
           ))
           }
-        </Row>
+        </Row> */}
         <Row>
           <div className="pagination_area">
             <Pagination

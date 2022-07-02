@@ -105,6 +105,11 @@
               padding-right: 5px;
             }
 
+            &.active {
+              color: #119769;
+              font-weight: 600;
+            }
+
             cursor: pointer;
           }
         }

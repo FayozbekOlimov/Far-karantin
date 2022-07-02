@@ -4,34 +4,34 @@ import { Link } from 'react-router-dom'
 import "./style.scss";
 
 interface INewsCard {
-  id: string,
-  date: string,
+  id: number,
   title: string,
-  img: string,
+  image: string,
+  slug: string,
+  created_at: string,
   content: string,
-  link: string
+  post_category_id: string
 }
 
 function NewsCard(props: INewsCard) {
-  const { date, title, img, content, link } = props;
+  const { title, image, content, slug, created_at } = props;
 
   return (
     <div className="news_card">
-      <Link to={link} className="card_link">
+      <Link to={slug} className="card_link">
         <Card>
           <p className="card_date">
             <i className="fa-solid fa-calendar-days"></i>
-            {date}
+            {created_at}
           </p>
           <h3 className="card_title">
             {title}
           </h3>
           <figure>
-            <img src={img} alt="Card-img" className="card_img" />
+            <img src={image} alt={title} className="card_img" />
           </figure>
-          <p className="card_content">
-            {content}
-          </p>
+          <p className="card_content" 
+          dangerouslySetInnerHTML={{__html: content}}/>
         </Card>
       </Link>
     </div>
