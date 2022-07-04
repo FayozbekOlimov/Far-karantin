@@ -27,11 +27,11 @@ function NewsCard(props: INewsCard) {
           <h3 className="card_title">
             {title}
           </h3>
-          <figure>
+          <div className='card_imgBx'>
             <img src={image} alt={title} className="card_img" />
-          </figure>
-          <p className="card_content" 
-          dangerouslySetInnerHTML={{__html: content}}/>
+          </div>
+          <p className="card_content"
+            dangerouslySetInnerHTML={{ __html: content }} />
         </Card>
       </Link>
     </div>

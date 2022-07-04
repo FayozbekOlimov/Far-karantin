@@ -45,9 +45,18 @@
     }
   }
 
-  .swiper-pagination {
+  .swiper-horizontal>.swiper-pagination-bullets,
+  .swiper-pagination-bullets.swiper-pagination-horizontal,
+  .swiper-pagination-custom,
+  .swiper-pagination-fraction {
     bottom: 20px;
+    left: 0;
+    width: 100%;
+  }
+
+  .swiper-pagination {
     z-index: 9;
+
 
     .swiper-pagination-bullet {
       border: 1px solid #a7a7a7;

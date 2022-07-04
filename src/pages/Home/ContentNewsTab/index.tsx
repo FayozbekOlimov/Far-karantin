@@ -1,60 +1,70 @@
-import React from 'react'
-import { Tabs } from 'antd';
+import React, { useCallback, useEffect, useState } from 'react'
+import { Col, Row, Tabs } from 'antd';
 import "./style.scss";
 import { Link } from 'react-router-dom';
 import News from "./Components/News"
+import { NewsUrlInfoType, NewsUrlResType } from '../../../types';
+import { bannerNewsUrl } from '../../../api/apiUrls';
+import baseAPI from '../../../api/baseAPI';
+import NewsCard from '../../../components/NewsCard';
 const { TabPane } = Tabs;
 
 const operations = <Link to="/news" className={"news_link"}>Axborot xizmati</Link>;
 
 // tablinkData
-const tabLinkDatas = [
-  {
-    tab: "Yangiliklar",
-    key: "1",
-    component: News
-  },
-  {
-    tab: "Tadbirlar",
-    key: "2",
-    component: News
-  },
-  {
-    tab: "Yangiliklar",
-    key: "3",
-    component: News
-  },
-  {
-    tab: "Yangiliklar",
-    key: "4",
-    component: News
-  }
-]
+// const tabLinkDatas = [
+//   {
+//     tab: "Yangiliklar",
+//     key: "1",
+//     component: News
+//   },
+//   {
+//     tab: "Tadbirlar",
+//     key: "2",
+//     component: News
+//   },
+//   {
+//     tab: "Yangiliklar",
+//     key: "3",
+//     component: News
+//   },
+//   {
+//     tab: "Yangiliklar",
+//     key: "4",
+//     component: News
+//   }
+// ]
 
 function ContentNewsTab() {
-  // function callback(key: string) {
-  //   console.log(key);
-  // }
+  const [bannerNews, setBannerNews] = useState<NewsUrlInfoType>([]);
+  const [loading, setLoading] = useState<boolean>(true);
 
+  const getBannerNewsData = useCallback(() => {
+    setLoading(true);
+    baseAPI.fetchAll<NewsUrlResType>(bannerNewsUrl)
+      .then((res) => {
+        if (res.data.status === "200") {
+          setBannerNews(res.data?.data);
+          setLoading(false);
+        }
+      })
+      .catch(e => console.log('Error:', e.message));
+  }, []);
+
+  useEffect(() => {
+    getBannerNewsData();
+  }, [getBannerNewsData])
 
   return (
     <div className='content_news_tab'>
       <div className="container">
-        <Tabs
-          tabBarExtraContent={{ left: operations }}
-          defaultActiveKey="1"
-          // onChange={callback}
-          animated={{ tabPane: true }}
-        >
-          {
-            tabLinkDatas.map(tabLinkData => (
-              <TabPane tab={tabLinkData.tab} key={tabLinkData.key}>
-                <tabLinkData.component />
-              </TabPane>
-            ))
-          }
-
-        </Tabs>
+        <Row gutter={[16, 16]}>
+          {bannerNews.map((news) => (
+            <Col lg={8} md={12} key={news.id}>
+              <NewsCard {...news} />
+            </Col>
+          ))}
+        </Row>
       </div>
     </div>
   )

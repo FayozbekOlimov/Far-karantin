@@ -7,8 +7,8 @@ export const socialNetworkUrl = 'social-network'; // c
 export const usefulLinkUrl = 'useful-link'; // c
 
 /* sayt bo'limlari */
-export const bannerImageUrl = 'banner-image'; // c
-export const symbolsUrl = 'symbols'; // c
+export const bannerImageUrl = 'banner-image';
+export const symbolsUrl = 'symbols';
 export const menuUrl = 'menu';
 export const galleryUrl = 'gallery';
 export const galleryDetailUrl = 'gallery-detail';
@@ -20,4 +20,5 @@ export const leaderUrl = 'leader';
 export const newsUrl = 'news';
 export const filesUrl = 'files';
 
-export const newsDetail = 'news-detail'
+export const newsDetail = 'news-detail';
+export const bannerNewsUrl = 'banner-news';

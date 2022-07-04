@@ -80,10 +80,10 @@ function HeaderTop() {
                     <i className="fa fa-eye"></i>
                     <span>{t(`verForVisImp.${lang}`)}</span>
                   </li>
-                  <li className="special_menu_link">
+                  {/* <li className="special_menu_link">
                     <i className="fa fa-volume-up"></i>
                     <span>{t(`soundAcc.${lang}`)}</span>
-                  </li>
+                  </li> */}
                 </ul>
               </div>
               <SocialMedia />

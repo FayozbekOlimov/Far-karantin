@@ -11,6 +11,7 @@ import Youth from './pages/Agency/Youth';
 import Contacts from './pages/Contacts';
 import ExpiredNormativeDocuments from './pages/Documents/ExpiredNormativeDocuments';
 import Home from './pages/Home';
+import FotoGallery from './pages/InformationServices/FotoGallery';
 import Videos from './pages/InformationServices/Videos';
 import PageNotFound from './pages/PageNotFound';
 import SiteMap from './pages/SiteMap';
@@ -50,7 +51,9 @@ function App() {
             <Route path='leader/:slug' element={<Leadership />} />
             <Route path="news/:slug" element={<Youth />} />
             <Route path="file/:slug" element={<ExpiredNormativeDocuments />} />
-            <Route path="c-action/:slug" element={<Videos />} />
+            <Route path="c-action/video" element={<Videos />} />
+            <Route path="c-action/contact-form" element={<Contacts />} />
+            <Route path="c-action/gallery" element={<FotoGallery />} />
           </Route>
         ))}
         <Route path='contact' element={<Contacts />} />

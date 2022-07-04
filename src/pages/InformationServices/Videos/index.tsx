@@ -1,35 +1,38 @@
 import { Col, Pagination, Row } from 'antd'
-import React, { useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import VideoCard from './VideoCard'
 import "./style.scss";
 import videoCardData from "./videoCardData.json"
 import { useParams } from 'react-router-dom';
+import { VideoUrlInfoType, VideoUrlResType } from '../../../types';
+import { videoUrl } from '../../../api/apiUrls';
+import baseAPI from '../../../api/baseAPI';
 
 function Videos() {
   const [current, setCurrent] = useState<number>(1);
-  // const [pageData, setPageData] = useState<PageUrlInfoType>();
-  const { slug } = useParams();
+  const [videoData, setVideoData] = useState<VideoUrlInfoType>([]);
+  // const { slug } = useParams();
   const [loading, setLoading] = useState<boolean>(true);
 
   const onPageChange = (page: number) => {
     setCurrent(page);
   }
 
-  // const getPageData = useCallback(() => {
-  //   setLoading(true);
-  //   baseAPI.fetchWithPagination<PageUrlResType>(newsUrl + "/" + slug)
-  //     .then((res) => {
-  //       if (res.data.status === "200") {
-  //         setPageData(res.data?.data);
-  //         setLoading(false);
-  //       }
-  //     })
-  //     .catch(e => console.log('Error:', e.message));
-  // }, [slug]);
+  const getVideoData = useCallback(() => {
+    setLoading(true);
+    baseAPI.fetchAll<VideoUrlResType>(videoUrl)
+      .then((res) => {
+        if (res.data.status === "200") {
+          setVideoData(res.data?.data);
+          setLoading(false);
+        }
+      })
+      .catch(e => console.log('Error:', e.message));
+  }, []);
 
-  // useEffect(() => {
-  //   getPageData();
-  // }, [getPageData])
+  useEffect(() => {
+    getVideoData();
+  }, [getVideoData])
 
   return (
     <div className="videos page_card">
@@ -39,18 +42,18 @@ function Videos() {
       <div className="videos_body">
         <Row gutter={[16, 16]}>
           {
-            Object.entries(videoCardData).map(([id, video]) => (
+            videoData.map((item) => (
               <Col
-                key={id}
+                key={item.id}
                 lg={8}
                 md={12}
               >
-                <VideoCard {...video} />
+                <VideoCard {...item} />
               </Col>
             ))
           }
         </Row>
-        <Row>
+        {/* <Row>
           <div className="pagination_area">
             <Pagination
               defaultCurrent={1}
@@ -60,7 +63,7 @@ function Videos() {
               showSizeChanger={false}
             />
           </div>
-        </Row>
+        </Row> */}
       </div>
     </div>
   )

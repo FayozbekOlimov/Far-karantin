@@ -153,3 +153,46 @@ export type NewsUrlInfoType = {
     content: string,
     post_category_id: string
 }[]
+
+export type VideoUrlResType = {
+    status: string,
+    message: string,
+    data: VideoUrlInfoType
+}
+
+export type VideoUrlInfoType = {
+    id: number,
+    video_url: string,
+    name: string,
+    created_at: string,
+}[]
+
+export type GalleryUrlResType = {
+    status: string,
+    message: string,
+    data: GalleryUrlInfoType
+}
+
+export type GalleryUrlInfoType = {
+    id: number,
+    title: string,
+    image: string,
+    slug: string,
+    created_at: string,
+}[]
+
+// export type BannerNewsUrlResType = {
+//     status: string,
+//     message: string,
+//     data: BannerNewsUrlInfoType
+// }
+
+// export type BannerNewsUrlInfoType = {
+//     id: string,
+//     created_at: string,
+//     title: string,
+//     image: string,
+//     content: string,
+//     slug: string,
+//     post
+// }[]

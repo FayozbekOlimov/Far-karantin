@@ -3,15 +3,15 @@ import { Modal } from 'antd';
 import ReactPlayer from 'react-player/lazy';
 
 interface IVideoCard {
-  title: string,
-  img: string,
+  name: string,
+  created_at: string,
   video_url: string
 }
 
 function VideoCard(props: IVideoCard) {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [videoPlaying, setVideoPlaying] = useState<boolean>(false)
-  const { title, img, video_url } = props;
+  const { name, created_at, video_url } = props;
 
   const showModal = () => {
     setIsModalVisible(true);
@@ -37,43 +37,41 @@ function VideoCard(props: IVideoCard) {
       <div
         className='video_card'
         onClick={showModal}
-        title={title}
+        title={name}
       >
-        <figure>
+        {/* <figure>
           <img
             className='video_img'
             src={img}
             alt="" />
-        </figure>
-        <img
+        </figure> */}
+        {/* <img
           src="/assets/img/video-play.png"
           alt=""
-          className="video_play" />
-        <div className="title">
-          <h3>
-            {title}
-          </h3>
-        </div>
-      </div>
-      <Modal
-        footer={false}
-        visible={isModalVisible}
-        onCancel={handleCancel}
-        onOk={handleOk}
-        wrapClassName={"video_modal"}
-
-      >
+          className="video_play" /> */}
         <ReactPlayer
           height={"100%"}
           width={"100%"}
           url={video_url}
           controls={true}
           light={true}
-          playing={videoPlaying}
-
+        // playing={videoPlaying}
         />
+        <div className="title">
+          <h3>
+            {name}
+          </h3>
+        </div>
+      </div>
+      {/* <Modal
+        footer={false}
+        visible={isModalVisible}
+        onCancel={handleCancel}
+        onOk={handleOk}
+        wrapClassName={"video_modal"}
 
-      </Modal>
+      > */}
+      {/* </Modal> */}
     </>
   )
 }
