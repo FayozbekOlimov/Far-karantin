@@ -5,6 +5,7 @@ import FerganaMap from './FerganaMap';
 import HomeGallery from './HomeGallery';
 import MainNews from './MainNews'
 import MyGovBanner from './MyGoyBanner';
+import RegionalAdministrations from './RegionalAdministrations';
 import "./style.scss";
 
 function Home() {
@@ -15,6 +16,7 @@ function Home() {
       <HomeGallery />
       <MyGovBanner />
       <BlockBanner />
+      <RegionalAdministrations />
       <FerganaMap />
     </section>
   )

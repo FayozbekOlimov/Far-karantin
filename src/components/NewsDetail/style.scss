@@ -1,0 +1,30 @@
+.newsDetail {
+    padding: 15px 0;
+
+    .container {
+        background-color: #fff;
+        border-radius: 6px;
+        padding: 15px;
+    }
+
+    .title {
+        color: #1d2127;
+        text-align: center;
+        font-size: 20px;
+        font-weight: 600;
+        padding-bottom: 16px;
+    }
+
+    &-imgBx {
+        float: left;
+        width: 100%;
+        height: 300px;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 6px;
+        }
+    }
+}

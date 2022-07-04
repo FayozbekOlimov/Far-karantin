@@ -1,7 +1,7 @@
 .news_card {
   .card_link {
     .ant-card {
-      min-height: 400px;
+      min-height: 350px;
       border-radius: 6px;
 
       &:hover .ant-card-body .card_title {
@@ -9,7 +9,7 @@
       }
 
       .ant-card-body {
-        padding: 5px 15px 30px;
+        padding: 5px 15px;
 
         .card_date {
           color: #119769;
@@ -32,7 +32,7 @@
           width: 100%;
           height: 150px;
           overflow: hidden;
-          margin: 10px 0 4px;
+          margin: 10px 0;
         }
 
         img {

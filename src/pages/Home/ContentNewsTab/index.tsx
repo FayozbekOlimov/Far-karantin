@@ -58,6 +58,9 @@ function ContentNewsTab() {
   return (
     <div className='content_news_tab'>
       <div className="container">
+        <h4 className="page_title">
+          Axborot xizmati
+        </h4>
         <Row gutter={[16, 16]}>
           {bannerNews.map((news) => (
             <Col lg={8} md={12} key={news.id}>

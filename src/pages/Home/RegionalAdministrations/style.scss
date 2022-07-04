@@ -1,0 +1,16 @@
+.regional-administrations {
+    &_card {
+        max-width: 500px;
+        width: 100%;
+        background-color: #fff;
+        padding: 15px;
+        border-radius: 6px;
+
+        .title {
+            font-size: 18px;
+            color: #137461;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+    }
+}

@@ -12,13 +12,13 @@ const titles: any = {
 function PhytosanitaryRequirements() {
   const tooltipText = <span>Ko'chirib olish</span>
 
-  let { pathname } = useLocation();
-  pathname = pathname.slice(9);
+  // let { pathname } = useLocation();
+  // pathname = pathname.slice(9);
 
   return (
     <div className='phytosanitary_requirements page_card'>
       <h4 className="page_title">
-        {titles[pathname]}
+        {/* {titles[pathname]} */}
       </h4>
       <div className="phytosanitary_requirements_body">
         {

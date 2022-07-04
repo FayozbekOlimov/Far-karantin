@@ -181,18 +181,56 @@ export type GalleryUrlInfoType = {
     created_at: string,
 }[]
 
-// export type BannerNewsUrlResType = {
-//     status: string,
-//     message: string,
-//     data: BannerNewsUrlInfoType
-// }
+export type GalleryViewUrlResType = {
+    status: string,
+    message: string,
+    data: GalleryViewUrlInfoType
+}
 
-// export type BannerNewsUrlInfoType = {
-//     id: string,
-//     created_at: string,
-//     title: string,
-//     image: string,
-//     content: string,
-//     slug: string,
-//     post
-// }[]
+export type GalleryViewUrlInfoType = {
+    title: string,
+    images: string[]
+}
+
+export type NewsDetailInfoType = {
+    id: number,
+    title: string,
+    image: string,
+    slug: string,
+    created_at: string,
+    content: string,
+    post_category_id: string
+}
+
+export type NewsDetailResType = {
+    status: string,
+    message: string,
+    data: NewsDetailInfoType
+}
+
+export type LatestVideoUrlResType = {
+    status: string,
+    message: string,
+    data: LatestVideoUrlInfoType
+}
+
+export type LatestVideoUrlInfoType = {
+    id: number,
+    video_url: string,
+    created_at: string,
+    name: string
+}
+
+export type PhotoGalleryCardResType = {
+    status: string,
+    message: string,
+    data: PhotoGalleryCardInfoType
+}
+
+export type PhotoGalleryCardInfoType = {
+    id: string,
+    title: string,
+    image: string,
+    slug: string,
+    created_at: string
+}

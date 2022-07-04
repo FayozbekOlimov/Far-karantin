@@ -18,7 +18,7 @@ function NewsCard(props: INewsCard) {
 
   return (
     <div className="news_card">
-      <Link to={slug} className="card_link">
+      <Link to={`/news-detail/${slug}`} className="card_link">
         <Card>
           <p className="card_date">
             <i className="fa-solid fa-calendar-days"></i>

@@ -11,7 +11,7 @@ export const bannerImageUrl = 'banner-image';
 export const symbolsUrl = 'symbols';
 export const menuUrl = 'menu';
 export const galleryUrl = 'gallery';
-export const galleryDetailUrl = 'gallery-detail';
+// export const galleryDetailUrl = 'gallery-detail';
 export const videoUrl = 'video';
 export const managementUrl = 'management';
 
@@ -20,5 +20,7 @@ export const leaderUrl = 'leader';
 export const newsUrl = 'news';
 export const filesUrl = 'files';
 
-export const newsDetail = 'news-detail';
+export const newsDetailUrl = 'news-detail';
 export const bannerNewsUrl = 'banner-news';
+export const latestGalleryUrl = 'latest-gallery';
+export const latestVideoUrl = 'video/latest';

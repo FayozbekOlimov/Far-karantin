@@ -19,8 +19,6 @@ function Youth() {
         if (res.data.status === "200") {
           setPageData(res.data?.data);
           setLoading(false);
-          console.log(res.data.data);
-          
         }
       })
       .catch(e => console.log('Error:', e.message));

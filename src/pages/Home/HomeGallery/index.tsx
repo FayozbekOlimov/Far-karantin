@@ -1,34 +1,21 @@
 import { Button, Col, Row } from "antd";
 import { useCallback, useEffect, useState } from "react";
+import ReactPlayer from "react-player";
 import { Link } from "react-router-dom";
-import { galleryUrl } from "../../../api/apiUrls";
+import { galleryUrl, latestGalleryUrl, latestVideoUrl } from "../../../api/apiUrls";
 import baseAPI from "../../../api/baseAPI";
 import PhotoGalleryCard from "../../../components/PhotoGalleryCard";
+import { LatestVideoUrlInfoType, LatestVideoUrlResType, NewsUrlResType, PhotoGalleryCardInfoType, PhotoGalleryCardResType } from "../../../types";
 import eventCardDatas from "./eventCardDatas.json";
 import './style.scss';
 
-
-type PhotoGalleryCardResType = {
-  status: string,
-  message: string,
-  data: PhotoGalleryCardInfoType
-}
-
-type PhotoGalleryCardInfoType = {
-  id: string,
-  title: string,
-  image: string,
-  slug: string,
-  created_at: string
-}[]
-
 function HomeGallery() {
   const [loading, setLoading] = useState<boolean>(true);
-  const [galleryCard, setGalleryCard] = useState<PhotoGalleryCardInfoType>([]);
+  const [galleryCard, setGalleryCard] = useState<PhotoGalleryCardInfoType>({} as PhotoGalleryCardInfoType);
 
   const getGalleryCardData = useCallback(() => {
     setLoading(true);
-    baseAPI.fetchAll<PhotoGalleryCardResType>(galleryUrl)
+    baseAPI.fetchAll<PhotoGalleryCardResType>(latestGalleryUrl)
       .then((res) => {
         if (res.data.status === "200") {
           setGalleryCard(res.data?.data);
@@ -42,6 +29,22 @@ function HomeGallery() {
     getGalleryCardData();
   }, [getGalleryCardData])
 
+  const [video, setVideo] = useState<LatestVideoUrlInfoType>({} as LatestVideoUrlInfoType);
+  const getVideoData = useCallback(() => {
+    setLoading(true);
+    baseAPI.fetchAll<LatestVideoUrlResType>(latestVideoUrl)
+      .then((res) => {
+        if (res.data.status === "200") {
+          setVideo(res.data?.data);
+          setLoading(false);
+        }
+      })
+      .catch(e => console.log('Error:', e.message));
+  }, []);
+
+  useEffect(() => {
+    getVideoData();
+  }, [getVideoData])
 
   return (
     <div className="home_gallery">
@@ -53,22 +56,22 @@ function HomeGallery() {
                 <h2 className="photo_gallery_top_title">
                   Rasmlar
                 </h2>
-                <Link to={"c-action/gallery"} className="more_link">Barcha rasmlar</Link>
+                <Link to={"axborot-xizmati/c-action/gallery"} className="more_link">Barcha rasmlar</Link>
               </div>
 
-              <Link to={'csdcs'} >
+              <Link to={`/gallery-detail/${galleryCard.slug}`} >
                 <div className="photo_gallery_body">
                   <img
                     className='photo_gallery_img'
-                    src={galleryCard[0]?.image}
-                    alt={galleryCard[0]?.title}
+                    src={galleryCard?.image}
+                    alt={galleryCard?.title}
                   />
                   <div className={`content`}>
                     <div className="left">
                       <span className="content_title">
-                        {galleryCard[0]?.title}
+                        {galleryCard?.title}
                       </span>
-                      <Button type="text">{galleryCard[0]?.created_at}</Button>
+                      <Button type="text">{galleryCard?.created_at}</Button>
                     </div>
                   </div>
                 </div>
@@ -81,22 +84,29 @@ function HomeGallery() {
                 <h2 className="photo_gallery_top_title">
                   Videolar
                 </h2>
-                <Link to={"c-action/gallery"} className="more_link">Barcha rasmlar</Link>
+                <Link to={"axborot-xizmati/c-action/video"} className="more_link">Barcha videolar</Link>
               </div>
 
-              <Link to={'csdcs'} >
+              <Link to={'/'} >
                 <div className="photo_gallery_body">
-                  <img
-                    className='photo_gallery_img'
-                    src={galleryCard[0]?.image}
-                    alt={galleryCard[0]?.title}
+                  <ReactPlayer
+                    height={"270px"}
+                    width={"100%"}
+                    url={video?.video_url}
+                    controls={true}
+                    light={true}
                   />
+                  {/* <img
+                    className='photo_gallery_img'
+                    src={galleryCard?.image}
+                    alt={galleryCard?.title}
+                  /> */}
                   <div className={`content`}>
                     <div className="left">
                       <span className="content_title">
-                        {galleryCard[0]?.title}
+                        {video?.name}
                       </span>
-                      <Button type="text">{galleryCard[0]?.created_at}</Button>
+                      <Button type="text">{video?.created_at}</Button>
                     </div>
                   </div>
                 </div>

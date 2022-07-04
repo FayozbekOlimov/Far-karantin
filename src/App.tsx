@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { menuUrl } from './api/apiUrls';
 import baseAPI from './api/baseAPI';
+import NewsDetail from './components/NewsDetail';
 import Footer from './layout/Footer';
 import Header from './layout/Header';
 import Agency from './pages/Agency';
@@ -10,6 +11,7 @@ import Leadership from './pages/Agency/Leadership';
 import Youth from './pages/Agency/Youth';
 import Contacts from './pages/Contacts';
 import ExpiredNormativeDocuments from './pages/Documents/ExpiredNormativeDocuments';
+import GalleryView from './pages/GalleryView';
 import Home from './pages/Home';
 import FotoGallery from './pages/InformationServices/FotoGallery';
 import Videos from './pages/InformationServices/Videos';
@@ -46,7 +48,7 @@ function App() {
       <Routes>
         <Route index element={<Home />} />
         {menuUrls.map(menu => (
-          <Route path={`/${menu.to}`} element={<Agency to={menu.to} />}>
+          <Route key={menu.menuName} path={`/${menu.to}`} element={<Agency to={menu.to} />}>
             <Route path='page/:slug' element={<AboutAgency />} />
             <Route path='leader/:slug' element={<Leadership />} />
             <Route path="news/:slug" element={<Youth />} />
@@ -56,6 +58,8 @@ function App() {
             <Route path="c-action/gallery" element={<FotoGallery />} />
           </Route>
         ))}
+        <Route path="news-detail/:slug" element={<NewsDetail />} />
+        <Route path="gallery-detail/:slug" element={<GalleryView />} />
         <Route path='contact' element={<Contacts />} />
         <Route path='sitemap' element={<SiteMap />} />
         <Route path='symbols' element={<Symbols />} />
