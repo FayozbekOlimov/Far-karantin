@@ -140,7 +140,7 @@ function BlockBanner() {
                   delay: 3000,
                   disableOnInteraction: false,
                 }}
-                effect={"fade"}
+                effect={"slide"}
                 loop={true}
                 modules={[Autoplay, Navigation, Pagination, EffectFade]}
                 spaceBetween={50}

@@ -31,8 +31,8 @@ function MainSidebar(props: { id: string }) {
   return (
     <div className="main_sidebar">
       <ul>
-        {menuUrls.filter(item => item.to === props.id)[0]?.subMenus?.map((menu, inx) => (
-          <li key={inx}>
+        {menuUrls.filter(item => item.to === props.id)[0]?.subMenus?.map((menu, ind) => (
+          <li key={ind}>
             <NavLink
               className={
                 ({ isActive }) => isActive ? activeClassName : undefined

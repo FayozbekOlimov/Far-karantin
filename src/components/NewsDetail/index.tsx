@@ -1,4 +1,4 @@
-import { Col, Image, Row } from "antd";
+import { Image } from "antd";
 import { useCallback, useEffect, useState } from "react";
 import { useParams } from "react-router-dom"
 import { newsDetailUrl } from "../../api/apiUrls";
@@ -31,17 +31,18 @@ function NewsDetail() {
         <div className='newsDetail'>
             <div className="container">
                 <h3 className="title">{newsDetail.title}</h3>
-                <Row gutter={[16, 16]}>
-                    <Col xs={24} md={8} className="newsDetail-imgBx">
-                        <Image
-                            src={newsDetail.image}
-                            width={"100%"} 
-                        />
-                    </Col >
-                    <Col xs={24} md={16}
+                <div className="newsDetail-wrapper">
+                    <Image
+                        src={newsDetail.image}
+                        width={"100%"}
+                    />
+                    <div
+                        className="newsDetail-content"
                         dangerouslySetInnerHTML={{ __html: newsDetail.content }}
                     />
-                </Row>
+                    <div className="clear-both"></div>
+                </div>
+                {/* </Row> */}
             </div>
         </div>
     )

@@ -47,6 +47,7 @@ function Videos() {
                 key={item.id}
                 lg={8}
                 md={12}
+                xs={24}
               >
                 <VideoCard {...item} />
               </Col>

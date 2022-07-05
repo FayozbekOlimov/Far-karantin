@@ -234,3 +234,32 @@ export type PhotoGalleryCardInfoType = {
     slug: string,
     created_at: string
 }
+
+export type ManagementUrlResType = {
+    status: string,
+    message: string,
+    data: ManagementUrlInfoType[]
+}
+
+export type ManagementUrlInfoType = {
+    id: string,
+    image: string,
+    title: string,
+    name: string,
+    phone: string,
+    fax: string,
+    work_day: string,
+    email: string,
+    region_id: string
+}
+
+export type LeaderUrlPropsType = {
+    id: number,
+    image: string,
+    name: string,
+    phone: string,
+    position: string,
+    work_day: string,
+    email?: string,
+    biography: string
+}

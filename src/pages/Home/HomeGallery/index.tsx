@@ -2,11 +2,9 @@ import { Button, Col, Row } from "antd";
 import { useCallback, useEffect, useState } from "react";
 import ReactPlayer from "react-player";
 import { Link } from "react-router-dom";
-import { galleryUrl, latestGalleryUrl, latestVideoUrl } from "../../../api/apiUrls";
+import { latestGalleryUrl, latestVideoUrl } from "../../../api/apiUrls";
 import baseAPI from "../../../api/baseAPI";
-import PhotoGalleryCard from "../../../components/PhotoGalleryCard";
 import { LatestVideoUrlInfoType, LatestVideoUrlResType, NewsUrlResType, PhotoGalleryCardInfoType, PhotoGalleryCardResType } from "../../../types";
-import eventCardDatas from "./eventCardDatas.json";
 import './style.scss';
 
 function HomeGallery() {
@@ -87,30 +85,23 @@ function HomeGallery() {
                 <Link to={"axborot-xizmati/c-action/video"} className="more_link">Barcha videolar</Link>
               </div>
 
-              <Link to={'/'} >
-                <div className="photo_gallery_body">
-                  <ReactPlayer
-                    height={"270px"}
-                    width={"100%"}
-                    url={video?.video_url}
-                    controls={true}
-                    light={true}
-                  />
-                  {/* <img
-                    className='photo_gallery_img'
-                    src={galleryCard?.image}
-                    alt={galleryCard?.title}
-                  /> */}
-                  <div className={`content`}>
-                    <div className="left">
-                      <span className="content_title">
-                        {video?.name}
-                      </span>
-                      <Button type="text">{video?.created_at}</Button>
-                    </div>
+              <div className="photo_gallery_body video-player-wrapper">
+                <ReactPlayer
+                  className='video-player'
+                  url={video?.video_url}
+                  controls={true}
+                  light={true}
+                />
+                <div className={`content`}>
+                  <div className="left">
+                    <span className="content_title">
+                      {video?.name}
+                    </span>
+                    <Button type="text">{video?.created_at}</Button>
                   </div>
                 </div>
-              </Link>
+              </div>
+              {/* </Link> */}
             </div>
           </Col>
         </Row>

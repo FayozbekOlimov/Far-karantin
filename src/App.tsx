@@ -40,8 +40,6 @@ function App() {
     getMenuUrls();
   }, [getMenuUrls])
 
-
-
   return (
     <div className="App">
       <Header />

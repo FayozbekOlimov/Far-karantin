@@ -1,5 +1,4 @@
 import { Button } from 'antd';
-import React from 'react'
 import { Link } from 'react-router-dom';
 import "./style.scss";
 
@@ -26,7 +25,7 @@ function PhotoGalleryCard(props: IPhotoGalleryCard) {
         )
       } */}
 
-      <Link to={slug} >
+      <Link to={'/gallery-detail/' + slug} >
         <div className="photo_gallery_body">
           <img
             className='photo_gallery_img'

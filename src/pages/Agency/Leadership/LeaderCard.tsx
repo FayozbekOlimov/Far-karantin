@@ -1,18 +1,7 @@
-import React from 'react'
 import { Tabs } from 'antd';
+import { LeaderUrlPropsType } from '../../../types';
 
 const { TabPane } = Tabs;
-
-type LeaderUrlPropsType = {
-  id: number,
-  image: string,
-  name: string,
-  phone: string,
-  position: string,
-  work_day: string,
-  email?: string,
-  biography: string
-}
 
 function Leadership(props: LeaderUrlPropsType) {
   const { id, image, name, phone, position, email, work_day, biography } = props;
@@ -32,17 +21,21 @@ function Leadership(props: LeaderUrlPropsType) {
                 <h2 className="fio">
                   {name}
                 </h2>
-                <p className="information">
-                  <b>Telefon :</b> {phone}
-                </p>
                 {
-                  email && <p className="information">
-                    <b>Elektron pochta :</b> {email}
+                  phone && <p className="information">
+                    <b>Telefon :</b> <a href={`tel:${phone}`}>{phone}</a>
                   </p>
                 }
-                <p className="information">
-                  <b>Qabul kunlari :</b> {work_day}
-                </p>
+                {
+                  email && <p className="information">
+                    <b>Elektron pochta :</b> <a href={`mailto:${email}`}>{email}</a>
+                  </p>
+                }
+                {
+                  work_day && <p className="information">
+                    <b>Qabul kunlari :</b> {work_day}
+                  </p>
+                }
               </div>
             </div>
           </TabPane>

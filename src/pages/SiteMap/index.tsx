@@ -1,71 +1,31 @@
-import React from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { Col, Row } from 'antd';
 import "./style.scss";
 import { Link } from 'react-router-dom';
-
-const categoriesDatas = [
-  {
-    id: "1",
-    categoryName: "Agentlik",
-    to: "agency",
-    subcategories: [
-      {
-        to: "/agency/about",
-        subcategoryName: "Agentlik haqida"
-      },
-      {
-        to: "/agency/about",
-        subcategoryName: "Agentlik haqida"
-      },
-      {
-        to: "/agency/about",
-        subcategoryName: "Agentlik haqida"
-      },
-      {
-        to: "/agency/about",
-        subcategoryName: "Agentlik haqida"
-      },
-      {
-        to: "/agency/about",
-        subcategoryName: "Agentlik haqida"
-      }
-    ]
-  },
-  {
-    id: "2",
-    categoryName: "Agentlik",
-    to: "agency",
-    subcategories: [
-      {
-        id: "1",
-        to: "/agency/about",
-        subcategoryName: "Agentlik haqida"
-      },
-      {
-        id: "2",
-        to: "/agency/about",
-        subcategoryName: "Agentlik haqida"
-      },
-      {
-        id: "3",
-        to: "/agency/about",
-        subcategoryName: "Agentlik haqida"
-      },
-      {
-        id: "4",
-        to: "/agency/about",
-        subcategoryName: "Agentlik haqida"
-      },
-      {
-        id: "5",
-        to: "/agency/about",
-        subcategoryName: "Agentlik haqida"
-      }
-    ]
-  }
-]
+import { MenuItemInfoType, MenuUrlResType } from '../../types';
+import { menuUrl } from '../../api/apiUrls';
+import baseAPI from '../../api/baseAPI';
 
 function SiteMap() {
+  const [loading, setLoading] = useState<boolean>(true);
+  const [menuUrls, setMenuUrls] = useState<MenuItemInfoType>([]);
+
+  const getMenuUrls = useCallback(() => {
+    setLoading(true);
+    baseAPI.fetchAll<MenuUrlResType>(menuUrl)
+      .then((res) => {
+        if (res.data[0].status === "200") {
+          setMenuUrls(res.data[0].data);
+          setLoading(false);
+        }
+      })
+      .catch(e => console.log('Error:', e.message));
+  }, []);
+
+  useEffect(() => {
+    getMenuUrls();
+  }, [getMenuUrls])
+
   return (
     <section className="site_map">
       <div className="container">
@@ -76,27 +36,24 @@ function SiteMap() {
                 Sayt xaritasi
               </h4>
               <div className="site_map_body">
-                <Link to="/" className={"site_link"}>
+                <Link to="/" className={"site_link-title"}>
                   Bosh sahifa
                 </Link>
                 {
-                  categoriesDatas.map(categories => (
-                    <React.Fragment key={categories.id}>
-                      <Link
-                        to={categories.to}
-                        className="site_link"
-                      >
-                        {categories.categoryName}
-                      </Link>
+                  menuUrls.map((categories, ind) => (
+                    <React.Fragment key={ind}>
+                      <p className="site_link-title">
+                        {categories.menuName}
+                      </p>
                       <ul className="subcategories">
                         {
-                          categories.subcategories.map((subcategory, ind) => (
+                          menuUrls[ind].subMenus.map((subcategory, ind) => (
                             <li className="subcategory" key={ind}>
                               <Link
-                                to={subcategory.to}
+                                to={`/${categories.to}/${subcategory.type}/${subcategory.to}`}
                                 className={"site_link"}
                               >
-                                {subcategory.subcategoryName}
+                                {subcategory.subName}
                               </Link>
                             </li>
                           ))

@@ -1,20 +1,56 @@
 import { Col, Row } from 'antd'
-import { getEnvironmentData } from 'worker_threads';
+import { useCallback, useEffect, useState } from 'react';
+import { managementUrl } from '../../../api/apiUrls';
+import baseAPI from '../../../api/baseAPI';
+import { ManagementUrlInfoType, ManagementUrlResType } from '../../../types';
 import './style.scss';
 
 function RegionalAdministrations() {
+    const [currRegion, setCurrRegion] = useState<ManagementUrlInfoType>({} as ManagementUrlInfoType);
+
+    const displayName = (e: string) => {
+        Array.from(document.getElementsByTagName('path')).forEach(elem => {
+            elem.style.fill = '#849c94';
+        })
+        document.getElementById(e)!.style.fill = '#119769'
+        const newCurrRegion: any = management.find(reg => reg.region_id === e);
+        setCurrRegion(newCurrRegion);
+    }
+
+    const [management, setManagement] = useState<ManagementUrlInfoType[]>([]);
+    const [loading, setLoading] = useState<boolean>(true);
+
+    const getManagementData = useCallback(() => {
+        setLoading(true);
+        baseAPI.fetchAll<ManagementUrlResType>(managementUrl)
+            .then((e) => {
+                if (e.data.status === "200") {
+                    setManagement(e.data.data);
+                    setLoading(false);
+                }
+            })
+            .catch(e => console.log('Error:', e.message));
+    }, []);
+
+    useEffect(() => {
+        getManagementData();
+    }, [getManagementData])
+
     return (
         <div className='regional-administrations'>
             <div className="container">
-                <Row gutter={[16, 16]}>
+                <h4 className="page_title">
+                    Hududiy boshqarmalar
+                </h4>
+                <Row gutter={[16, 16]} align='middle'>
                     <Col xs={24} lg={12}>
                         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
                             viewBox="0 0 652 422" enableBackground="new 0 0 652 422" >
-                            <g id="Shape_1_1_" enableBackground="new    " data-toggle="tooltip" data-placement="bottom" >
+                            <g id="Shape_1_1_" enableBackground="new" data-toggle="tooltip" data-placement="bottom" >
                                 <g id="Shape_1">
                                     <g>
-                                        <path id="beshariq" style={{ zIndex: 2 }}
-                                            data-toggle="popover" data-content="And here's some amazing content. It's very engaging. Right?" fillRule="evenodd" clipRule="evenodd" fill="#2C9CC3" d="M142.1,158.7c-3.2,0.9-2.3-2.5-3.1-4.7s0.2-5.8,0-7
+                                        <path className='region-path' id="Navoiy" style={{ zIndex: 2 }} onClick={() => displayName('Navoiy')}
+                                            data-toggle="popover" data-content="And here's some amazing content. It's very engaging. Right?" fillRule="evenodd" clipRule="evenodd" d="M142.1,158.7c-3.2,0.9-2.3-2.5-3.1-4.7s0.2-5.8,0-7
                             c-0.2-1.2-4.6-6.2-5-7c-0.4-0.8-6.4-1.8-7-3c-0.6-1.2-1.2-11.8-1-14c0.2-2.2-2-6.4-3-8c-1-1.6-1-3-1-3s-8.4-3.6-11-4
                             c-2.6-0.4-1-4.6-2-6c-1-1.4-5-4-8-5c-3-1-6.8-0.8-9-2c-1.8-1-4.4,2.8-7,4c-2.6,1.2-5.8-0.8-8-1c-2.2-0.2-4.4,1-6,2
                             c-1.6,1-0.4,2.8,0,4c0.4,1.2-2.6,5-4,6c-1.4,1-2,3.6-2,6s-2,4-3,5s-3,1-5,1c-2,0-4.2,0.6-6,1c-1.8,0.4-13,4-13,4s-0.6,2.4-2,4
@@ -26,10 +62,10 @@ function RegionalAdministrations() {
                                     </g>
                                 </g>
                             </g>
-                            <g id="Shape_2_1_" enableBackground="new    " >
+                            <g id="Shape_2_1_" enableBackground="new" >
                                 <g id="Shape_2">
                                     <g>
-                                        <path id="furqat" fillRule="evenodd" clipRule="evenodd" fill="#49C1F3"
+                                        <path className='region-path' id="Toshkent" fillRule="evenodd" clipRule="evenodd" onClick={() => displayName('Toshkent')}
                                             d="M197,130c0,0-0.8-1.4-2-3c-1.2-1.6-4.4-4-5-5c-0.6-1-4-4-4-4
         s-3.6,0.2-4,0c-0.4-0.2-4,2-4,2s-0.8,2.2-3,2s-5-4-5-4l1-4c0,0,4.5-2.1,5.8-2.8c-0.2,0-0.3,0,0.2-0.2c0.2-0.1,0.1,0-0.2,0.2
         c0.4,0,1.2-0.2,1.2-0.2s0.1-3.9,0-5c-0.1-1.1-1.3-3.4-2-5c-0.8-1.6-0.1-2.5-2-3c-1.9-0.5-5.2,1.3-7,1c-1.4-0.3-2.6-2.1-4-2
@@ -46,10 +82,10 @@ function RegionalAdministrations() {
                                     </g>
                                 </g>
                             </g>
-                            <g id="Shape_3_1_" enableBackground="new    ">
+                            <g id="Shape_3_1_" enableBackground="new">
                                 <g id="Shape_3">
                                     <g>
-                                        <path id="dangara" fillRule="evenodd" clipRule="evenodd" fill="#3CA3CD"
+                                        <path className='region-path' id="dangara" fillRule="evenodd" clipRule="evenodd" onClick={() => displayName('dangara')}
                                             d="M237,19c-0.3-1.2-0.3-0.5-2-1s-3.3,0.7-4,0c-0.7-0.7-2-1.3-3-1
         s-2.7,0.3-3,1s-3,2-3,2s-1.8-3.5-2-5c-0.2-1.5-2.7-3.3-4-4c-1.3-0.7-2-0.7-4-1s-5,0.5-6,1c-1,0.5-4.2,2.5-5,3c-0.8,0.5-5,4.3-6,5
         c-1,0.7-1.5,2.3-4,3c-2.5,0.7-1.8,0.8-5,1c-3.2,0.2-6.3,1.5-8,1c-1.7-0.5-2.3,0.2-5,0c-2.7-0.2-5.3-0.2-7,0c-1.7,0.2-2.7-0.7-4,1
@@ -65,10 +101,10 @@ function RegionalAdministrations() {
                                     </g>
                                 </g>
                             </g>
-                            <g id="Shape_4_1_" enableBackground="new    ">
+                            <g id="Shape_4_1_" enableBackground="new">
                                 <g id="Shape_4">
                                     <g>
-                                        <path id="ozbekiston" fillRule="evenodd" clipRule="evenodd" fill="#51B3DA"
+                                        <path className='region-path' id="ozbekiston" fillRule="evenodd" clipRule="evenodd" onClick={() => displayName('ozbekiston')}
                                             d="M243,211c-2-0.6-5.4-0.9-7-2c-1.6-1.1-3-6-3-6s-2.6-11-3-12
         s-2.1-2.4-2-5c0.1-2.6-0.1-9.4,0-11c0.1-1.6,1.7-4.3,2-6s2-8,2-8s0.9-6.4,1-7c0.1-0.6,0-3.7-3-6c-3-2.3-1-9-1-9s-1.4-6.6-1-7
         s0.1-2.9,0-4c-0.1-1.1-1-4-1-4s-3.7,2.4-5,3c-1.3,0.6-3.9,2-4,3c-0.1,1-1,3-1,3s-0.9,0.7-2,1s-2.6,0.1-3,0c-0.4-0.1-3,0-3,0
@@ -82,10 +118,10 @@ function RegionalAdministrations() {
                                     </g>
                                 </g>
                             </g>
-                            <g id="Shape_5_1_" enableBackground="new    ">
+                            <g id="Shape_5_1_" enableBackground="new">
                                 <g id="Shape_5">
                                     <g>
-                                        <path id="qoqon" fillRule="evenodd" clipRule="evenodd" fill="#3592B8"
+                                        <path className='region-path' id="qoqon" fillRule="evenodd" clipRule="evenodd" onClick={() => displayName('qoqon')}
                                             d="M228,103c-0.4-1.1-1.7-2.9-3-4s-1.9-2.9-3-3c-1.1-0.1-2.3-1-4-1
         c-1.7,0-3.1,0.3-4,0c-0.9-0.3-2-0.4-3-1s-1.7-2.3-3-2c-1.3,0.3-3.6,2-4,3c-0.4,1-3.9,4.4-4,5c-0.1,0.6-2,6-2,6s-1.1,3.9-1,5
         c0.1,1.1-1,5.6-2,6s-3,2-3,2s0,1.4,1,3c1,1.6,3.1,5.7,5,7c1.9,1.3,3.9,1.7,6,2c2.1,0.3,4.4,1.4,6,1c1.6-0.4,4,0,4,0s2.7-2.3,3-3
@@ -93,10 +129,10 @@ function RegionalAdministrations() {
                                     </g>
                                 </g>
                             </g>
-                            <g id="Shape_6_1_" enableBackground="new    ">
+                            <g id="Shape_6_1_" enableBackground="new">
                                 <g id="Shape_6">
                                     <g>
-                                        <path id="uchkoprik" fillRule="evenodd" clipRule="evenodd" fill="#128FC2"
+                                        <path className='region-path' id="uchkoprik" fillRule="evenodd" clipRule="evenodd" onClick={() => displayName('uchkoprik')}
                                             d="M269,101c-1-3-2.6-9.1-3-10c-0.4-0.9-2-4-2-4l-3,2
         c0,0-1.4,0.9-3,1c-1.6,0.1-4,0-4,0l-1-2c0,0-0.3-1-1-2s-2-3-2-3s-1.7-1.7-4-2c-2.3-0.3-6-3-6-3s-1.1-2-1-5c0.1-3-0.9-3.4-1-5
         c-0.1-1.6-1.1-2.9-2-4c-0.9-1.1-2.9-2.4-3-3c-0.1-0.6-2.7-0.7-2-4c0.7-3.3,1-5,1-5s-1.1-1.7-1-3c0.1-1.1,0.8-5.6,1-6.1
@@ -112,10 +148,10 @@ function RegionalAdministrations() {
                                     </g>
                                 </g>
                             </g>
-                            <g id="Shape_7_1_" enableBackground="new    ">
+                            <g id="Shape_7_1_" enableBackground="new">
                                 <g id="Shape_7">
                                     <g>
-                                        <path id="buvayda" fillRule="evenodd" clipRule="evenodd" fill="#3592B8"
+                                        <path className='region-path' id="buvayda" fillRule="evenodd" clipRule="evenodd" onClick={() => displayName('buvayda')}
                                             d="M316,64c-2.4-0.8-6.2-3.6-7-4c-0.8-0.4-2.6-2.4-4-3
         c-1.4-0.6-5-4-5-4s-2.4-1.6-3-2c-0.6-0.4-2.8-1.6-4-2c-1.2-0.4-4-1-6-2c-2-1-8.4-6.2-9-7c-0.6-0.8-3.4-4-5-4c-1.6,0,1.8-1.2-4-1
         s-4.6,0.4-8,0c-3.4-0.4-11,0-11,0s1-6,2-9s6-10,6-10s1.2-3.4,1-4c-0.2-0.6-2.2-2.4-4-2c0,0-1.6,0.6-3,2c-1.4,1.4-4.6,4.6-5,5
@@ -128,10 +164,10 @@ function RegionalAdministrations() {
                                     </g>
                                 </g>
                             </g>
-                            <g id="Shape_9_1_" enableBackground="new    ">
+                            <g id="Shape_9_1_" enableBackground="new">
                                 <g id="Shape_9">
                                     <g>
-                                        <path id="sox" fill="#3CA6D0"
+                                        <path className='region-path' id="sox" onClick={() => displayName('sox')}
                                             d="M244,252c0,0,2.7,0.7,4,0c1.3-0.7,2.3-1,3-4s1-5,1-5l1-3c0,0-1-0.3-2-2c-1-1.7-1.3-4.7-3-5
         c-1.7-0.3-2-1.7-3,0c-1,1.7-3,6-3,6s-2,5-1,7S244,252,244,252z M307,386c-0.4-1.2-1.8-5.8-4-6c-2.2-0.2-2.6-3.8-5-5
         c-3.8-2-4.6-1.6-7-2c-2.4-0.4-6.2,0.2-8,0c-1.8-0.2-4-1.2-3-2s3.4-3.6,4-4c0.6-0.4,0.6-2.6,1-4c0.4-1.4-0.8-3.4-2-4
@@ -147,10 +183,10 @@ function RegionalAdministrations() {
                                     </g>
                                 </g>
                             </g>
-                            <g id="Shape_10_1_" enableBackground="new    ">
+                            <g id="Shape_10_1_" enableBackground="new">
                                 <g id="Shape_10">
                                     <g>
-                                        <path id="bagdod" fillRule="evenodd" clipRule="evenodd" fill="#369AC3"
+                                        <path className='region-path' id="bagdod" fillRule="evenodd" clipRule="evenodd" onClick={() => displayName('bagdod')}
                                             d="M336,139c0.1,0-0.1,0-0.4,0C335.5,139.1,335.7,139.1,336,139z
          M345,127c-1-2-5.4-4.8-6-7c-0.6-2.2-1-4.6-2-6c-1-1.4-1.6-1.8-2-4s0.2-5,0-6c-0.2-1-2-4-2-4s-1.6-3.4-2-4c-0.4-0.6,0.4-2.6,0-3
         c-0.4-0.4,1-3.2,0-4s-3-2.8-4-3c-1-0.2-5-1-5-1l-3-2l-4-1l-4,5l-5,2l-4,1c0,0-1.8,1.8-2,4c-0.2,2.2,0,7,0,7s0.6,4,0,5
@@ -164,10 +200,10 @@ function RegionalAdministrations() {
                                     </g>
                                 </g>
                             </g>
-                            <g id="Shape_11_1_" enableBackground="new    ">
+                            <g id="Shape_11_1_" enableBackground="new">
                                 <g id="Shape_11">
                                     <g>
-                                        <path id="rishton" fillRule="evenodd" clipRule="evenodd" fill="#278EB7"
+                                        <path className='region-path' id="rishton" fillRule="evenodd" clipRule="evenodd" onClick={() => displayName('rishton')}
                                             d="M368,173c-1-4.2-0.8-6-2-8s-1.3-3.6-2-5c-0.6-1.1-0.6-3-3-2
         c0,0,0-1.2-1-2c-1-0.8-5-1-5-1l-1-5c0,0,1.4-7.4,1-8c-0.4-0.6-4-5-6-5s-1.2,2-3,2s-4.4-0.6-5,0c-0.6,0.6-1.6,1.2-3,2
         c-1.4,0.8-2.4,0.6-4,1c-1.6,0.4-3,0-3,0s-0.4,1-3,2c-2.6,1-3.5,2.2-6,4c-1.4,1-5.8,6.4-7,7c-1.2,0.6-0.6,1.2-1,2
@@ -180,10 +216,10 @@ function RegionalAdministrations() {
                                     </g>
                                 </g>
                             </g>
-                            <g id="Shape_12_1_" enableBackground="new    ">
+                            <g id="Shape_12_1_" enableBackground="new">
                                 <g id="Shape_12">
                                     <g>
-                                        <path id="oltiariq" fillRule="evenodd" clipRule="evenodd" fill="#299DCB"
+                                        <path className='region-path' id="oltiariq" fillRule="evenodd" clipRule="evenodd" onClick={() => displayName('oltiariq')}
                                             d="M441,181c-2.5-3.5-1.2-8.8-2-11c-2-5.3-2.5-5.8-5-7
         c-2.5-1.3-1.8,3-7-3c-5.3-6-4.8-4.8-6-7c-1.3-2.3-2.3-3.3-4-4s-3.5-1.3-6-2c-2.5-0.8-2.5,0.8-3-2c-0.5-2.8-0.3-5.5-1-7
         c-0.8-1.5-0.3-4-3-4s-4,0-4,0s-1.6-3-3-5c-1.4-2-2.6-2-5-2c-2.4,0-4,1-5,0s-1-1-1-5s3.2-7.8,5-10c1.8-2.2,3.6-6.4,4-8
@@ -197,10 +233,10 @@ function RegionalAdministrations() {
                                     </g>
                                 </g>
                             </g>
-                            <g id="Shape_13_1_" enableBackground="new    ">
+                            <g id="Shape_13_1_" enableBackground="new">
                                 <g id="Shape_13">
                                     <g>
-                                        <path id="yozyovon" fillRule="evenodd" clipRule="evenodd" fill="#1E93C2"
+                                        <path className='region-path' id="yozyovon" fillRule="evenodd" clipRule="evenodd" onClick={() => displayName('yozyovon')}
                                             d="M510,79c-0.3-4.8,0.5-7-1-9s0-5.5-1-7s-2.5-5-4-7
         c-1.5-2-10.2-6-12-8c-1.8-2-1.8-5-6-8c-4.3-3-7.5-4.3-9-5c-1.5-0.8-0.5-1.3-5-1c-4.5,0.3-5.8,1.3-9-1c-3.2-2.3-4.7-4.8-6-6
         s-1-3-4-5c-3-2-2.8-3.5-6-2c-3.3,1.5-5.5-0.3-6,5s-0.3,6.3,0,10s-0.5,8.8,0,11s3,2.8,3,5s-2.5,3.8-7,6c-4.5,2.3-5.5,5.8-7,7
@@ -212,10 +248,10 @@ function RegionalAdministrations() {
                                     </g>
                                 </g>
                             </g>
-                            <g id="Shape_14_1_" enableBackground="new    ">
+                            <g id="Shape_14_1_" enableBackground="new">
                                 <g id="Shape_14">
                                     <g>
-                                        <path id="qoshtepa" fillRule="evenodd" fill='#18a1d2'
+                                        <path className='region-path' id="qoshtepa" fillRule="evenodd" onClick={() => displayName('qoshtepa')}
                                             d="M473,110c0.5-2.3,1-9.8,1-14s-1-9-1-9s-1.8,0-6,0
         c-4.3,0-5.3,1.3-7,2s-2.5,0.3-5,0s-2.5-1.8-3-3s-0.5-8.3,0-11s-1.3-3.3-4-4c-2.8-0.8-5.3,0.3-7,2s0.8,4,1,6s1.3,7.8,0,11
         s-5.5,1.5-10,2c-4.5,0.5-4.5-4-6-8s-1-7-1-7s-4.3,0.5-6,1s-7,1.3-9,2c-2,0.8-4.5,2.5-8,3s-7.5,1.5-10,2c-2.5,0.5-7,2-7,2
@@ -227,20 +263,20 @@ function RegionalAdministrations() {
                                     </g>
                                 </g>
                             </g>
-                            <g id="Shape_15_1_" enableBackground="new    ">
+                            <g id="Shape_15_1_" enableBackground="new">
                                 <g id="Shape_15">
                                     <g>
-                                        <path id="margilan" fillRule="evenodd" clipRule="evenodd" fill="#1C8DBA"
+                                        <path className='region-path' id="margilan" fillRule="evenodd" clipRule="evenodd" onClick={() => displayName('margilan')}
                                             d="M491,142c-1.8-0.5-6-5-6-5s1.8,0.3,0-1s-3-2-3-2s-0.3-2.8-1-3
         s-3.3-0.5-4,0s-3,3-3,3s-1.5,1.8-3,2s-6-1-6-1s2.3,2.3,3,4s2.3,4.5,1,6s-3,2.5-3,4s2.3,3.5,3,4s3.3,1.3,3,3s0,3,0,3l6-6l6-5
         c-1.3,1-0.8-0.5,1-1s3.5-1,5-1c1.5,0,4,0,4,0S492.8,142.5,491,142z"/>
                                     </g>
                                 </g>
                             </g>
-                            <g id="Shape_16_1_" enableBackground="new    ">
+                            <g id="Shape_16_1_" enableBackground="new">
                                 <g id="Shape_16">
                                     <g>
-                                        <path id="ferghana" fillRule="evenodd" clipRule="evenodd" fill="#1496CB"
+                                        <path className='region-path' id="ferghana" fillRule="evenodd" clipRule="evenodd" onClick={() => displayName('ferghana')}
                                             d="M517,178c-1-1.3-1.2-4.3-2-6s-2.5-5.3-3-7s0.3-4-2-5s-4.3-1-5-2
         c-0.8-1-2.5-1.3-3-3s-0.3-3.8-1-5s-0.3-2.8-2-3s-3.5,0.3-5,0s-3.3-1.3-5,0c-1.8,1.3-4.3,3.3-5,4s-3,3-3,3l-2,2c0,0,0.8,5,1,6
         s-0.8,4.3,0,6s0.8,7.5,1,9s1.8,4.3,3,4s5,1,6,1c1,0,1.5,0.5,3,3c1.5,2.5,4,3,4,3s4,0,5,1c1,1,3,4,3,4s4.3-1.5,4-3s3.3-1.3,4-2
@@ -248,10 +284,10 @@ function RegionalAdministrations() {
                                     </g>
                                 </g>
                             </g>
-                            <g id="Shape_19_1_" enableBackground="new    ">
+                            <g id="Shape_19_1_" enableBackground="new">
                                 <g id="Shape_19">
                                     <g>
-                                        <path id="toshloq" fillRule="evenodd" clipRule="evenodd" fill="#2E9CC9"
+                                        <path className='region-path' id="toshloq" fillRule="evenodd" clipRule="evenodd" onClick={() => displayName('toshloq')}
                                             d="M539,82c2.6-3.8,2.4-3.8,0-4c-2.4-0.2-4-0.2-9-2
         c-5-1.8-8-4.4-10-6c-2-1.6-10-7-10-7s0.4,4.2,1,6c0.6,1.8,1.2,7.8,1,9c-0.2,1.2,0.2,4.6-1,6c-1.2,1.4-2.8,3.8-4,4
         c-1.2,0.2-3-0.6-3,1c0,1.6,0.2,5.2,0,7c-0.2,1.8-0.2,5.8-1,7c-0.8,1.2-0.4,2.6-3,2c-2.6-0.6-4.6,0.2-6-3c-1.4-3.2-1.2-6.4-2-9
@@ -263,10 +299,10 @@ function RegionalAdministrations() {
                                     </g>
                                 </g>
                             </g>
-                            <g id="Shape_20_1_" enableBackground="new    ">
+                            <g id="Shape_20_1_" enableBackground="new">
                                 <g id="Shape_20">
                                     <g>
-                                        <path id="quva" fillRule="evenodd" clipRule="evenodd" fill="#0F96CD"
+                                        <path className='region-path' id="quva" fillRule="evenodd" clipRule="evenodd" onClick={() => displayName('quva')}
                                             d="M633,105c-6.4-0.4-4.6,2-8,1c-3.4-1-3.4-1.8-5-3
         c-1.6-1.2-2.2-3.2-5-3c-2.8,0.2-7,0-7,0s-2-3-2-4s-1.6-5.8-3-6c-1.4-0.2-3.2-2.8-5,0c-1.8,2.8-0.8,3.8-3,3s-4-4-4-5s1.6-4.4,0-6
         c-1.6-1.6,0.2-3-8-2c-8.2,1-10,1-10,1s-2.4-1.4-6-2c-3.6-0.6-5.4-1.6-8-2c-2.6-0.4-7.2-0.6-9-1c-1.8-0.4-1.2-1-3,0s-7.2,4.8-6,8
@@ -281,10 +317,10 @@ function RegionalAdministrations() {
                                     </g>
                                 </g>
                             </g>
-                            <g id="Shape_21_1_" enableBackground="new    ">
+                            <g id="Shape_21_1_" enableBackground="new">
                                 <g id="Shape_21">
                                     <g>
-                                        <path id="quvasoy" fillRule="evenodd" clipRule="evenodd" fill="#1F9FD2"
+                                        <path className='region-path' id="quvasoy" fillRule="evenodd" clipRule="evenodd" onClick={() => displayName('quvasoy')}
                                             d="M578,176c-3-2-6-3-6-4s3-9,3-9v-4c0,0-1.8,1.8-4,3
         c-2.2,1.3-1.2,3-5,3s-4.5,0-6,0c-1.5,0-1.5-0.8-3-2c-1.5-1.3-4-3-4-3s-3-1.8-2-3s3.5-2.8,2-6s-3-4.5-4-5s-2,0-2,0s-0.8,1.8-3,2
         c-2.2,0.3-6-4-6-4s1.5,4,1,5s-2.5,3.3-3,5s-0.5,5-1,6s-0.3,2.8-3,3c-2.7,0.3-3.7,0.5-6,0s-4.3-2.3-5-3s-1.8-2.5-3-2
@@ -296,10 +332,10 @@ function RegionalAdministrations() {
                                     </g>
                                 </g>
                             </g>
-                            <g id="Shape_22_1_" enableBackground="new    ">
+                            <g id="Shape_22_1_" enableBackground="new">
                                 <g id="Shape_22">
                                     <g>
-                                        <path id="fartum" fill="#1F92C0"
+                                        <path className='region-path' id="fartum" onClick={() => displayName('fartum')}
                                             d="M555,241c-2.3-0.5-5.5-1.5-7-2s-2.5-1.5-3-3s1.2-5,3-5c1.3,0,3-2,3-2s-0.5-3.3-3-3c-2.5,0.3-4.8,1-7,0
         s-7.5-1-11-3c-3.5-2-4-3-7-5s-6-7-6-7s-4.6-7.1-4-9c0.5-1.5,0-3,2-4c2-1,4.8-2.8,5-4s0.8-2.5,1-4s-2-3-2-3s0.8-1-2,1
         c-2.7,2-6,2-6,2c-0.3,1-0.8,2.8-1,4s0,3.5-3,3c-3-0.5-3.3-0.3-4-2c-0.7-1.8-1.2-3-2-4s-3-2-3-2l-2,3l-2,2c0,0-1.8-2-2-3
@@ -321,21 +357,21 @@ function RegionalAdministrations() {
                     </Col>
                     <Col xs={24} lg={12}>
                         <div className="regional-administrations_card">
-                            <h3 className="title">Oʼsimliklar karantini va himoyasi agentligining  Farg`ona viloyati boshqarmasi</h3>
+                            <h3 className="title">{currRegion?.title}</h3>
                             <Row gutter={[16, 16]}>
                                 <Col xs={24} lg={16}>
-                                    <strong className='name'>Аtaboev Voxidjon Voxobjonovich</strong>
+                                    <strong className='name'>{currRegion?.name}</strong>
                                     <ul>
-                                        <li>Lavozim: Boshliq</li>
-                                        <li>Telefon: + 998 91 157 19 05</li>
-                                        <li>Faks: +0373 244-57-53</li>
-                                        <li>Qabul kunlari: Har kuni soat 10:00 dan 12:00 gacha</li>
-                                        <li>Elektron manzil: Fergana@karantin.uz</li>
+                                        {/* <li>Lavozim: </li> */}
+                                        <li>Telefon: <a href={`tel:${currRegion?.phone}`}>{currRegion?.phone}</a></li>
+                                        <li>Faks: <a href={`tel:${currRegion?.fax}`}>{currRegion?.fax}</a></li>
+                                        <li>Qabul kunlari: {currRegion?.work_day}</li>
+                                        <li>Elektron manzil: <a href={`mailto:${currRegion?.email}`}>{currRegion?.email}</a></li>
                                     </ul>
                                 </Col>
                                 <Col xs={24} lg={8}>
                                     <div className="card_imgBx">
-                                        <img src="http://karantin.uz/thumb/view/w/120/h/160/src/uploads/regional/505f6971c2ae71b98b4e823343076c18.jpg" alt="boshqarma1" />
+                                        <img src={currRegion?.image} alt={`boshqarma${currRegion.id}`} />
                                     </div>
                                 </Col>
                             </Row>
