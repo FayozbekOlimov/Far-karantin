@@ -1,87 +1,19 @@
-import { useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { Col, Row, Radio, Space, RadioChangeEvent, Button, Modal, Progress, Alert } from 'antd'
 import { Navigation, Pagination, EffectFade, Autoplay } from 'swiper';
 import "./style.scss";
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import TitleBlock from './TitleBlock';
-import { Link } from 'react-router-dom';
+import { AdsImgUrlInfoType, AdsImgUrlResType, CardLinksInfoType, CardLinksResType } from '../../../types';
+import baseAPI from '../../../api/baseAPI';
+import { adsImgUrl, cardLinksUrl } from '../../../api/apiUrls';
+import { useT } from '../../../custom-hooks/useT';
 
-const blockBannerImages = [
-  {
-    id: "1",
-    imgUrl: "/assets/img/blockBannerImg.jpg"
-  },
-  {
-    id: "2",
-    imgUrl: "/assets/img/itpark.png"
-  },
-  {
-    id: "3",
-    imgUrl: "/assets/img/blockBannerImg.jpg"
-  },
-  {
-    id: "4",
-    imgUrl: "/assets/img/itpark.png"
-  }
-
-]
-
-const usefulLinksDatas = [
-  {
-    id: "1",
-    img: "/assets/img/aloqa.png",
-    text: "Aloqa, axborotlashtirish va  telekommunikatsiya texnologiyalari sohasida nazorat bo‘yicha davlat inspeksiyasi",
-    link: "#"
-  },
-  {
-    id: "2",
-    img: "/assets/img/aloqa.png",
-    text: "Aloqa, axborotlashtirish va  telekommunikatsiya texnologiyalari sohasida nazorat bo‘yicha davlat inspeksiyasi",
-    link: "#"
-  },
-  {
-    id: "3",
-    img: "/assets/img/aloqa.png",
-    text: "Aloqa, axborotlashtirish va  telekommunikatsiya texnologiyalari sohasida nazorat bo‘yicha davlat inspeksiyasi",
-    link: "#"
-  },
-  {
-    id: "4",
-    img: "/assets/img/aloqa.png",
-    text: "Aloqa, axborotlashtirish va  telekommunikatsiya texnologiyalari sohasida nazorat bo‘yicha davlat inspeksiyasi",
-    link: "#"
-  },
-  {
-    id: "5",
-    img: "/assets/img/aloqa.png",
-    text: "Aloqa, axborotlashtirish va  telekommunikatsiya texnologiyalari sohasida nazorat bo‘yicha davlat inspeksiyasi",
-    link: "#"
-  },
-  {
-    id: "6",
-    img: "/assets/img/aloqa.png",
-    text: "Aloqa, axborotlashtirish va  telekommunikatsiya texnologiyalari sohasida nazorat bo‘yicha davlat inspeksiyasi",
-    link: "#"
-  },
-  {
-    id: "7",
-    img: "/assets/img/aloqa.png",
-    text: "Aloqa, axborotlashtirish va  telekommunikatsiya texnologiyalari sohasida nazorat bo‘yicha davlat inspeksiyasi",
-    link: "#"
-  },
-  {
-    id: "8",
-    img: "/assets/img/aloqa.png",
-    text: "Aloqa, axborotlashtirish va  telekommunikatsiya texnologiyalari sohasida nazorat bo‘yicha davlat inspeksiyasi",
-    link: "#"
-  },
-
-]
 
 function BlockBanner() {
   const [surveyValue, setSurveyValue] = useState<string>("");
-  const [isModalVisible, setIsModalVisible] = useState(false);
+  const [isModalVisible, setIsModalVisible] = useState<boolean>(false);
   const [isOpenAlert, setIsOpenAlert] = useState<boolean>(false)
   const [alertProps, setAlertProps] = useState<{ message: string, type: "success" | "info" | "warning" | "error" }>({
     message: "",
@@ -94,7 +26,6 @@ function BlockBanner() {
   };
 
   // alert
-
   const openAlert = (e: React.MouseEvent<HTMLElement>) => {
     setIsOpenAlert(true);
     if (surveyValue !== "") {
@@ -127,6 +58,44 @@ function BlockBanner() {
     setIsModalVisible(false);
   };
 
+  const [cardLinks, setCardLinks] = useState<CardLinksInfoType>([]);
+  const [adsImg, setAdsImg] = useState<AdsImgUrlInfoType>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+
+  const getCardLink = useCallback(() => {
+    setLoading(true);
+    baseAPI.fetchAll<CardLinksResType>(cardLinksUrl)
+      .then((e) => {
+        if (e.data.status === "200") {
+          setCardLinks(e.data.data);
+          setLoading(false);
+        }
+      })
+      .catch(e => console.log('Error:', e.message));
+  }, [])
+
+  useEffect(() => {
+    getCardLink();
+  }, [getCardLink])
+
+  const getAdsImg = useCallback(() => {
+    setLoading(true);
+    baseAPI.fetchAll<AdsImgUrlResType>(adsImgUrl)
+      .then((e) => {
+        if (e.data.status === "200") {
+          setAdsImg(e.data.data);
+          setLoading(false);
+        }
+      })
+      .catch(e => console.log('Error:', e.message));
+  }, [])
+
+  useEffect(() => {
+    getAdsImg();
+  }, [getAdsImg])
+
+  const {t, lang} = useT();
+
   return (
     <div className="block_banner">
       <div className="container">
@@ -149,15 +118,16 @@ function BlockBanner() {
                 pagination={{ clickable: true }}
               >
                 {
-                  blockBannerImages.map(blockBannerImage => (
-                    <SwiperSlide key={blockBannerImage.id}>
+                  adsImg.map(img => (
+                    <SwiperSlide key={img.id}>
                       <div
                         className="slider_img_container"
-                        key={blockBannerImage.id}>
+                        key={img.id}
+                      >
                         <img
                           className="main_news_img"
-                          src={blockBannerImage.imgUrl}
-                          alt={"bannerImg"}
+                          src={img.ad_image}
+                          alt={`bannerImg${img.id}`}
                         />
                       </div>
                     </SwiperSlide>
@@ -190,23 +160,23 @@ function BlockBanner() {
               <TitleBlock text="Foydali havolalar" />
               <div className="useful_link_body">
                 {
-                  usefulLinksDatas.map(usefulLink => (
-                    <Link
-                      to={usefulLink.link}
+                  cardLinks.map(usefulLink => (
+                    <a
+                      href={usefulLink.url_name}
                       key={usefulLink.id}
+                      target={"_blank"}
                     >
                       <div className="useful_link">
-
                         <img
-                          src={usefulLink.img}
-                          alt={usefulLink.text}
-                          title={usefulLink.text}
+                          src={usefulLink.image}
+                          alt={usefulLink.name}
+                        // title={usefulLink.text}
                         />
                         <p className="link_text">
-                          {usefulLink.text}
+                          {usefulLink.name}
                         </p>
                       </div>
-                    </Link>
+                    </a>
                   ))
                 }
               </div>
@@ -217,15 +187,15 @@ function BlockBanner() {
               <TitleBlock text="So'rovnoma" />
               <div className="survey">
                 <h5 className="survey_title">
-                  Saytning yangi dizayni yoqdimi?
+                  {t(`survey.${lang}`)}
                 </h5>
                 <div className="survey_radios">
                   <Radio.Group onChange={onChange} value={surveyValue}>
                     <Space direction="vertical">
-                      <Radio value={"alo"}>A'lo</Radio>
-                      <Radio value={"yaxshi"}>Yaxshi</Radio>
-                      <Radio value={"qoniqarli"}>Qoniqarli</Radio>
-                      <Radio value={"qoniqarsiz"}>Qoniqarsiz</Radio>
+                      <Radio value="A'lo">{t(`ans1.${lang}`)}</Radio>
+                      <Radio value="Yaxshi">{t(`ans2.${lang}`)}</Radio>
+                      <Radio value="Qoniqarli">{t(`ans3.${lang}`)}</Radio>
+                      <Radio value="Qoniqarsiz">{t(`ans4.${lang}`)}</Radio>
                     </Space>
                   </Radio.Group>
                 </div>
@@ -235,44 +205,44 @@ function BlockBanner() {
                     type='primary'
                     onClick={openAlert}
                   >
-                    Yuborish
+                    {t(`vote.${lang}`)}
                   </Button>
                   <div className="left">
                     <Button
                       type="primary"
                       onClick={showModal}
                     >
-                      Natijalar
+                      {t(`results.${lang}`)}
                     </Button>
                     <Modal
-                      title="Saytni yangi dizayni yoqdimi?"
+                      title={t(`survey.${lang}`)}
                       visible={isModalVisible}
                       onOk={handleOk}
                       onCancel={handleCancel}
                       footer={null}
                     >
-                      <span>A'lo</span>
+                      <span>{t(`ans1.${lang}`)}</span>
                       <Progress
                         percent={75}
                         showInfo={false}
                         strokeWidth={18}
 
                       />
-                      <span>Yaxshi</span>
+                      <span>{t(`ans2.${lang}`)}</span>
                       <Progress
                         percent={75}
                         status="exception"
                         showInfo={false}
                         strokeWidth={18}
                       />
-                      <span>Qoniqarli</span>
+                      <span>{t(`ans3.${lang}`)}</span>
                       <Progress
                         percent={30}
                         showInfo={false}
                         strokeColor={"#2baab1"}
                         strokeWidth={18}
                       />
-                      <span>Qoniqarsiz</span>
+                      <span>{t(`ans4.${lang}`)}</span>
                       <Progress
                         percent={75}
                         showInfo={false}

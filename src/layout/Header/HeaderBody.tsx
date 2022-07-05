@@ -30,8 +30,7 @@ function HeaderBody() {
                     <i className="fa-solid fa-map-location-dot"></i>
                     <p className="fax_text">
                       {t(`address.${lang}`)}: <br />
-                      100100, Toshkent sh., <br />
-                      "Bobur" 1-berk ko'chasi, 17-uy <br />
+                      {t(`fullAddress.${lang}`)} <br />
                       {t(`email.${lang}`)}: <a href="mailto:info@karantin.uz" className='email'>
                         info@karantin.uz
                       </a>

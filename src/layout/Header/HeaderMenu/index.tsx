@@ -8,7 +8,7 @@ import baseAPI from '../../../api/baseAPI';
 import { menuUrl } from '../../../api/apiUrls';
 import { MenuItemInfoType, MenuUrlResType } from '../../../types';
 
-const createNavbar = (to : string, submenu: { subName: string, type: string, to: string }[]) => (
+const createNavbar = (to: string, submenu: { subName: string, type: string, to: string }[]) => (
   <Menu>
     {submenu.map((menu, ind) => (
       <Menu.Item key={"key" + ind}>
@@ -40,16 +40,26 @@ function HeaderMenu() {
     getMenuUrls();
   }, [getMenuUrls])
 
+  const onChange = (key: string | string[]) => {
+    console.log(key);
+  };
+
+  const [open, setOpen] = useState<string[]>([]);
+  const handleClick = () => {
+    // e.preventDefault();
+    setOpen([]);
+  };
+
   return (
     <div className="header_menu">
       <div className="container">
-        <Collapse className="header_menu__collapse" accordion expandIcon={(panelProps) => <AlignRightOutlined />}>
+        <Collapse activeKey={open} onChange={() => setOpen(["1"])} className="header_menu__collapse" accordion expandIcon={(panelProps) => <AlignRightOutlined />}>
           <Collapse.Panel header="Menu" key="1">
             <Collapse accordion>
               {menuUrls.map((menu) => (
                 <Collapse.Panel header={menu.menuName} key={menu.menuName}>
                   {menu.subMenus.map((subMenu) => (
-                    <Link key={subMenu.subName} className='header_menu_link' to={`${menu.to}/${subMenu.type}/${subMenu.to}`}>
+                    <Link onClick={handleClick} key={subMenu.subName} className='header_menu_link' to={`${menu.to}/${subMenu.type}/${subMenu.to}`}>
                       {subMenu.subName}
                     </Link>
                   ))}

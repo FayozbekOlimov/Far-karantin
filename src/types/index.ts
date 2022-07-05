@@ -264,3 +264,28 @@ export type LeaderUrlPropsType = {
     email?: string,
     biography: string
 }
+
+export type CardLinksResType = {
+    status: string,
+    message: string,
+    data: CardLinksInfoType
+}
+
+export type CardLinksInfoType = {
+    id: number,
+    image: string,
+    name: string,
+    url_name: string
+}[]
+
+export type AdsImgUrlResType = {
+    status: string,
+    message: string,
+    data: AdsImgUrlInfoType
+}
+
+export type AdsImgUrlInfoType = {
+    id: number,
+    image: string,
+    ad_image: string
+}[]

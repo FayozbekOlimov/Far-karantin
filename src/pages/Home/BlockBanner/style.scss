@@ -102,7 +102,6 @@
   }
 
   // usefull link card
-
   .useful_link_card {
     background-color: #fff;
     border-radius: 6px;
@@ -115,7 +114,7 @@
 
       .useful_link {
         display: flex;
-        align-items: center;
+        align-items: flex-start;
 
         &:hover .link_text {
           color: #137461;
@@ -124,6 +123,7 @@
         img {
           border-radius: 50%;
           border: 1px solid #999;
+          margin-top: 5px;
         }
 
         .link_text {

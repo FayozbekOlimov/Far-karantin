@@ -25,7 +25,7 @@ function Footer() {
             <div className="right">
               <p>{t(`updated.${lang}`)}: 04.07.2022, 12:52</p>
               <p>{t(`source.${lang}`)}</p>
-              <p>{t(`license.t${lang}`)}: <a href="https://creativecommons.org/licenses/by/4.0/" target={'_blank'}>Creative Commons Attribution 4.0 International</a></p>
+              <p>{t(`license.${lang}`)}: <a href="https://creativecommons.org/licenses/by/4.0/" target={'_blank'}>Creative Commons Attribution 4.0 International</a></p>
             </div>
           </Col>
         </Row>

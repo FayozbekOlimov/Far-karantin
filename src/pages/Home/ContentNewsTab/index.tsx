@@ -1,19 +1,16 @@
 import { useCallback, useEffect, useState } from 'react'
 import { Col, Row } from 'antd';
 import "./style.scss";
-// import { Link } from 'react-router-dom';
-// import News from "./Components/News"
 import { NewsUrlInfoType, NewsUrlResType } from '../../../types';
 import { bannerNewsUrl } from '../../../api/apiUrls';
 import baseAPI from '../../../api/baseAPI';
 import NewsCard from '../../../components/NewsCard';
 import { useT } from '../../../custom-hooks/useT';
-// const { TabPane } = Tabs;
 
 function ContentNewsTab() {
   const [bannerNews, setBannerNews] = useState<NewsUrlInfoType>([]);
   const [loading, setLoading] = useState<boolean>(true);
-  const {t, lang} = useT();
+  const { t, lang } = useT();
 
   const getBannerNewsData = useCallback(() => {
     setLoading(true);
@@ -39,7 +36,7 @@ function ContentNewsTab() {
         </h4>
         <Row gutter={[16, 16]}>
           {bannerNews.map((news) => (
-            <Col lg={8} md={12} key={news.id}>
+            <Col lg={6} md={12} key={news.id}>
               <NewsCard {...news} />
             </Col>
           ))}

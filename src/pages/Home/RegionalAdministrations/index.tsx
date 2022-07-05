@@ -52,7 +52,7 @@ function RegionalAdministrations() {
                             <g id="Shape_1_1_" enableBackground="new" data-toggle="tooltip" data-placement="bottom" >
                                 <g id="Shape_1">
                                     <g>
-                                        <path className='region-path' id="beshari" style={{ zIndex: 2 }} onClick={() => displayName('beshariq')}
+                                        <path className='region-path' id="beshariq" style={{ zIndex: 2 }} onClick={() => displayName('beshariq')}
                                             data-toggle="popover" data-content="And here's some amazing content. It's very engaging. Right?" fillRule="evenodd" clipRule="evenodd" d="M142.1,158.7c-3.2,0.9-2.3-2.5-3.1-4.7s0.2-5.8,0-7
                             c-0.2-1.2-4.6-6.2-5-7c-0.4-0.8-6.4-1.8-7-3c-0.6-1.2-1.2-11.8-1-14c0.2-2.2-2-6.4-3-8c-1-1.6-1-3-1-3s-8.4-3.6-11-4
                             c-2.6-0.4-1-4.6-2-6c-1-1.4-5-4-8-5c-3-1-6.8-0.8-9-2c-1.8-1-4.4,2.8-7,4c-2.6,1.2-5.8-0.8-8-1c-2.2-0.2-4.4,1-6,2

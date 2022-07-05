@@ -13,7 +13,7 @@ function News() {
   return (
     <div className="news">
       <h4 className="page_title">
-        Agentlik yangiliklari
+        {/* Agentlik yangiliklari */}
       </h4>
       {/* <div className="news_body">
         <Row gutter={[16, 16]}>

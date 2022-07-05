@@ -1,6 +1,8 @@
+import { useT } from "../../../custom-hooks/useT";
 import "./style.scss";
 
 function FerganaMap() {
+  const { t, lang } = useT();
   return (
     <div className="fergana_map">
       <div className="container">
@@ -19,19 +21,19 @@ function FerganaMap() {
             <ul className="contact-data__list">
               <li className="contact-data__item">
                 <i className="fa-solid fa-location-dot"></i>
-                <p>100100, Toshkent sh., "Bobur" 1-berk ko'chasi, 17-uy Elektron manzil: info@karantin.uz</p>
+                <p>{t(`fullAddress.${lang}`)}</p>
               </li>
               <li className="contact-data__item">
                 <i className="fa-solid fa-phone"></i>
-                <p>+ 998 (71) 202 10 00</p>
+                <a href="tel:+998 (71) 202 10 00">+998 (71) 202 10 00</a>
               </li>
               <li className="contact-data__item">
                 <i className="fa-regular fa-clock"></i>
-                <p>Ish kuni: Dushanba-Juma 9:00-18:00</p>
+                <p>{t(`schedule.${lang}`)}: {t(`workingDays.${lang}`)}</p>
               </li>
               <li className="contact-data__item">
                 <i className="fa-regular fa-envelope"></i>
-                <p>info@karantin.uz</p>
+                <a href="mailto:info@karantin.uz">info@karantin.uz</a>
               </li>
             </ul>
           </div>

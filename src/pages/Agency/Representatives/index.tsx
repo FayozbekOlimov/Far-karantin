@@ -2,12 +2,14 @@ import { Divider } from 'antd';
 import React, { useCallback, useEffect, useState } from 'react';
 import { managementUrl } from '../../../api/apiUrls';
 import baseAPI from '../../../api/baseAPI';
+import { useT } from '../../../custom-hooks/useT';
 import { ManagementUrlInfoType, ManagementUrlResType } from '../../../types';
 import './style.scss';
 
 function Representatives() {
 	const [loading, setLoading] = useState<boolean>(true);
 	const [pageData, setPageData] = useState<ManagementUrlInfoType[]>([]);
+	const {t, lang} = useT();
 
 	const getPageData = useCallback(() => {
 		setLoading(true);
@@ -46,22 +48,22 @@ function Representatives() {
 								</h2>
 								{
 									item.phone && <p className="information">
-										<b>Telefon :</b> <a href={`tel:${item.phone}`}>{item.phone}</a>
+										<b>{t(`phone.${lang}`)} :</b> <a href={`tel:${item.phone}`}>{item.phone}</a>
 									</p>
 								}
 								{
 									item.fax && <p className="information">
-										<b>Fax :</b> <a href={`tel:${item.fax}`}>{item.fax}</a>
+										<b>{t(`fax.${lang}`)} :</b> <a href={`tel:${item.fax}`}>{item.fax}</a>
 									</p>
 								}
 								{
 									item.work_day && <p className="information">
-										<b>Qabul kunlari :</b> {item.work_day}
+										<b>{t(`reseptionDays.${lang}`)} :</b> {item.work_day}
 									</p>
 								}
 								{
 									item.email && <p className="information">
-										<b>Elektron pochta :</b> <a href={`mailto:${item.email}`}>{item.email}</a>
+										<b>{t(`email.${lang}`)} :</b> <a href={`mailto:${item.email}`}>{item.email}</a>
 									</p>
 								}
 							</div>

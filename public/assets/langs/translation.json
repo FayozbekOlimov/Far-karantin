@@ -203,5 +203,55 @@
         "uz": "Tarjimai hol",
         "ru": "Биография",
         "en": "Biography"
+    },
+    "fullAddress": {
+        "uz": "100100, Toshkent sh., \"Bobur\" 1-berk ko'chasi, 17-uy",
+        "ru": "100100, г. Ташкент, ул. Бабура, 1 проезд дом №17",
+        "en": "100100, 17, 1 Turn, Bobur Str., Tashkent, Uzbekistan"
+    },
+    "workingDays": {
+        "uz": "Dushanba-Juma 9:00-18:00",
+        "ru": "Понедельник-Пятница 9:00-18:00",
+        "en": "Moday-Friday 9:00-18:00"
+    },
+    "ques": {
+        "uz": "So'rovnoma",
+        "ru": "Опросник",
+        "en": "Questionnaire"
+    },
+    "ans1": {
+        "uz": "A'lo",
+        "ru": "Отлично",
+        "en": "Excellent"
+    },
+    "ans2": {
+        "uz": "Yaxshi",
+        "ru": "Хороший",
+        "en": "Good"
+    },
+    "ans3": {
+        "uz": "Qoniqarli",
+        "ru": "Удовлетворительно",
+        "en": "Satisfactory"
+    },
+    "ans4": {
+        "uz": "Qoniqarsiz",
+        "ru": "Не удовлетворительно",
+        "en": "Not satisfactorily"
+    },
+    "survey": {
+        "uz": "Saytning yangi dizayni sizga yoqdimi?",
+        "ru": "Нравится ли вам новый дизайн сайта?",
+        "en": "Do you like the new design of the site?"
+    },
+    "results": {
+        "uz": "Natijalar",
+        "ru": "Результаты",
+        "en": "Results"
+    },
+    "vote": {
+        "uz": "Ovoz berish",
+        "ru": "Голосовать",
+        "en": "Vote"
     }
 }
