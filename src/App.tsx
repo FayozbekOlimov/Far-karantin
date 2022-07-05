@@ -8,6 +8,7 @@ import Header from './layout/Header';
 import Agency from './pages/Agency';
 import AboutAgency from './pages/Agency/AboutAgency';
 import Leadership from './pages/Agency/Leadership';
+import Representatives from './pages/Agency/Representatives';
 import Youth from './pages/Agency/Youth';
 import Contacts from './pages/Contacts';
 import ExpiredNormativeDocuments from './pages/Documents/ExpiredNormativeDocuments';
@@ -49,15 +50,16 @@ function App() {
           <Route key={menu.menuName} path={`/${menu.to}`} element={<Agency to={menu.to} />}>
             <Route path='page/:slug' element={<AboutAgency />} />
             <Route path='leader/:slug' element={<Leadership />} />
-            <Route path="news/:slug" element={<Youth />} />
-            <Route path="file/:slug" element={<ExpiredNormativeDocuments />} />
-            <Route path="c-action/video" element={<Videos />} />
-            <Route path="c-action/contact-form" element={<Contacts />} />
-            <Route path="c-action/gallery" element={<FotoGallery />} />
+            <Route path='news/:slug' element={<Youth />} />
+            <Route path='file/:slug' element={<ExpiredNormativeDocuments />} />
+            <Route path='c-action/video' element={<Videos />} />
+            <Route path='c-action/contact-form' element={<Contacts />} />
+            <Route path='c-action/gallery' element={<FotoGallery />} />
+            <Route path='c-action/management' element={<Representatives />} />
           </Route>
         ))}
-        <Route path="news-detail/:slug" element={<NewsDetail />} />
-        <Route path="gallery-detail/:slug" element={<GalleryView />} />
+        <Route path='news-detail/:slug' element={<NewsDetail />} />
+        <Route path='gallery-detail/:slug' element={<GalleryView />} />
         <Route path='contact' element={<Contacts />} />
         <Route path='sitemap' element={<SiteMap />} />
         <Route path='symbols' element={<Symbols />} />

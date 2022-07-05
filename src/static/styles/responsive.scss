@@ -71,6 +71,16 @@
 			}
 		}
 	}
+
+	.footer {
+		.copyrigt {
+			border: none;
+		}
+
+		.right {
+			display: none;
+		}
+	}
 }
 
 @media (max-width: 575px) {
@@ -147,6 +157,26 @@
 						}
 					}
 				}
+			}
+		}
+	}
+
+	.newsDetail-wrapper {
+		.ant-image {
+			float: none;
+			width: 100% !important;
+			height: 200px;
+		}
+	}
+
+	.representatives {
+		.info_body {
+			flex-direction: column;
+			align-items: center;
+
+			.right {
+				margin-left: 0 !important;
+				text-align: center;
 			}
 		}
 	}

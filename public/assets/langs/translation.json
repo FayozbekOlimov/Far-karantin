@@ -123,5 +123,85 @@
         "uz": "Jo'natish",
         "ru": "Отправить",
         "en": "Send"
+    },
+    "copyright": {
+        "uz": "Barcha huquqlar himoyalangan.",
+        "ru": "Все права защищены.",
+        "en": "All rights reserved."
+    },
+    "creator": {
+        "uz": "Sayt yaratuvchisi",
+        "ru": "Создатель сайта",
+        "en": "Site creator"
+    },
+    "source": {
+        "uz": "Sayt ma'lumotlaridan foydalanilganda www.karantin.uz manbasi ko'rsatilishi shart.",
+        "ru": "При использовании информации сайта необходимо указывать источник www.karantin.uz.",
+        "en": "When using site information, the source www.karantin.uz must be indicated."
+    },
+    "updated": {
+        "uz": "Saytning yangilangan sanasi",
+        "ru": "Дата обновления сайта",
+        "en": "The date the site was updated"
+    },
+    "license": {
+        "uz": "Saytdagi barcha materiallardan quyidagi lisenziya bo‘yicha foydalanish mumkin",
+        "ru": "Все материалы сайта могут быть использованы на условиях следующей лицензии",
+        "en": "All materials on the site can be used under the following license"
+    },
+    "fax": {
+        "uz": "Faks",
+        "ru": "Факс",
+        "en": "Fax"
+    },
+    "reseptionDays": {
+        "uz": "Qabul kunlari",
+        "ru": "Приемные дни",
+        "en": "Reception days"
+    },
+    "yearName": {
+        "uz": "2022-yil \"Inson qadrini ulug‘lash va faol mahalla yili\" deb e’lon qilindi",
+        "ru": "2022 год объявлен «Годом почитания человеческого достоинства и активного добрососедства».",
+        "en": "The year 2022 was declared as \"the year of glorifying human dignity and active neighborhood\"."
+    },
+    "pics": {
+        "uz": "Rasmlar",
+        "ru": "Картинки",
+        "en": "Pictures"
+    },
+    "allPics": {
+        "uz": "Barcha rasmlar",
+        "ru": "Все картинки",
+        "en": "All pictures"
+    },
+    "video": {
+        "uz": "Video",
+        "ru": "Видео",
+        "en": "Video"
+    },
+    "allVideos": {
+        "uz": "Barcha videolar",
+        "ru": "Все видео",
+        "en": "All videos"
+    },
+    "infoService": {
+        "uz": "Axborot xizmati",
+        "ru": "Информационная служба",
+        "en": "Information service"
+    },
+    "regAdm": {
+        "uz": "Hududiy boshqarmalar",
+        "ru": "Региональные администрации",
+        "en": "Regional administrations"
+    },
+    "information": {
+        "uz": "Ma'lumot",
+        "ru": "Информация",
+        "en": "Information"
+    },
+    "bio": {
+        "uz": "Tarjimai hol",
+        "ru": "Биография",
+        "en": "Biography"
     }
 }

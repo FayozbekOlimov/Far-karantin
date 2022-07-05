@@ -14,7 +14,7 @@ function TerritorialAdministrations() {
         {Object.entries(administrationsData).map(([id, administration]) => (
           <React.Fragment key={id}>
             <AdministrationCard id={id} {...administration} />
-            <Divider />
+            <Divider className='divider' />
           </React.Fragment>
         ))}
       </div>

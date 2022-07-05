@@ -4,6 +4,7 @@ import ReactPlayer from "react-player";
 import { Link } from "react-router-dom";
 import { latestGalleryUrl, latestVideoUrl } from "../../../api/apiUrls";
 import baseAPI from "../../../api/baseAPI";
+import { useT } from "../../../custom-hooks/useT";
 import { LatestVideoUrlInfoType, LatestVideoUrlResType, NewsUrlResType, PhotoGalleryCardInfoType, PhotoGalleryCardResType } from "../../../types";
 import './style.scss';
 
@@ -44,6 +45,8 @@ function HomeGallery() {
     getVideoData();
   }, [getVideoData])
 
+  const { t, lang } = useT();
+
   return (
     <div className="home_gallery">
       <div className="container">
@@ -52,9 +55,9 @@ function HomeGallery() {
             <div className="photo_gallery_card">
               <div className="photo_gallery_top">
                 <h2 className="photo_gallery_top_title">
-                  Rasmlar
+                  {t(`pics.${lang}`)}
                 </h2>
-                <Link to={"axborot-xizmati/c-action/gallery"} className="more_link">Barcha rasmlar</Link>
+                <Link to={"axborot-xizmati/c-action/gallery"} className="more_link">{t(`allPics.${lang}`)}</Link>
               </div>
 
               <Link to={`/gallery-detail/${galleryCard.slug}`} >
@@ -80,9 +83,9 @@ function HomeGallery() {
             <div className="photo_gallery_card">
               <div className="photo_gallery_top">
                 <h2 className="photo_gallery_top_title">
-                  Videolar
+                  {t(`video.${lang}`)}
                 </h2>
-                <Link to={"axborot-xizmati/c-action/video"} className="more_link">Barcha videolar</Link>
+                <Link to={"axborot-xizmati/c-action/video"} className="more_link"> {t(`allVideos.${lang}`)}</Link>
               </div>
 
               <div className="photo_gallery_body video-player-wrapper">

@@ -1,11 +1,10 @@
 import { Col, Row, Pagination } from 'antd';
-import React, { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import { newsUrl } from '../../../api/apiUrls';
 import baseAPI from '../../../api/baseAPI';
 import NewsCard from '../../../components/NewsCard';
 import { NewsUrlInfoType, NewsUrlResType } from '../../../types';
-import cardData from "../../cardData.json"
 
 function Youth() {
   const { slug } = useParams();

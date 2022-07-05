@@ -1,4 +1,3 @@
-import React from 'react'
 import BlockBanner from './BlockBanner';
 import ContentNewsTab from './ContentNewsTab';
 import FerganaMap from './FerganaMap';

@@ -32,13 +32,13 @@ function Leadership() {
   return (
     <div className="leadership_card">
       <h4 className="page_title">
-        Rahbariyat
+        {pageData[0]?.leader_category_id}
       </h4>
       <div className="leadership_body">
         {pageData.map((item) => (
           <React.Fragment key={item.id}>
             <LeaderCard {...item} />
-            <Divider />
+            <Divider className='divider' />
           </React.Fragment>
         ))}
       </div>

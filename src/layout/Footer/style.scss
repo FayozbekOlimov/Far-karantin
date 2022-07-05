@@ -1,10 +1,10 @@
 .footer {
   background-color: #119769;
-  padding         : 30px 10px;
+  padding: 30px 10px 10px;
 
   .copyrigt {
-    display     : flex;
-    align-items : center;
+    display: flex;
+    align-items: center;
     border-right: 2px solid #69ffcb;
 
     .copyright_text {
@@ -12,12 +12,37 @@
 
       h3 {
         font-size: 13px;
-        color    : #fff;
+        color: #fff;
       }
 
       p {
         font-size: 12px;
-        color    : #b4e6d5;
+        color: #b4e6d5;
+      }
+    }
+  }
+
+  .right {
+    text-align: right;
+
+    &>*,
+    a {
+      color: #fff;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .creator {
+    color: #b4e6d5;
+
+    a {
+      color: #69ffcb;
+
+      &:hover {
+        text-decoration: underline;
       }
     }
   }

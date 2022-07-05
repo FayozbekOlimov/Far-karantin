@@ -121,7 +121,8 @@ export type LeaderUrlInfoType = {
     phone: string,
     position: string,
     work_day: string,
-    biography: string
+    biography: string,
+    leader_category_id: string
 }[]
 
 export type FileUrlResType = {

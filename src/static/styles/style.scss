@@ -74,9 +74,18 @@ table {
     border: 1px solid #373634;
   }
 }
+
 .clear-both {
-  clear: both!important;
+  clear: both !important;
 }
+
+.divider {
+  background-image: linear-gradient(to right, transparent, #119769, transparent);
+  border: 0;
+  height: 1px;
+  margin: 12px 0;
+}
+
 .page_title {
   font-size: 28px;
   color: #119769;

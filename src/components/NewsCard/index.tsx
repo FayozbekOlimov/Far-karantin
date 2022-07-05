@@ -1,5 +1,4 @@
 import { Card } from 'antd'
-import React from 'react'
 import { Link } from 'react-router-dom'
 import "./style.scss";
 

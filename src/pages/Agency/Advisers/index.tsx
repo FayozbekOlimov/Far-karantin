@@ -15,7 +15,7 @@ function Advisers() {
         {Object.entries(leadershipData).map(([id, leadership]) => (
           <React.Fragment key={id}>
             <LeaderCard id={id} {...leadership} />
-            <Divider />
+            <Divider className='divider' />
           </React.Fragment>
         ))}
       </div>

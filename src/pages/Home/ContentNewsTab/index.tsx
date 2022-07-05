@@ -1,43 +1,19 @@
-import React, { useCallback, useEffect, useState } from 'react'
-import { Col, Row, Tabs } from 'antd';
+import { useCallback, useEffect, useState } from 'react'
+import { Col, Row } from 'antd';
 import "./style.scss";
-import { Link } from 'react-router-dom';
-import News from "./Components/News"
+// import { Link } from 'react-router-dom';
+// import News from "./Components/News"
 import { NewsUrlInfoType, NewsUrlResType } from '../../../types';
 import { bannerNewsUrl } from '../../../api/apiUrls';
 import baseAPI from '../../../api/baseAPI';
 import NewsCard from '../../../components/NewsCard';
-const { TabPane } = Tabs;
-
-const operations = <Link to="/news" className={"news_link"}>Axborot xizmati</Link>;
-
-// tablinkData
-// const tabLinkDatas = [
-//   {
-//     tab: "Yangiliklar",
-//     key: "1",
-//     component: News
-//   },
-//   {
-//     tab: "Tadbirlar",
-//     key: "2",
-//     component: News
-//   },
-//   {
-//     tab: "Yangiliklar",
-//     key: "3",
-//     component: News
-//   },
-//   {
-//     tab: "Yangiliklar",
-//     key: "4",
-//     component: News
-//   }
-// ]
+import { useT } from '../../../custom-hooks/useT';
+// const { TabPane } = Tabs;
 
 function ContentNewsTab() {
   const [bannerNews, setBannerNews] = useState<NewsUrlInfoType>([]);
   const [loading, setLoading] = useState<boolean>(true);
+  const {t, lang} = useT();
 
   const getBannerNewsData = useCallback(() => {
     setLoading(true);
@@ -59,7 +35,7 @@ function ContentNewsTab() {
     <div className='content_news_tab'>
       <div className="container">
         <h4 className="page_title">
-          Axborot xizmati
+          {t(`infoService.${lang}`)}
         </h4>
         <Row gutter={[16, 16]}>
           {bannerNews.map((news) => (

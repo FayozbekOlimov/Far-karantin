@@ -1,36 +1,35 @@
 import { Col, Row } from 'antd';
-import React from 'react'
+import { useT } from '../../custom-hooks/useT';
 import "./style.scss";
 
 function Footer() {
+  const {t, lang} = useT();
   return (
     <div className="footer">
       <div className="container">
         <Row gutter={[16, 16]}>
-          <Col lg={9} md={24}>
+          <Col lg={9} xs={24}>
             <div className="copyrigt">
               <figure>
                 <img src="/assets/img/gerb_logo.png" alt="gerb" />
               </figure>
               <div className="copyright_text">
-                <h3>
-                  O'ZBEKISTON RESPUBLIKASI <br />
-                  O'SIMLIKLAR KARANTINI VA HIMOYASI <br />
-                  AGENTLIGI
-                </h3>
+                <h3 dangerouslySetInnerHTML={{__html: t(`state.${lang}`)}} />
                 <p>
-                  2022 © Barcha huquqlar himoyalangan.
+                  2022 © {t(`copyright.${lang}`)}
                 </p>
               </div>
             </div>
           </Col>
-          <Col lg={15} md={24}>
+          <Col lg={15} xs={24}>
             <div className="right">
-
+              <p>{t(`updated.${lang}`)}: 04.07.2022, 12:52</p>
+              <p>{t(`source.${lang}`)}</p>
+              <p>{t(`license.t${lang}`)}: <a href="https://creativecommons.org/licenses/by/4.0/" target={'_blank'}>Creative Commons Attribution 4.0 International</a></p>
             </div>
           </Col>
-
         </Row>
+        <p className='creator'>{t(`creator.${lang}`)}: <a href="http://isoftware.uz/" target={'_blank'}>iSoft - IT Company</a></p>
       </div>
     </div>
   )

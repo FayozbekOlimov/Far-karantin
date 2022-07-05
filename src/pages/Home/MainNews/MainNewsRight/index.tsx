@@ -52,7 +52,7 @@ function MainNewsRight() {
         >
           <img src="/assets/img/prezident.jpg" alt="prezident" />
           <h4 className='sidebar_block_title'>
-            2022-yil "Inson qadrini ulug‘lash va faol mahalla yili" deb e’lon qilindi
+            {t(`yearName.${lang}`)}
           </h4>
         </a>
       </div>

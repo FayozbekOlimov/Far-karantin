@@ -15,7 +15,7 @@ function MobileReceptions() {
               <figure >
                 <img className='reception_img' src={url} alt="" />
               </figure>
-              <Divider />
+              <Divider className='divider' />
             </React.Fragment>
 
           ))
