@@ -25,9 +25,9 @@
         "en": "Site search"
     },
     "state": {
-        "uz": "O'ZBEKISTON RESPUBLIKASI <br /> O'SIMLIKLAR KARANTINI VA HIMOYASI <br /> AGENTLIGI",
-        "ru": "АГЕНТСТВО <br /> ПО КАРАНТИНУ И ЗАЩИТЕ РАСТЕНИЙ <br /> РЕСПУБЛИКИ УЗБЕКИСТАН",
-        "en": "AGENCY OF PLANT PROTECTION <br /> AND QUARANTINE OF THE REPUBLIC <br /> UZBEKISTAN"
+        "uz": "O'ZBEKISTON RESPUBLIKASI O'SIMLIKLAR KARANTINI VA HIMOYASI AGENTLIGI FARG'ONA VILOYATI BOSHQARMASI",
+        "ru": "ФЕРГАНСКОЕ ОБЛАСТНОЕ УПРАВЛЕНИЕ АГЕНТСТВА ПО КАРАНТИНУ И ЗАЩИТЕ РАСТЕНИЙ РЕСПУБЛИКИ УЗБЕКИСТАН",
+        "en": "FERGANA REGIONAL ADMINISTRATION OF PLANT QUARANTINE AND PROTECTION AGENCY OF THE REPUBLIC OF UZBEKISTAN"
     },
     "address": {
         "uz": "Bizning manzil",
@@ -135,9 +135,9 @@
         "en": "Site creator"
     },
     "source": {
-        "uz": "Sayt ma'lumotlaridan foydalanilganda www.karantin.uz manbasi ko'rsatilishi shart.",
-        "ru": "При использовании информации сайта необходимо указывать источник www.karantin.uz.",
-        "en": "When using site information, the source www.karantin.uz must be indicated."
+        "uz": "Sayt ma'lumotlaridan foydalanilganda www.farkarantin.uz manbasi ko'rsatilishi shart.",
+        "ru": "При использовании информации сайта необходимо указывать источник www.farkarantin.uz.",
+        "en": "When using site information, the source www.farkarantin.uz must be indicated."
     },
     "updated": {
         "uz": "Saytning yangilangan sanasi",
@@ -205,9 +205,9 @@
         "en": "Biography"
     },
     "fullAddress": {
-        "uz": "100100, Toshkent sh., \"Bobur\" 1-berk ko'chasi, 17-uy",
-        "ru": "100100, г. Ташкент, ул. Бабура, 1 проезд дом №17",
-        "en": "100100, 17, 1 Turn, Bobur Str., Tashkent, Uzbekistan"
+        "uz": "Farg‘ona sh, Usmon Nosir ko‘chasi 3-uy",
+        "ru": "г.Фергана, улица Османа Насыра, дом 3",
+        "en": "3rd house, Osman Nasir street, Fergana"
     },
     "workingDays": {
         "uz": "Dushanba-Juma 9:00-18:00",
@@ -253,5 +253,25 @@
         "uz": "Ovoz berish",
         "ru": "Голосовать",
         "en": "Vote"
+    },
+    "interview": {
+        "uz": "So'rovnoma",
+        "ru": "Опрос",
+        "en": "Interview"
+    },
+    "usefulLinks": {
+        "uz": "Foydali linklar",
+        "ru": "Полезные ссылки",
+        "en": "Useful links"
+    },
+    "weather": {
+        "uz": "Farg'onada ob-havo",
+        "ru": "Погода в Фергане",
+        "en": "Weather in Ferghana"
+    },
+    "": {
+        "uz": "",
+        "ru": "",
+        "en": ""
     }
 }

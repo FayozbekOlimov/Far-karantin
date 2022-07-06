@@ -80,6 +80,11 @@
     border: none;
     height: 40px;
 
+    span {
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
     &:hover {
       color: #fff;
       background-color: #119769;

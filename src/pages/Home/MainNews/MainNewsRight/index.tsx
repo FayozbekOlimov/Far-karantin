@@ -47,7 +47,7 @@ function MainNewsRight() {
       <div className="sidebar_block1">
         <a
           href="#"
-          target="_blank"
+          // target="_blank"
           rel="noopener noreferrer"
         >
           <img src="/assets/img/prezident.jpg" alt="prezident" />

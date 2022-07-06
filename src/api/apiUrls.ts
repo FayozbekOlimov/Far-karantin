@@ -21,6 +21,9 @@ export const filesUrl = 'files';
 
 export const newsDetailUrl = 'news-detail';
 export const bannerNewsUrl = 'banner-news';
+export const congratulationUrl = 'congratulation';
+export const mediaUrl = 'media';
+export const moralUrl = 'moral';
 export const latestGalleryUrl = 'latest-gallery';
 export const latestVideoUrl = 'video/latest';
 export const cardLinksUrl = 'card-link';

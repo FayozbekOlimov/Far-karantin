@@ -138,11 +138,11 @@ function BlockBanner() {
           </Col>
           <Col lg={6} sm={12} xs={24}>
             <div className="weather_card">
-              <TitleBlock text="Toshkentda ob-havo" />
+              <TitleBlock text={t(`weather.${lang}`)} />
               <div className="weather_body">
                 <div className="title">
                   <h2>
-                    Toshkent
+                    Farg'ona
                   </h2>
                   <p>Bugun 08:00 dagi ob-havo</p>
                 </div>
@@ -157,7 +157,7 @@ function BlockBanner() {
           </Col>
           <Col lg={6} sm={12} xs={24}>
             <div className="useful_link_card">
-              <TitleBlock text="Foydali havolalar" />
+              <TitleBlock text={t(`usefulLinks.${lang}`)} />
               <div className="useful_link_body">
                 {
                   cardLinks.map(usefulLink => (
@@ -184,7 +184,7 @@ function BlockBanner() {
           </Col>
           <Col lg={6} sm={12} xs={24}>
             <div className="survey_card">
-              <TitleBlock text="So'rovnoma" />
+              <TitleBlock text={t(`interview.${lang}`)} />
               <div className="survey">
                 <h5 className="survey_title">
                   {t(`survey.${lang}`)}

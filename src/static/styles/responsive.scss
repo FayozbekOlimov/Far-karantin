@@ -180,4 +180,11 @@
 			}
 		}
 	}
+
+	.content_news_tab {
+		.ant-tabs-nav {
+			flex-direction: column;
+			align-items: flex-start;
+		}
+	}
 }

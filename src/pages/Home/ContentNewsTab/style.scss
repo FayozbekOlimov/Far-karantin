@@ -2,13 +2,29 @@
   margin: 20px 0 10px;
 
   .ant-tabs {
+    width: 100%;
+
     .ant-tabs-ink-bar {
       background-color: #119769;
     }
 
-    .ant-tabs-tab {
+    &-tab {
+      font-size: 16px;
+      padding: 6px 0;
+
       &:hover {
         color: #119769;
+      }
+    }
+
+    &-nav::before {
+      border-bottom: none !important;
+    }
+
+    &-extra-content {
+      .page_title {
+        margin-bottom: 0;
+        margin-right: 16px;
       }
     }
 

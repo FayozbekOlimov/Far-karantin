@@ -12,11 +12,11 @@ function HeaderBody() {
           <Col xs={24} lg={12}>
             <div className="left">
               {/* <Fade direction='down' delay={100}> */}
-              <Link to="/">
-                <figure>
+              <Link to="/" className='site_logo'>
+                <div className='logo_imgBx'>
                   <img className="site_logo_img" src="/assets/img/logo.svg" alt="karantin agentligi" />
-                </figure>
-                <h2 className="site_title" dangerouslySetInnerHTML={{__html: t(`state.${lang}`)}} />
+                </div>
+                <h2 className="site_title" dangerouslySetInnerHTML={{ __html: t(`state.${lang}`) }} />
               </Link>
               {/* </Fade> */}
             </div>
@@ -46,10 +46,10 @@ function HeaderBody() {
                       </div>
                       <p className="phone_body">
                         <span className="tel_text">{t(`hotline.${lang}`)}</span> <br />
-                        <a className="phone_url" href="tel:+998712028484">
+                        <a className="phone_url" href="tel:+998712431046">
                           (+99871)
                           <span className="tel_number">
-                            202 84 84
+                            243 10 46
                           </span>
                         </a>
                       </p>
@@ -60,13 +60,10 @@ function HeaderBody() {
                       </div>
                       <p className="phone_body">
                         <span className="tel_text">{t(`callCenter.${lang}`)}</span> <br />
-                        <a href="tel:1288" className="tel_number">
-                          1288,
-                        </a>
-                        <a className="phone_url" href="tel:+998712028484">
+                        <a className="phone_url" href="tel:+998712431115">
                           (+99871)
                           <span className="tel_number">
-                            202 84 84
+                            243 11 15
                           </span>
                         </a>
                       </p>
