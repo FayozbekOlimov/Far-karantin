@@ -152,6 +152,7 @@ export type NewsUrlInfoType = {
     slug: string,
     created_at: string,
     content: string,
+    description: string,
     post_category_id: string
 }[]
 
@@ -200,6 +201,7 @@ export type NewsDetailInfoType = {
     slug: string,
     created_at: string,
     content: string,
+    description: string,
     post_category_id: string
 }
 

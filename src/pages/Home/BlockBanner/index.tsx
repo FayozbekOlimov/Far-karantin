@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { Col, Row, Radio, Space, RadioChangeEvent, Button, Modal, Progress, Alert } from 'antd'
 import { Navigation, Pagination, EffectFade, Autoplay } from 'swiper';
 import "./style.scss";
@@ -9,16 +9,22 @@ import { AdsImgUrlInfoType, AdsImgUrlResType, CardLinksInfoType, CardLinksResTyp
 import baseAPI from '../../../api/baseAPI';
 import { adsImgUrl, cardLinksUrl } from '../../../api/apiUrls';
 import { useT } from '../../../custom-hooks/useT';
+import axios from 'axios';
+import { weatherAPI } from '../../../constants';
 
 
 function BlockBanner() {
   const [surveyValue, setSurveyValue] = useState<string>("");
   const [isModalVisible, setIsModalVisible] = useState<boolean>(false);
-  const [isOpenAlert, setIsOpenAlert] = useState<boolean>(false)
-  const [alertProps, setAlertProps] = useState<{ message: string, type: "success" | "info" | "warning" | "error" }>({
+  const [isOpenAlert, setIsOpenAlert] = useState<boolean>(false);
+
+  type AlertType = "success" | "info" | "warning" | "error";
+  const [alertProps, setAlertProps] = useState<{ message: string, type: AlertType }>({
     message: "",
     type: "success"
   })
+
+  const { t, lang } = useT();
 
   const onChange = (e: RadioChangeEvent) => {
     console.log('radio checked', e.target.value);
@@ -31,13 +37,13 @@ function BlockBanner() {
     if (surveyValue !== "") {
       setAlertProps(prev => ({
         ...prev,
-        message: "Sizning javobingiz qabul qilindi",
+        message: t(`accReply.${lang}`),
         type: 'success'
       }))
     } else {
       setAlertProps(prev => ({
         ...prev,
-        message: "Bitta javobni tanlang",
+        message: t(`chooseOne.${lang}`),
         type: 'error'
       }))
     }
@@ -94,7 +100,29 @@ function BlockBanner() {
     getAdsImg();
   }, [getAdsImg])
 
-  const {t, lang} = useT();
+  const apiKey = '7a13b51f1f360b2a5e6559a9c06c1a51';
+
+  const [hour, setHour] = useState<number>();
+  const [temp, setTemp] = useState<number>();
+  const [weatherImg, setWeatherImg] = useState<string>('');
+
+  const getCurrentWeather = () => {
+    axios
+      .get(`${weatherAPI}Fergana&units=metric&appid=${apiKey}`)
+      .then(res => {
+        if (res.status !== 404) {
+          return res.data;
+        }
+      })
+      .then(data => {
+        setTemp(data.main.temp);
+        setHour(new Date(data.dt * 1000).getHours());
+        setWeatherImg(`${data.weather[0].icon}@2x.png`);
+      })
+      .catch(e => console.log('Error:', e.message));
+  }
+
+  useMemo(() => getCurrentWeather(), []);
 
   return (
     <div className="block_banner">
@@ -104,7 +132,6 @@ function BlockBanner() {
           <Col lg={6} sm={12} xs={24}>
             <div className="slider_card">
               <Swiper
-                // install Swiper modules
                 autoplay={{
                   delay: 3000,
                   disableOnInteraction: false,
@@ -144,13 +171,14 @@ function BlockBanner() {
                   <h2>
                     Farg'ona
                   </h2>
-                  <p>Bugun 08:00 dagi ob-havo</p>
+                  <p>Bugun {hour && (hour > 10 ? hour + ":00" : "0" + hour + ":00")} dagi ob-havo</p>
                 </div>
                 <figure>
-                  <img src="/assets/img/sunny.png" alt="sunny" />
+                  {weatherImg &&
+                    <img src={'http://openweathermap.org/img/wn/' + weatherImg} alt="weather-logo" />}
                 </figure>
                 <h4 className="temperature">
-                  +20,5 °C
+                  {temp && temp > 0 ? "+" + temp?.toFixed(1) + "°C" : temp?.toFixed(1) + "°C"}
                 </h4>
               </div>
             </div>
@@ -169,8 +197,7 @@ function BlockBanner() {
                       <div className="useful_link">
                         <img
                           src={usefulLink.image}
-                          alt={usefulLink.name}
-                        // title={usefulLink.text}
+                          alt={`link${usefulLink.id}`}
                         />
                         <p className="link_text">
                           {usefulLink.name}

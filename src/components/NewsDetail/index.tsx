@@ -32,10 +32,10 @@ function NewsDetail() {
             <div className="container">
                 <h3 className="title">{newsDetail.title}</h3>
                 <div className="newsDetail-wrapper">
-                    <Image
+                    {/* <Image
                         src={newsDetail.image}
                         width={"100%"}
-                    />
+                    /> */}
                     <div
                         className="newsDetail-content"
                         dangerouslySetInnerHTML={{ __html: newsDetail.content }}

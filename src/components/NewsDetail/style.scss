@@ -29,4 +29,12 @@
             }
         }
     }
+
+    &-content {
+        img {
+            border-radius: 6px;
+            height: auto !important;
+            margin: 15px 15px 15px 0 !important;
+        }
+    }
 }

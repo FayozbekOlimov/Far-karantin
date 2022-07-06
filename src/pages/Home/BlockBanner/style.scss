@@ -115,6 +115,7 @@
       .useful_link {
         display: flex;
         align-items: flex-start;
+        gap: 10px;
 
         &:hover .link_text {
           color: #137461;
@@ -127,7 +128,6 @@
         }
 
         .link_text {
-          margin-left: 10px;
           color: #000;
         }
       }
@@ -181,6 +181,8 @@
         display: flex;
         justify-content: space-between;
         margin-top: 20px;
+        gap: 8px;
+        flex-wrap: wrap;
 
         .ant-btn-primary {
           background: linear-gradient(to bottom, rgb(17, 151, 105) 0%, rgb(19, 116, 97) 100%);

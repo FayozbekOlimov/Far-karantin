@@ -9,24 +9,16 @@ import './style.scss';
 function RegionalAdministrations() {
     const [currRegion, setCurrRegion] = useState<ManagementUrlInfoType>({} as ManagementUrlInfoType);
 
-    const displayName = (e: string) => {
-        Array.from(document.getElementsByTagName('path')).forEach(elem => {
-            elem.style.fill = '#849c94';
-        })
-        document.getElementById(e)!.style.fill = '#119769'
-        const newCurrRegion: any = management.find(reg => reg.region_id === e);
-        setCurrRegion(newCurrRegion);
-    }
-
     const [management, setManagement] = useState<ManagementUrlInfoType[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
 
     const getManagementData = useCallback(() => {
         setLoading(true);
         baseAPI.fetchAll<ManagementUrlResType>(managementUrl)
-            .then((e) => {
-                if (e.data.status === "200") {
-                    setManagement(e.data.data);
+            .then((res) => {
+                if (res.data.status === "200") {
+                    setManagement(res.data.data);
+                    setCurrRegion(res.data.data.filter(reg => reg.region_id === 'fargona-shahar')[0]);
                     setLoading(false);
                 }
             })
@@ -35,7 +27,17 @@ function RegionalAdministrations() {
 
     useEffect(() => {
         getManagementData();
+        displayName('fargona-shahar');
     }, [getManagementData])
+
+    const displayName = (e: string = 'fargona-shahar') => {
+        Array.from(document.getElementsByTagName('path')).forEach(elem => {
+            elem.style.fill = '#849c94';
+        })
+        document.getElementById(e)!.style.fill = '#119769'
+        const newCurrRegion: any = management.find(reg => reg.region_id === e);
+        setCurrRegion(newCurrRegion);
+    }
 
     const { t, lang } = useT();
 
@@ -232,7 +234,7 @@ function RegionalAdministrations() {
         c0.3,1.3,5,4,5,4l2,2c0,0,0,2.3,0,6s-0.3,6.3,5,9c5.2,2.8,2.3,1.5,4,4c1.7,2.5,2,9.3,3,11c1,1.8,3.5,4.8,3,7s0.5,5.5-2,7
         c-2.5,1.5-7.3,3-8,3s-2.5,2.8-4,4s-2.5,6.3-3,8s-1.8,4-3,4c-1.3,0-5.3-0.3-6,0s-2,2-4,2c-2,0-2.5-0.3-5,0s-6,1-6,1h-3
         c0,0,1.5,4.5,3,5s6.8-0.3,9-2c2.3-1.8,8-2,8-2s0.8,4,2,4s4.5,1.3,6,1c1.5-0.3,2.5-1,5,0s12,10,12,10s-4.5-10,0-10
-        c4.5,0,10.8,0.3,13,1s2.5,0.3,8,1c5.5,0.8,11-4,11-4s9.8-5.8,15-10s5.8-4.3,8-6s-0.5-1,5-3s7.8-2.3,8-4S443.5,184.5,441,181z"><title>Rishton tumani</title></path>
+        c4.5,0,10.8,0.3,13,1s2.5,0.3,8,1c5.5,0.8,11-4,11-4s9.8-5.8,15-10s5.8-4.3,8-6s-0.5-1,5-3s7.8-2.3,8-4S443.5,184.5,441,181z"><title>Oltiariq tumani</title></path>
                                     </g>
                                 </g>
                             </g>
@@ -279,7 +281,7 @@ function RegionalAdministrations() {
                             <g id="Shape_16_1_" enableBackground="new">
                                 <g id="Shape_16">
                                     <g>
-                                        <path className='region-path' id="ferghana" fillRule="evenodd" clipRule="evenodd" onClick={() => displayName('ferghana')}
+                                        <path className='region-path' id="fargona-shahar" fillRule="evenodd" clipRule="evenodd" onClick={() => displayName('fargona-shahar')}
                                             d="M517,178c-1-1.3-1.2-4.3-2-6s-2.5-5.3-3-7s0.3-4-2-5s-4.3-1-5-2
         c-0.8-1-2.5-1.3-3-3s-0.3-3.8-1-5s-0.3-2.8-2-3s-3.5,0.3-5,0s-3.3-1.3-5,0c-1.8,1.3-4.3,3.3-5,4s-3,3-3,3l-2,2c0,0,0.8,5,1,6
         s-0.8,4.3,0,6s0.8,7.5,1,9s1.8,4.3,3,4s5,1,6,1c1,0,1.5,0.5,3,3c1.5,2.5,4,3,4,3s4,0,5,1c1,1,3,4,3,4s4.3-1.5,4-3s3.3-1.3,4-2
@@ -338,7 +340,7 @@ function RegionalAdministrations() {
                             <g id="Shape_22_1_" enableBackground="new">
                                 <g id="Shape_22">
                                     <g>
-                                        <path className='region-path' id="fartum" onClick={() => displayName('fartum')}
+                                        <path className='region-path' id="fargona" onClick={() => displayName('fargona')}
                                             d="M555,241c-2.3-0.5-5.5-1.5-7-2s-2.5-1.5-3-3s1.2-5,3-5c1.3,0,3-2,3-2s-0.5-3.3-3-3c-2.5,0.3-4.8,1-7,0
         s-7.5-1-11-3c-3.5-2-4-3-7-5s-6-7-6-7s-4.6-7.1-4-9c0.5-1.5,0-3,2-4c2-1,4.8-2.8,5-4s0.8-2.5,1-4s-2-3-2-3s0.8-1-2,1
         c-2.7,2-6,2-6,2c-0.3,1-0.8,2.8-1,4s0,3.5-3,3c-3-0.5-3.3-0.3-4-2c-0.7-1.8-1.2-3-2-4s-3-2-3-2l-2,3l-2,2c0,0-1.8-2-2-3
@@ -366,10 +368,10 @@ function RegionalAdministrations() {
                                     <strong className='name'>{currRegion?.name}</strong>
                                     <ul>
                                         {/* <li>Lavozim: </li> */}
-                                        {currRegion?.phone && <li>{t(`phone.${lang}`)}: <a href={`tel:${currRegion?.phone}`}>{currRegion?.phone}</a></li>}
-                                        {currRegion?.fax && <li>{t(`fax.${lang}`)}: <a href={`tel:${currRegion?.fax}`}>{currRegion?.fax}</a></li>}
-                                        {currRegion?.work_day && <li>{t(`reseptionDays.${lang}`)}: {currRegion?.work_day}</li>}
-                                        {currRegion?.email && <li>{t(`email.${lang}`)}: <a href={`mailto:${currRegion?.email}`}>{currRegion?.email}</a></li>}
+                                        {currRegion?.phone && <li><strong>{t(`phone.${lang}`)}:</strong> <a href={`tel:${currRegion?.phone}`}>{currRegion?.phone}</a></li>}
+                                        {currRegion?.fax && <li><strong>{t(`fax.${lang}`)}:</strong> <a href={`tel:${currRegion?.fax}`}>{currRegion?.fax}</a></li>}
+                                        {currRegion?.work_day && <li><strong>{t(`reseptionDays.${lang}`)}:</strong> {currRegion?.work_day}</li>}
+                                        {currRegion?.email && <li><strong>{t(`email.${lang}`)}:</strong> <a href={`mailto:${currRegion?.email}`}>{currRegion?.email}</a></li>}
                                     </ul>
                                 </Col>
                                 <Col xs={24} lg={8}>

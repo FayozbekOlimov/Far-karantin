@@ -269,9 +269,14 @@
         "ru": "Погода в Фергане",
         "en": "Weather in Ferghana"
     },
-    "": {
-        "uz": "",
-        "ru": "",
-        "en": ""
+    "accReply": {
+        "uz": "Sizning javobingiz qabul qilindi",
+        "ru": "Ваш ответ принят",
+        "en": "Your reply has been accepted"
+    },
+    "chooseOne": {
+        "uz": "Bitta javobni tanlang",
+        "ru": "Выберите один ответ",
+        "en": "Choose one answer"
     }
 }

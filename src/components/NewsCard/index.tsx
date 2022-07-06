@@ -9,11 +9,12 @@ interface INewsCard {
   slug: string,
   created_at: string,
   content: string,
+  description: string,
   post_category_id: string
 }
 
 function NewsCard(props: INewsCard) {
-  const { title, image, content, slug, created_at } = props;
+  const { title, image, content, slug, created_at, description } = props;
 
   return (
     <div className="news_card">
@@ -30,7 +31,7 @@ function NewsCard(props: INewsCard) {
             <img src={image} alt={title} className="card_img" />
           </div>
           <p className="card_content"
-            dangerouslySetInnerHTML={{ __html: content }} />
+            dangerouslySetInnerHTML={{ __html: description }} />
         </Card>
       </Link>
     </div>
