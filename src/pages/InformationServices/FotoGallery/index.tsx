@@ -1,10 +1,9 @@
 import { Col, Pagination, Row } from 'antd';
-import React, { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { galleryUrl } from '../../../api/apiUrls';
 import baseAPI from '../../../api/baseAPI';
 import PhotoGalleryCard from '../../../components/PhotoGalleryCard';
 import { GalleryUrlInfoType, GalleryUrlResType } from '../../../types';
-import fotoGalleryData from "./fotoGalleryData.json";
 
 function FotoGallery() {
   const [current, setCurrent] = useState<number>(1);

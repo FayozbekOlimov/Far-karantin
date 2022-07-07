@@ -1,34 +1,18 @@
 import { Row, Col, Form, Input, Button, message } from "antd";
-import { log } from "console";
 import { useCallback, useEffect, useState } from "react";
 import PhoneInput from "react-phone-input-2";
 import { contactDataUrl, contactForm } from "../../api/apiUrls";
 import baseAPI from "../../api/baseAPI";
-import { BASE_IMG_URL } from "../../constants";
 import { useT } from "../../custom-hooks/useT";
-import { ContactDataInfoType, ContactDataResType } from "../../types";
+import { ContactDataInfoType, ContactDataResType, ContactFormType } from "../../types";
 import FerganaMap from '../Home/FerganaMap';
 import './style.scss';
 
 function Contacts() {
   const { t, lang } = useT();
-
-  // user data states
-  const [name, setName] = useState('')
-  const [email, setEmail] = useState('')
   const [phoneNumber, setPhoneNumber] = useState('')
-  // const [message, setMessage] = useState('')
-
-  type ContactFormType = {
-    status: string,
-    message: string,
-    data: {
-      message: string
-    }
-  }
 
   const onFinish = (values: FormData) => {
-    // console.log('Success:', values);
     baseAPI.create<ContactFormType>(contactForm, values)
       .then((res) => {
         message.warning(res.data.message)
@@ -36,8 +20,6 @@ function Contacts() {
       .catch(err => {
         console.log(err);
       })
-
-
   };
 
   const onFinishFailed = (errorInfo: any) => {
@@ -72,8 +54,6 @@ function Contacts() {
               <div className="address_card">
                 <p className="address_text"><strong>{t(`address.${lang}`)}: </strong>{contactData[0]?.address}</p>
                 <p className="address_text"><strong>{t(`nextTo.${lang}`)}: </strong>{contactData[0]?.destination}</p>
-                <p className="address_text"><strong>{t(`stations.${lang}`)}: </strong> Alisher Navoiy nomidagi Toshkent davlat o'zbek tili va adabiyoti universiteti</p>
-                <p className="address_text"><strong>{t(`buses.${lang}`)}: </strong>47, 11, 76, 32, 126, 3, 92, 81</p>
                 <p className="address_text"><strong>{t(`schedule.${lang}`)}: </strong>{contactData[0]?.work_time}</p>
                 <p className="address_text"><strong>{t(`lunch.${lang}`)}: </strong>{contactData[0]?.lunch_time}</p>
                 <p className="address_text">
@@ -88,7 +68,7 @@ function Contacts() {
                 <p className="address_text">
                   <strong>{t(`rule.${lang}`)}: </strong>
                 </p>
-                <a href={BASE_IMG_URL + contactData[0]?.download} target="_blank" rel="noopener noreferrer">
+                <a href={contactData[0]?.download} target="_blank" rel="noopener noreferrer">
                   {t(`see.${lang}`)}
                 </a>
               </div>
@@ -115,7 +95,7 @@ function Contacts() {
                     layout='vertical'
                   >
                     <Row gutter={[16, 16]}>
-                      <Col xs={12}>
+                      <Col xs={24} sm={12}>
                         <Form.Item
                           style={{ marginBottom: '0' }}
                           label={t(`name.${lang}`)}
@@ -125,7 +105,7 @@ function Contacts() {
                           <Input />
                         </Form.Item>
                       </Col>
-                      <Col xs={12} >
+                      <Col xs={24} sm={12}>
                         <Form.Item
                           style={{ marginBottom: '0' }}
                           label={t(`email.${lang}`)}
@@ -143,7 +123,6 @@ function Contacts() {
                           name="phone"
                           rules={[{ required: true, message: 'Please input your phone number!' }]}
                         >
-                          {/* <Input type={'tel'} /> */}
                           <PhoneInput
                             country={'uz'}
                             placeholder='+998 (__) ___-__-__'

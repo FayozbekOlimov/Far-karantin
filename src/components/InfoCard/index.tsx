@@ -3,7 +3,6 @@ import { Card } from 'antd'
 import { Link } from 'react-router-dom'
 import "./style.scss";
 
-
 interface IInfoCard {
   id: string,
   date: string,

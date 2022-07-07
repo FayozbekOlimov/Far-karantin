@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import "./style.scss";
 
 interface IPhotoGalleryCard {
+  id: number,
   title: string,
   slug: string,
   image: string,
@@ -10,29 +11,18 @@ interface IPhotoGalleryCard {
 }
 
 function PhotoGalleryCard(props: IPhotoGalleryCard) {
-  const { title, slug, image, created_at } = props;
+  const { id, title, slug, image, created_at } = props;
 
   return (
     <div className="photo_gallery_card">
-      {/* {
-        title && (
-          <div className="photo_gallery_top">
-            <h2 className="photo_gallery_top_title">
-              {title}
-            </h2>
-            <Link to={"#"} className="more_link">{slug}</Link>
-          </div>
-        )
-      } */}
-
       <Link to={'/gallery-detail/' + slug} >
         <div className="photo_gallery_body">
           <img
             className='photo_gallery_img'
             src={image}
-            alt=""
+            alt={`card-image${id}`}
           />
-          <div className={`content`}>
+          <div className='content'>
             <div className="left">
               <h2 className="content_title">
                 {title}

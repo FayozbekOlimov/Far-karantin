@@ -1,7 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import "./style.scss";
 import LeaderCard from "./LeaderCard";
-import leadershipData from "./leadershipData.json";
 import { Divider } from 'antd';
 import { useParams } from 'react-router-dom';
 import baseAPI from '../../../api/baseAPI';

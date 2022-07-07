@@ -42,8 +42,7 @@ function Youth() {
         <Row gutter={[16, 16]}>
           {pageData.map(data => (
             <Col lg={8} md={12} key={data.id}>
-              <NewsCard {...data}
-              />
+              <NewsCard {...data} />
             </Col>
           ))
           }

@@ -59,11 +59,6 @@
         "ru": "Ориентир",
         "en": "Next to"
     },
-    "buses": {
-        "uz": "Avtobuslar",
-        "ru": "Автобусов",
-        "en": "Buses"
-    },
     "schedule": {
         "uz": "Ish kunlari",
         "ru": "График работы",
@@ -78,11 +73,6 @@
         "uz": "Telefon nomerlari",
         "ru": "Телефонные номера",
         "en": "Phone numbers"
-    },
-    "stations": {
-        "uz": "Yaqin bekatlar",
-        "ru": "Ближайшие станции",
-        "en": "Nearby stations"
     },
     "rule": {
         "uz": "O'zbekiston Respublikasi O'simliklar Karantini va Himoyasi Agentligi davlat xizmatlarini ko'rsatishda aloqa markazi (ishonch telefoni) faoliyatini tashkil etish tartibi to'g'risidagi nizom",
@@ -278,5 +268,15 @@
         "uz": "Bitta javobni tanlang",
         "ru": "Выберите один ответ",
         "en": "Choose one answer"
+    },
+    "home": {
+        "uz": "Bosh sahifa",
+        "ru": "Главная",
+        "en": "Home"
+    },
+    "fergana": {
+        "uz": "Farg'ona",
+        "ru": "Фергана",
+        "en": "Fergana"
     }
 }

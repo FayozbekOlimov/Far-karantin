@@ -40,9 +40,6 @@ function Representatives() {
 								<img src={item.image} alt={item.name} />
 							</div>
 							<div className="right">
-								{/* <h2 className="rank">
-								{item.}
-							</h2> */}
 								<h2 className="fio">
 									{item.name}
 								</h2>

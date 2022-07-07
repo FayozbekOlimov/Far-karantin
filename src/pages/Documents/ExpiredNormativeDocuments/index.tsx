@@ -1,9 +1,8 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import { filesUrl } from '../../../api/apiUrls';
 import baseAPI from '../../../api/baseAPI';
 import { FileUrlInfoType, FileUrlResType } from '../../../types';
-import statisticsConsideredData from "../../statisticsConsideredData.json";
 
 function ExpiredNormativeDocuments() {
   const { slug } = useParams();
@@ -40,7 +39,7 @@ function ExpiredNormativeDocuments() {
         {
           pageData.map((item) => (
             <a
-            key={item.id}
+              key={item.id}
               className='statistic_link'
               href={item.file_download}
               target="_blank"

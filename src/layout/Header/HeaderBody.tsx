@@ -11,14 +11,14 @@ function HeaderBody() {
         <Row gutter={[16, 16]} justify='center'>
           <Col xs={24} lg={12}>
             <div className="left">
-              {/* <Fade direction='down' delay={100}> */}
-              <Link to="/" className='site_logo'>
-                <div className='logo_imgBx'>
-                  <img className="site_logo_img" src="/assets/img/logo.svg" alt="karantin agentligi" />
-                </div>
-                <h2 className="site_title" dangerouslySetInnerHTML={{ __html: t(`state.${lang}`) }} />
-              </Link>
-              {/* </Fade> */}
+              <Fade direction='down' delay={100}>
+                <Link to="/" className='site_logo'>
+                  <div className='logo_imgBx'>
+                    <img className="site_logo_img" src="/assets/img/logo.svg" alt="karantin agentligi" />
+                  </div>
+                  <h2 className="site_title">{t(`state.${lang}`)}</h2>
+                </Link>
+              </Fade>
             </div>
           </Col>
           <Col xs={24} lg={12}>
@@ -26,16 +26,14 @@ function HeaderBody() {
               <Row gutter={[16, 16]} justify='center'>
                 <Col xs={0} sm={12}>
                   <div className="fax">
-                    {/* <a href="#"> */}
                     <i className="fa-solid fa-map-location-dot"></i>
                     <p className="fax_text">
                       {t(`address.${lang}`)}: <br />
                       {t(`fullAddress.${lang}`)} <br />
-                      {t(`email.${lang}`)}: <a href="mailto:info@karantin.uz" className='email'>
-                        info@karantin.uz
+                      {t(`email.${lang}`)}: <a href="mailto: info@farkarantin.uz" className='email'>
+                         info@farkarantin.uz
                       </a>
                     </p>
-                    {/* </a> */}
                   </div>
                 </Col>
                 <Col xs={24} sm={12}>
@@ -46,8 +44,8 @@ function HeaderBody() {
                       </div>
                       <p className="phone_body">
                         <span className="tel_text">{t(`hotline.${lang}`)}</span> <br />
-                        <a className="phone_url" href="tel:+998712431046">
-                          (+99871)
+                        <a className="phone_url" href="tel:+998732431046">
+                          (+99873)
                           <span className="tel_number">
                             243 10 46
                           </span>
@@ -60,8 +58,8 @@ function HeaderBody() {
                       </div>
                       <p className="phone_body">
                         <span className="tel_text">{t(`callCenter.${lang}`)}</span> <br />
-                        <a className="phone_url" href="tel:+998712431115">
-                          (+99871)
+                        <a className="phone_url" href="tel:+998732431115">
+                          (+99873)
                           <span className="tel_number">
                             243 11 15
                           </span>

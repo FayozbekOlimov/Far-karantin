@@ -14,7 +14,7 @@ function Footer() {
                 <img src="/assets/img/gerb_logo.png" alt="gerb" />
               </figure>
               <div className="copyright_text">
-                <h3 dangerouslySetInnerHTML={{__html: t(`state.${lang}`)}} />
+                <h3>{t(`state.${lang}`)}</h3>
                 <p>
                   2022 © {t(`copyright.${lang}`)}
                 </p>

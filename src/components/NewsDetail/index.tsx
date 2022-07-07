@@ -1,9 +1,8 @@
-import { Image } from "antd";
 import { useCallback, useEffect, useState } from "react";
 import { useParams } from "react-router-dom"
 import { newsDetailUrl } from "../../api/apiUrls";
 import baseAPI from "../../api/baseAPI";
-import { NewsDetailInfoType, NewsDetailResType, NewsUrlInfoType, NewsUrlResType } from "../../types";
+import { NewsDetailInfoType, NewsDetailResType } from "../../types";
 import './style.scss';
 
 function NewsDetail() {
@@ -42,7 +41,6 @@ function NewsDetail() {
                     />
                     <div className="clear-both"></div>
                 </div>
-                {/* </Row> */}
             </div>
         </div>
     )

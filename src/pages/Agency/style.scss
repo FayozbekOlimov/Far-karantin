@@ -4,9 +4,14 @@
     color: #000;
 
     .about_agency_body {
+
+      &>p,
+      span {
+        font-size: 14px !important;
+      }
+
       .agency_text {
         text-align: justify;
-        font-size: 14px;
       }
     }
   }

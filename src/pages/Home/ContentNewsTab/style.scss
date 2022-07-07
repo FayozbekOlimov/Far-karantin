@@ -17,6 +17,10 @@
       }
     }
 
+    &-nav-operations {
+      display: none !important;
+    }
+
     &-nav::before {
       border-bottom: none !important;
     }

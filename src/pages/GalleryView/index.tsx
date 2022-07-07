@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { Col, Row, Image } from 'antd'
 import "./style.scss";
 import { useParams } from 'react-router-dom';
@@ -38,15 +38,12 @@ function GalleryView() {
             {
               galleryView?.images?.map((link, ind) => (
                 <Col
-                  lg={6}
-                  md={8}
-                  sm={12}
                   key={ind}
+                  lg={6} md={8} sm={12}
                 >
                   <Image
                     src={link}
-                    width={"100%"} 
-                    height={"240px"}
+                    className='gallery_view_img'
                   />
                 </Col>
               ))

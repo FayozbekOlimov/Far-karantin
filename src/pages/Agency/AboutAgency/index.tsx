@@ -3,13 +3,11 @@ import { useParams } from "react-router-dom";
 import { pageUrl } from "../../../api/apiUrls";
 import baseAPI from "../../../api/baseAPI";
 import { PageUrlInfoType, PageUrlResType } from "../../../types";
-// import { LoadingContext } from "react-router-loading";
 
 function AboutAgency() {
   const { slug } = useParams();
   const [loading, setLoading] = useState<boolean>(true);
   const [pageData, setPageData] = useState<PageUrlInfoType>({} as PageUrlInfoType);
-  // const loadingContext = useContext(LoadingContext);
 
   const getPageData = useCallback(() => {
     setLoading(true);
@@ -18,13 +16,9 @@ function AboutAgency() {
         if (res.data.status === "200") {
           setPageData(res.data?.data);
           setLoading(false);
-          // loadingContext.done()
         }
       })
       .catch(e => console.log('Error:', e.message))
-      // .finally(() => {
-      //   loadingContext.done();
-      // })
   }, [slug]);
 
   useEffect(() => {
@@ -44,8 +38,6 @@ function AboutAgency() {
       />
     </div>
   )
-
-
 }
 
 export default AboutAgency

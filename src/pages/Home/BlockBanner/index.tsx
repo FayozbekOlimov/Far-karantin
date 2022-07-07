@@ -2,7 +2,6 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import { Col, Row, Radio, Space, RadioChangeEvent, Button, Modal, Progress, Alert } from 'antd'
 import { Navigation, Pagination, EffectFade, Autoplay } from 'swiper';
 import "./style.scss";
-
 import { Swiper, SwiperSlide } from 'swiper/react';
 import TitleBlock from './TitleBlock';
 import { AdsImgUrlInfoType, AdsImgUrlResType, CardLinksInfoType, CardLinksResType } from '../../../types';
@@ -11,7 +10,6 @@ import { adsImgUrl, cardLinksUrl } from '../../../api/apiUrls';
 import { useT } from '../../../custom-hooks/useT';
 import axios from 'axios';
 import { weatherAPI } from '../../../constants';
-
 
 function BlockBanner() {
   const [surveyValue, setSurveyValue] = useState<string>("");
@@ -106,6 +104,12 @@ function BlockBanner() {
   const [temp, setTemp] = useState<number>();
   const [weatherImg, setWeatherImg] = useState<string>('');
 
+  let todayWeather =
+    lang === 'uz' ? `Bugun ${hour && (hour >= 10 ? hour + ":00" : "0" + hour + ":00")} dagi ob-havo`
+      : lang === 'ru' ? `Сегодняшняя погода в ${hour && (hour >= 10 ? hour + ":00" : "0" + hour + ":00")}`
+        : lang === 'en' ? `Today's weather at ${hour && (hour >= 10 ? hour + ":00" : "0" + hour + ":00")}` : null;
+
+
   const getCurrentWeather = () => {
     axios
       .get(`${weatherAPI}Fergana&units=metric&appid=${apiKey}`)
@@ -128,7 +132,6 @@ function BlockBanner() {
     <div className="block_banner">
       <div className="container">
         <Row gutter={[16, 16]}>
-          {/* block slider */}
           <Col lg={6} sm={12} xs={24}>
             <div className="slider_card">
               <Swiper
@@ -169,9 +172,9 @@ function BlockBanner() {
               <div className="weather_body">
                 <div className="title">
                   <h2>
-                    Farg'ona
+                    {t(`fergana.${lang}`)}
                   </h2>
-                  <p>Bugun {hour && (hour > 10 ? hour + ":00" : "0" + hour + ":00")} dagi ob-havo</p>
+                  <p>{todayWeather}</p>
                 </div>
                 <figure>
                   {weatherImg &&

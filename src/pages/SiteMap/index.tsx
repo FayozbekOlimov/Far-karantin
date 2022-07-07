@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { MenuItemInfoType, MenuUrlResType } from '../../types';
 import { menuUrl } from '../../api/apiUrls';
 import baseAPI from '../../api/baseAPI';
+import { useT } from '../../custom-hooks/useT';
 
 function SiteMap() {
   const [loading, setLoading] = useState<boolean>(true);
@@ -26,6 +27,8 @@ function SiteMap() {
     getMenuUrls();
   }, [getMenuUrls])
 
+  const { t, lang } = useT();
+
   return (
     <section className="site_map">
       <div className="container">
@@ -33,11 +36,11 @@ function SiteMap() {
           <Col xs={24} md={18}>
             <div className="site_map_card page_card">
               <h4 className="page_title">
-                Sayt xaritasi
+                {t(`siteMap.${lang}`)}
               </h4>
               <div className="site_map_body">
                 <Link to="/" className={"site_link-title"}>
-                  Bosh sahifa
+                  {t(`home.${lang}`)}
                 </Link>
                 {
                   menuUrls.map((categories, ind) => (

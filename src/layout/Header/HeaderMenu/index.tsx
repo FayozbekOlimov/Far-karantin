@@ -1,6 +1,5 @@
 import { Button, Collapse, Dropdown, Menu } from 'antd';
 import "./style.scss";
-// import headerMenu from "./headerMenuData.json"
 import { Link } from 'react-router-dom';
 import { AlignRightOutlined } from '@ant-design/icons';
 import { useCallback, useEffect, useState } from 'react';
@@ -40,20 +39,20 @@ function HeaderMenu() {
     getMenuUrls();
   }, [getMenuUrls])
 
-  const onChange = (key: string | string[]) => {
-    console.log(key);
-  };
-
-  const [open, setOpen] = useState<string[]>([]);
+  const [open, setOpen] = useState<string>("0");
   const handleClick = () => {
-    // e.preventDefault();
-    setOpen([]);
+    setOpen("0");
   };
 
   return (
     <div className="header_menu">
       <div className="container">
-        <Collapse activeKey={open} onChange={() => setOpen(["1"])} className="header_menu__collapse" accordion expandIcon={(panelProps) => <AlignRightOutlined />}>
+        <Collapse activeKey={open} 
+          onChange={() => setOpen(prev => prev === "1" ? "0" : "1")}
+          className="header_menu__collapse"
+          accordion
+          expandIcon={(panelProps) => <AlignRightOutlined />}
+        >
           <Collapse.Panel header="Menu" key="1">
             <Collapse accordion>
               {menuUrls.map((menu) => (

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { latestGalleryUrl, latestVideoUrl } from "../../../api/apiUrls";
 import baseAPI from "../../../api/baseAPI";
 import { useT } from "../../../custom-hooks/useT";
-import { LatestVideoUrlInfoType, LatestVideoUrlResType, NewsUrlResType, PhotoGalleryCardInfoType, PhotoGalleryCardResType } from "../../../types";
+import { LatestVideoUrlInfoType, LatestVideoUrlResType, PhotoGalleryCardInfoType, PhotoGalleryCardResType } from "../../../types";
 import './style.scss';
 
 function HomeGallery() {
@@ -104,7 +104,6 @@ function HomeGallery() {
                   </div>
                 </div>
               </div>
-              {/* </Link> */}
             </div>
           </Col>
         </Row>

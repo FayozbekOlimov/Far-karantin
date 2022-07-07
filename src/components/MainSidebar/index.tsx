@@ -2,7 +2,6 @@ import { useCallback, useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom'
 import { menuUrl } from '../../api/apiUrls';
 import baseAPI from '../../api/baseAPI';
-// import headerMenuData from "../../layout/Header/HeaderMenu/headerMenuData.json"
 import { MenuItemInfoType, MenuUrlResType } from '../../types';
 import "./style.scss";
 

@@ -1,9 +1,7 @@
 import { Col, Pagination, Row } from 'antd'
-import React, { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import VideoCard from './VideoCard'
 import "./style.scss";
-import videoCardData from "./videoCardData.json"
-import { useParams } from 'react-router-dom';
 import { VideoUrlInfoType, VideoUrlResType } from '../../../types';
 import { videoUrl } from '../../../api/apiUrls';
 import baseAPI from '../../../api/baseAPI';
@@ -45,9 +43,7 @@ function Videos() {
             videoData.map((item) => (
               <Col
                 key={item.id}
-                lg={8}
-                md={12}
-                xs={24}
+                lg={8} md={12} xs={24}
               >
                 <VideoCard {...item} />
               </Col>

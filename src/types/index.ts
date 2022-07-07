@@ -291,3 +291,11 @@ export type AdsImgUrlInfoType = {
     image: string,
     ad_image: string
 }[]
+
+export type ContactFormType = {
+    status: string,
+    message: string,
+    data: {
+        message: string
+    }
+}

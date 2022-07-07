@@ -25,7 +25,7 @@ function FerganaMap() {
               </li>
               <li className="contact-data__item">
                 <i className="fa-solid fa-phone"></i>
-                <a href="tel:+998 (71) 243 10 46">+998 (71) 243 10 46</a>
+                <a href="tel:+998 (73) 243 10 46">+998 (73) 243 10 46</a>
               </li>
               <li className="contact-data__item">
                 <i className="fa-regular fa-clock"></i>
@@ -33,7 +33,7 @@ function FerganaMap() {
               </li>
               <li className="contact-data__item">
                 <i className="fa-regular fa-envelope"></i>
-                <a href="mailto:info@karantin.uz">info@karantin.uz</a>
+                <a href="mailto: info@farkarantin.uz"> info@farkarantin.uz</a>
               </li>
             </ul>
           </div>
