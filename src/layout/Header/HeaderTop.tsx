@@ -1,15 +1,18 @@
-import { Col, Row } from 'antd';
+import { Col, Input, Row } from 'antd';
 import { useCallback, useEffect, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 import { socialNetworkUrl } from '../../api/apiUrls';
 import baseAPI from '../../api/baseAPI';
 import { useT } from '../../custom-hooks/useT';
 import { changeLang, getLang, setLang } from '../../helpers';
 import { LangType, SocialLinkInfoType, SocialLinkResType, Tlangs } from '../../types';
-// const { Search } = Input;
+const { Search } = Input;
 
 function HeaderTop() {
-  // const onSearch = (value: string) => console.log(value);
+  // const [searchParams] = useSearchParams();
+  const navigate = useNavigate();
+  const [searchValue, setSearchValue] = useState<{ key: string }>({} as { key: string });
+
   const { t, lang } = useT();
   let langs: Tlangs = [{ 1: "O'z", 2: "uz" }, { 1: "Ru", 2: "ru" }, { 1: "En", 2: "en" }];
   const handleSetLang = (language: LangType) => {
@@ -28,6 +31,7 @@ function HeaderTop() {
 
   const [socialLinks, setSocialLinks] = useState<SocialLinkInfoType>([]);
   const [loading, setLoading] = useState<boolean>(true);
+
   const getSocialLinks = useCallback(() => {
     setLoading(true);
     baseAPI.fetchAll<SocialLinkResType>(socialNetworkUrl)
@@ -43,6 +47,17 @@ function HeaderTop() {
   useEffect(() => {
     getSocialLinks();
   }, [getSocialLinks])
+
+  const handleSearchValue = (e: any) => {
+    setSearchValue({ key: e.target.value.trim() });
+  }
+
+  const onSearch = () => {
+    if (searchValue.key && searchValue.key.length > 2) {
+      navigate(`/search?${new URLSearchParams(searchValue)}`);
+      setSearchValue({ key: '' });
+    }
+  }
 
   const SocialMedia = () => {
     return (
@@ -93,7 +108,14 @@ function HeaderTop() {
             <div className="right">
               <SocialMedia />
               <div className="search_area">
-                <input type="search" placeholder={t(`search.${lang}`)} /><i className="fa-solid fa-magnifying-glass"></i>
+                <Search
+                  placeholder={t(`search.${lang}`)}
+                  type='search'
+                  value={searchValue.key}
+                  onChange={handleSearchValue}
+                  onSearch={onSearch}
+                  enterButton={<i className="fa-solid fa-magnifying-glass"></i>}
+                />
               </div>
               <div className="language_area">
                 <ul className="languages">

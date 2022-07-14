@@ -28,3 +28,6 @@ export const latestGalleryUrl = 'latest-gallery';
 export const latestVideoUrl = 'video/latest';
 export const cardLinksUrl = 'card-link';
 export const adsImgUrl = 'ad-pictures';
+
+/* search */
+export const searchUrl = 'search';

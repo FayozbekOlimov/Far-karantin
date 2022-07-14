@@ -278,5 +278,10 @@
         "uz": "Farg'ona",
         "ru": "Фергана",
         "en": "Fergana"
+    },
+    "searchRes": {
+        "uz": "Qidiruv natijasi",
+        "ru": "Результат поиска",
+        "en": "Search result"
     }
 }

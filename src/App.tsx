@@ -17,6 +17,7 @@ import Home from './pages/Home';
 import FotoGallery from './pages/InformationServices/FotoGallery';
 import Videos from './pages/InformationServices/Videos';
 import PageNotFound from './pages/PageNotFound';
+import Search from './pages/Search';
 import SiteMap from './pages/SiteMap';
 import Symbols from './pages/Symbols';
 import { MenuItemInfoType, MenuUrlResType } from './types';
@@ -63,6 +64,7 @@ function App() {
         <Route path='contact' element={<Contacts />} />
         <Route path='sitemap' element={<SiteMap />} />
         <Route path='symbols' element={<Symbols />} />
+        <Route path='search' element={<Search />} />
         <Route path='*' element={<PageNotFound />} />
       </Routes>
       <Footer />

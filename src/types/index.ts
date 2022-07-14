@@ -211,6 +211,12 @@ export type NewsDetailResType = {
     data: NewsDetailInfoType
 }
 
+export type SearchUrlResType = {
+    status: string,
+    message: string,
+    data: NewsDetailInfoType[]
+}
+
 export type LatestVideoUrlResType = {
     status: string,
     message: string,

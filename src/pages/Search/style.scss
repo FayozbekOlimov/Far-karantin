@@ -1,0 +1,18 @@
+.search {
+  margin-top: 15px;
+  margin-bottom: 15px;
+
+  &_list {
+    min-height: 400px;
+    padding-left: 32px;
+
+    li {
+      list-style: disc;
+      margin: 5px 0;
+    }
+
+    .no-found {
+      text-align: center;
+    }
+  }
+}
