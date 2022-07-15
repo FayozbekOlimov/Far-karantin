@@ -283,5 +283,10 @@
         "uz": "Qidiruv natijasi",
         "ru": "Результат поиска",
         "en": "Search result"
+    },
+    "menu": {
+        "uz": "Menyu",
+        "ru": "Меню",
+        "en": "Menu"
     }
 }

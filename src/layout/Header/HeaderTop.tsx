@@ -49,11 +49,11 @@ function HeaderTop() {
   }, [getSocialLinks])
 
   const handleSearchValue = (e: any) => {
-    setSearchValue({ key: e.target.value.trim() });
+    setSearchValue({ key: e.target.value });
   }
 
   const onSearch = () => {
-    if (searchValue.key && searchValue.key.length > 2) {
+    if (searchValue.key && searchValue.key.trim().length > 2) {
       navigate(`/search?${new URLSearchParams(searchValue)}`);
       setSearchValue({ key: '' });
     }

@@ -256,25 +256,24 @@ function BlockBanner() {
                         percent={75}
                         showInfo={false}
                         strokeWidth={18}
-
                       />
                       <span>{t(`ans2.${lang}`)}</span>
                       <Progress
-                        percent={75}
+                        percent={40}
                         status="exception"
                         showInfo={false}
                         strokeWidth={18}
                       />
                       <span>{t(`ans3.${lang}`)}</span>
                       <Progress
-                        percent={30}
+                        percent={50}
                         showInfo={false}
                         strokeColor={"#2baab1"}
                         strokeWidth={18}
                       />
                       <span>{t(`ans4.${lang}`)}</span>
                       <Progress
-                        percent={75}
+                        percent={20}
                         showInfo={false}
                         strokeColor="#383f48"
                         strokeWidth={18}

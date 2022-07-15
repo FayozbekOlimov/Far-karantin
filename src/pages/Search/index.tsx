@@ -25,7 +25,7 @@ function Search() {
         }
       })
       .catch(e => console.log('Error:', e.message));
-  }, []);
+  }, [key]);
 
   useEffect(() => {
     getSearchResults();

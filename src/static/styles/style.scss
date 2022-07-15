@@ -165,14 +165,15 @@ table {
 }
 
 .main_page {
-  margin: 15px 0px 30px;
+  margin: 15px 0px 15px;
   min-height: calc(100vh - 483px);
 }
 
 .page_card {
   background-color: #fff;
-  padding: 30px 15px;
+  padding: 15px;
   border-radius: 4px;
+  min-height: 450px;
 }
 
 .pagination_area {

@@ -6,6 +6,7 @@ import { useCallback, useEffect, useState } from 'react';
 import baseAPI from '../../../api/baseAPI';
 import { menuUrl } from '../../../api/apiUrls';
 import { MenuItemInfoType, MenuUrlResType } from '../../../types';
+import { useT } from '../../../custom-hooks/useT';
 
 const createNavbar = (to: string, submenu: { subName: string, type: string, to: string }[]) => (
   <Menu>
@@ -44,16 +45,18 @@ function HeaderMenu() {
     setOpen("0");
   };
 
+  const { t, lang } = useT();
+
   return (
     <div className="header_menu">
       <div className="container">
-        <Collapse activeKey={open} 
+        <Collapse activeKey={open}
           onChange={() => setOpen(prev => prev === "1" ? "0" : "1")}
           className="header_menu__collapse"
           accordion
           expandIcon={(panelProps) => <AlignRightOutlined />}
         >
-          <Collapse.Panel header="Menu" key="1">
+          <Collapse.Panel header={t(`menu.${lang}`)} key="1">
             <Collapse accordion>
               {menuUrls.map((menu) => (
                 <Collapse.Panel header={menu.menuName} key={menu.menuName}>

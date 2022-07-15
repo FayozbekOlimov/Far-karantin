@@ -1,4 +1,4 @@
-import { useCallback, useContext, useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { pageUrl } from "../../../api/apiUrls";
 import baseAPI from "../../../api/baseAPI";
@@ -32,9 +32,9 @@ function AboutAgency() {
       <h4 className="page_title">
         {title}
       </h4>
-      <div 
-        className="about_agency_body" 
-        dangerouslySetInnerHTML={{__html: content}}
+      <div
+        className="about_agency_body"
+        dangerouslySetInnerHTML={{ __html: content }}
       />
     </div>
   )
